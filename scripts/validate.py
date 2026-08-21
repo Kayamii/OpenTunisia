@@ -49,9 +49,9 @@ def load(path):
         with open(path, encoding="utf-8") as fh:
             return json.load(fh)
     except json.JSONDecodeError as e:
-        err(f"{rel(path)}: invalid JSON — {e}")
+        err(f"{rel(path)}: invalid JSON, {e}")
     except UnicodeDecodeError as e:
-        err(f"{rel(path)}: not valid UTF-8 — {e}")
+        err(f"{rel(path)}: not valid UTF-8, {e}")
     return None
 
 
@@ -128,7 +128,7 @@ def main():
         if n_bad_gov: err(f"{name}: {n_bad_gov} record(s) reference an unknown governorate_code")
         if n_oob:     err(f"{name}: {n_oob} record(s) have coordinates outside Tunisia")
         if n_contra:  err(f"{name}: {n_contra} record(s) name a delegation from another governorate")
-        if n_bidi:    err(f"{name}: {n_bidi} record(s) contain invisible bidi characters — strip them")
+        if n_bidi:    err(f"{name}: {n_bidi} record(s) contain invisible bidi characters, strip them")
 
         # every dataset must document where it came from
         stem = os.path.splitext(os.path.basename(path))[0]
@@ -137,7 +137,7 @@ def main():
             shared = glob.glob(os.path.join(SOURCES, "*.md"))
             covered = any(stem in open(s, encoding="utf-8").read() for s in shared)
             if not covered:
-                err(f"{name}: no matching file in sources/ — every dataset needs its "
+                err(f"{name}: no matching file in sources/, every dataset needs its "
                     f"origin and licence documented (expected sources/{stem}.md)")
 
         per_file.append((name, len(recs)))
@@ -147,7 +147,7 @@ def main():
     for key, where in list(dupes.items())[:10]:
         err(f"duplicate record {key[0]}/{key[1]} appears in: {', '.join(sorted(set(where)))}")
     if len(dupes) > 10:
-        err(f"... and {len(dupes) - 10} further duplicate record(s)")
+        err(f".. and {len(dupes) - 10} further duplicate record(s)")
 
     # ---- GeoJSON boundaries ---------------------------------------------------
     for path in sorted(glob.glob(os.path.join(DATA, "*", "*.geojson"))):

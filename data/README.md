@@ -3,16 +3,16 @@
 This folder holds the datasets of OpenTunisia.
 
 Datasets are added gradually as they are researched, collected and verified. Nothing is
-invented or filled with placeholder examples — a folder stays empty until there is real
+invented or filled with placeholder examples, a folder stays empty until there is real
 data to put in it.
 
 ## What exists today
 
 **49,780 records** from two source families:
 
-- **OpenStreetMap** (ODbL) — broad coverage with coordinates
+- **OpenStreetMap** (ODbL), broad coverage with coordinates
 - **Tunisian government open data** via data.gov.tn and agridata.tn (CC-Zero, CC-BY,
-  ODbL, LNDPO-TN) — official registries, authoritative but often without coordinates
+  ODbL, LNDPO-TN), official registries, authoritative but often without coordinates
 
 ### Official government data (15,848)
 
@@ -32,7 +32,7 @@ These are kept **separate** from the OpenStreetMap files covering the same topic
 are independent sources with different strengths, and are not merged or deduplicated
 against each other.
 
-### Geography — the full administrative hierarchy (2,374)
+### Geography, the full administrative hierarchy (2,374)
 
 ```
 Governorate (24)  ->  Delegation (266)  ->  Imada (2,084)
@@ -45,7 +45,7 @@ Governorate (24)  ->  Delegation (266)  ->  Imada (2,084)
 | `geography/governorates.json` | 24 |
 | `geography/delegation-boundaries.geojson` | 266 polygons |
 
-### Services — OpenStreetMap (9,080)
+### Services. OpenStreetMap (9,080)
 
 | File | Records |
 |---|---:|
@@ -58,7 +58,7 @@ Governorate (24)  ->  Delegation (266)  ->  Imada (2,084)
 | `services/other-facilities.json` | 287 |
 | `services/vehicle-services.json` | 138 |
 
-### Businesses — OpenStreetMap (11,704)
+### Businesses. OpenStreetMap (11,704)
 
 | File | Records |
 |---|---:|
@@ -67,7 +67,7 @@ Governorate (24)  ->  Delegation (266)  ->  Imada (2,084)
 | `businesses/tourism-and-lodging.json` | 1,471 |
 | `businesses/offices-and-crafts.json` | 962 |
 
-### Places — OpenStreetMap (10,774)
+### Places. OpenStreetMap (10,774)
 
 | File | Records |
 |---|---:|
@@ -89,7 +89,7 @@ database. No record appears in two files.
 
 ### Before you rely on it
 
-The **OpenStreetMap** files are a geolocated index of what exists and where — not a
+The **OpenStreetMap** files are a geolocated index of what exists and where, not a
 verified business directory. Phone numbers are on ~4% of records, websites ~2%, and
 coverage is uneven (Tunis has ~23x more entries than Kef) because it reflects mapping
 activity, not reality.

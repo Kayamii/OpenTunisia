@@ -1,7 +1,7 @@
 # Contributing to OpenTunisia
 
 Thanks for helping. Corrections to a single record are as welcome as a whole new
-dataset — both make the data more useful.
+dataset. Both make the data more useful.
 
 ---
 
@@ -10,15 +10,15 @@ dataset — both make the data more useful.
 This is the one rule the project will not bend on.
 
 **Every dataset must document its origin and its licence.** Data that is publicly
-visible on a website is *not* automatically reusable — most websites reserve their
+visible on a website is *not* automatically reusable. Most websites reserve their
 database rights, and publishing that data here would compromise the licensing of the
 whole repository, not just one file.
 
 If a source does not state a licence, treat it as **not reusable** and leave it out.
 
 Sources known to be usable are listed in [`sources/README.md`](sources/README.md).
-Sources that must not be scraped — Google Maps, TripAdvisor, Foursquare, commercial
-directories — are listed there too, with the reasoning.
+Sources that must not be scraped (Google Maps, TripAdvisor, Foursquare, commercial
+directories) are listed there too, with the reasoning.
 
 ---
 
@@ -27,9 +27,9 @@ directories — are listed there too, with the reasoning.
 You do not need write access. The normal flow is:
 
 1. **Fork** this repository on GitHub.
-2. **Create a branch** — `git checkout -b fix-sfax-pharmacies`
+2. **Create a branch:** `git checkout -b fix-sfax-pharmacies`
 3. **Make your change** in `data/`, and document the source in `sources/`.
-4. **Run the validator** — `python scripts/validate.py`
+4. **Run the validator:** `python scripts/validate.py`
 5. **Commit and push** to your fork.
 6. **Open a pull request** against `main`.
 
@@ -40,7 +40,7 @@ mechanical checks passed and review can focus on whether the data is *right*.
 
 ## The rules the validator enforces
 
-Run it locally before opening a PR — it needs only Python 3, no dependencies:
+Run it locally before opening a PR. It needs only Python 3, with no dependencies:
 
 ```bash
 python scripts/validate.py
@@ -74,7 +74,7 @@ geography files without a database. Keep it.
 
 **Names.** Use `name` when the source gives one primary name. Use `name_ar` /
 `name_fr` / `name_en` when it distinguishes them. If a source publishes Arabic only,
-use `name_ar` — do not transliterate and present a guess as fact.
+use `name_ar`. Do not transliterate and present a guess as fact.
 
 **Prefer coordinates over names.** If a source has coordinates, assign the delegation
 by point-in-polygon against
@@ -82,7 +82,7 @@ by point-in-polygon against
 not by matching text. It is far more reliable.
 
 **Do not merge official data with OpenStreetMap data.** They are kept as separate
-files on purpose — different provenance, different strengths. Where a record has been
+files on purpose: different provenance, different strengths. Where a record has been
 matched to its OSM counterpart, that is a *cross-reference* (`osm_type` / `osm_id`),
 not a merge.
 
@@ -113,16 +113,16 @@ Add a Markdown file in `sources/` named after your dataset
 <Coverage, known gaps, accuracy, what you cleaned, whether it needs re-checking.>
 ```
 
-Be honest about the gaps. Every existing source file states its own limitations —
-sparse phone numbers, missing coordinates, governorates that do not publish. That
-honesty is what makes the data trustworthy.
+Be honest about the gaps. Every existing source file states its own limitations: sparse phone
+numbers, missing coordinates, governorates that do not publish. That honesty is what
+makes the data trustworthy.
 
 ---
 
 ## Fixing a single record
 
 Perfectly welcome, and no source file needed if the dataset already has one. Say in
-the PR how you know — "this pharmacy closed in 2024, I live on that street" is a
+the PR how you know. "This pharmacy closed in 2024, I live on that street" is a
 better justification than a silent edit.
 
 ---
@@ -130,7 +130,7 @@ better justification than a silent edit.
 ## Improving the map
 
 The viewer lives in [`viewer/`](viewer/). It is one HTML file, one icons file and
-three generated JSON files — no framework, no build step.
+three generated JSON files. No framework, no build step.
 
 ```bash
 cd viewer && python -m http.server 8000
@@ -147,4 +147,4 @@ python viewer/build.py
 ## Code of conduct
 
 Be decent. Assume good faith, critique the data rather than the person, and keep
-discussion in English, French or Arabic — whichever you are comfortable with.
+discussion in English, French or Arabic, whichever you prefer.

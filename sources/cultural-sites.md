@@ -1,7 +1,7 @@
 # Cultural sites, museums and festivals
 
 - **Dataset file:** data/places/cultural-sites.json
-- **Source:** data.gov.tn / openculture.gov.tn — Ministry of Cultural Affairs and its
+- **Source:** data.gov.tn / openculture.gov.tn. Ministry of Cultural Affairs and its
   regional commissariats
 - **License:** per record, in the `license` field (`cc-by`, `other-open`, LNDPO-TN)
 - **Retrieved:** 2026-08-21
@@ -37,8 +37,7 @@ coordinates mark the **venue** where the festival is held (109 also carry a venu
 `address`).
 
 Treat them accordingly: the point tells you where a festival happens, not that there is
-something to visit at that spot year-round. Dates and programmes are **not** included —
-they change annually and would go stale.
+something to visit at that spot year-round. Dates and programmes are **not** included, they change annually and would go stale.
 
 ## Caveats
 
@@ -54,14 +53,14 @@ they change annually and would go stale.
 
 ## What was deliberately excluded
 
-The same portals publish a large volume of **cultural statistics** — subscriber counts,
+The same portals publish a large volume of **cultural statistics** subscriber counts,
 activity totals, festival subsidies, budgets. None of it is included. This repository is
 a directory of things that exist and can be found, not a statistics archive.
 
 ## Relationship to `places/heritage-sites.json`
 
 39 of the 116 `museum_or_site` records sit within 120 m of a record in
-`heritage-sites.json` (the OpenStreetMap file) — they describe the same physical place.
+`heritage-sites.json` (the OpenStreetMap file), they describe the same physical place.
 
 **They are deliberately not merged.** As everywhere in this repository, official data and
 OpenStreetMap data are kept as independent files: the official record is authoritative

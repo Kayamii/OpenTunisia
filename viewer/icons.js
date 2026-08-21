@@ -1,8 +1,8 @@
-/* OpenTunisia — map marker icons.
+/* OpenTunisia map marker icons.
  *
  * Solid-filled glyphs on a teardrop pin, the way real map markers are drawn:
  * a filled silhouette reads at 24px where a thin outline turns to mush.
- * All inline SVG — nothing to download, no icon font, no sprite sheet.
+ * All inline SVG: nothing to download, no icon font, no sprite sheet.
  */
 (function (global) {
   "use strict";
@@ -131,7 +131,7 @@
     'individual_mill':['factory','#7f5539'],   'delegation_summary':['factory','#7f5539']
   };
 
-  /* per-layer fallback — the data holds 430 distinct type values */
+  /* per-layer fallback, since the data holds 430 distinct type values */
   var BY_LAYER = {
     healthcare:['hospital','#e03131'], health_official:['hospital','#e03131'],
     doctors:['doctor','#e03131'],
@@ -178,14 +178,14 @@
       +   '<path d="' + (P[glyph] || P.pin) + '"/></g></svg>';
   }
 
-  /* Flat glyph, no pin — for legends, popups and the layer list. */
+  /* Flat glyph, no pin. For legends, popups and the layer list. */
   function glyphSvg(glyph, colour, size) {
     return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" '
       + 'fill="' + colour + '" aria-hidden="true"><path d="'
       + (P[glyph] || P.pin) + '"/></svg>';
   }
 
-  /* Rounded-square chip holding a white glyph — used in the sidebar. */
+  /* Rounded-square chip holding a white glyph, used in the sidebar. */
   function chipSvg(glyph, colour, size) {
     var r = Math.round(size * 0.28);
     return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" '

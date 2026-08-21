@@ -1,7 +1,7 @@
 # Private specialist doctors
 
 - **Dataset file:** data/services/private-specialist-doctors.json
-- **Source:** data.gov.tn — *Annuaires des médecins spécialistes dans le secteur privé*
+- **Source:** data.gov.tn, *Annuaires des médecins spécialistes dans le secteur privé*
   (Ministry of Health)
 - **License:** **Creative Commons Attribution (CC-BY)** as declared by the publisher
 - **Retrieved:** 2026-08-21
@@ -9,8 +9,7 @@
 
 ## What this is
 
-The **official public directory of private-sector specialist doctors** in Tunisia —
-2,220 practitioners with their specialty, practice, address and phone number.
+The **official public directory of private-sector specialist doctors** in Tunisia, 2,220 practitioners with their specialty, practice, address and phone number.
 
 This is a professional directory published by the Ministry so that patients can find a
 specialist. It lists practitioners in their professional capacity at their place of
@@ -50,13 +49,13 @@ Empty values in the source are omitted rather than stored as empty strings.
 
 - **No coordinates.** The source gives a postal address only. Records are located
   administratively.
-- **23 of 24 governorates** — one has no private specialists listed.
+- **23 of 24 governorates** one has no private specialists listed.
 - **Private sector only.** Public-hospital doctors are not included; see
   `health-facilities-official.json` for public facilities.
 - Names and addresses are uppercase in the source; names are title-cased here, addresses
   are kept verbatim so they remain searchable against the original.
 - The directory's compilation date is not stated on the portal. Practitioners move and
-  retire — **verify before relying on a specific entry.**
+  retire, **verify before relying on a specific entry.**
 - `delegation` was matched from the source's own delegation label, constrained to the
   stated governorate. Zero governorate/delegation contradictions.
 

@@ -1,11 +1,11 @@
-# Health facilities (official — Ministry of Health)
+# Health facilities (official. Ministry of Health)
 
 - **Dataset file:** data/services/health-facilities-official.json
 - **Source:** Portail National des Données Ouvertes (data.gov.tn), published by the
   Ministère de la Santé
 - **URLs:**
-  - Basic health centres — https://catalog.data.gov.tn/dataset/74134555-7893-40c1-b078-4543a22a0772
-  - Circumscription hospitals — https://catalog.data.gov.tn/dataset/a8a27221-d8ab-4097-8f83-c8b51574fcd1
+  - Basic health centres, https://catalog.data.gov.tn/dataset/74134555-7893-40c1-b078-4543a22a0772
+  - Circumscription hospitals, https://catalog.data.gov.tn/dataset/a8a27221-d8ab-4097-8f83-c8b51574fcd1
 - **License:** **Creative Commons Attribution (CC-BY)** as declared by the publisher
 - **Retrieved:** 2026-08-21
 - **Method:** Direct JSON/CSV download from the portal's CKAN API. No scraping.
@@ -19,15 +19,15 @@
 | Établissements publics de santé (major public hospitals) | 19 |
 | **Total** | **1,555** |
 
-The 19 *établissements publics de santé* are Tunisia's major public hospitals — La Rabta,
-Hôpital d'Enfants de Tunis, Aziza Othmana and others — and they arrive **with street
+The 19 *établissements publics de santé* are Tunisia's major public hospitals. La Rabta,
+Hôpital d'Enfants de Tunis, Aziza Othmana and others. They arrive **with street
 addresses and phone numbers**, which the other two sources lack. They were matched
 against the existing records by normalized name + governorate before insertion, so no
 facility is listed twice.
 
 This complements `services/healthcare.json` (from OpenStreetMap), which covers
 pharmacies, clinics and private practices that this official list does not include.
-**The two are not merged** — they are independent sources covering different things.
+**The two are not merged** they are independent sources covering different things.
 
 ## Fields
 
@@ -39,9 +39,9 @@ pharmacies, clinics and private practices that this official list does not inclu
 | `governorate_code` / `governorate` | Joins to `governorates.json` |
 | `delegation` / `delegation_code_geo` | Joins to `delegations.json`, where matched |
 | `locality`, `postcode`, `address` | Where the source provides them |
-| `phone`, `fax` | Hospitals only — digits normalized, separators stripped |
+| `phone`, `fax` | Hospitals only, digits normalized, separators stripped |
 
-## Caveats — please read
+## Caveats, please read
 
 - **No coordinates.** Neither source publishes latitude/longitude. Records are located
   administratively (governorate, and delegation where matched), not geographically.
@@ -49,7 +49,7 @@ pharmacies, clinics and private practices that this official list does not inclu
 - **1,235 of 1,536 have a delegation**; the remainder are located to governorate only,
   because their delegation string did not match confidently. Governorate is present and
   verified for **all 1,536**.
-- **98 records carry a phone number and 99 an address** — the two hospital sources have
+- **98 records carry a phone number and 99 an address** the two hospital sources have
   them, the basic-health-centre source does not.
 - Names are in French/Latin script, often fully uppercase in the source, and are kept as
   published.

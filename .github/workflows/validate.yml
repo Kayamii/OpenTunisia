@@ -24,7 +24,7 @@ jobs:
         run: |
           python viewer/build.py
           if ! git diff --quiet -- viewer/; then
-            echo "::error::viewer/ is stale — run 'python viewer/build.py' and commit the result"
+            echo "::error::viewer/ is stale, run 'python viewer/build.py' and commit the result"
             git diff --stat -- viewer/
             exit 1
           fi

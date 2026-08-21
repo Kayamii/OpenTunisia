@@ -1,13 +1,13 @@
 # Public libraries
 
 - **Dataset file:** data/services/public-libraries.json
-- **Source:** data.gov.tn — regional cultural affairs directorates
+- **Source:** data.gov.tn, regional cultural affairs directorates
 - **License:** per record, in the `license` field (`other-open`, `cc-by`)
 - **Retrieved:** 2026-08-21
 - **Method:** Library names extracted from regional library-statistics publications
   (CSV/XLSX) on the national portal.
 
-## What this is — and is not
+## What this is, and is not
 
 The source publications are **statistics** about libraries (book counts, subscriber
 numbers, loans), not facility directories. What is reusable from them is the **list of
@@ -23,7 +23,7 @@ directory. It has no addresses, no phone numbers, no opening hours, and no coord
 Nabeul 51 · Sousse 26 · Ben Arous 19 · Tataouine 14 · Manouba 13 · Médenine 3 · Béja 1
 
 `facility_type` distinguishes 125 `public_library` from 2 `mobile_library`
-(bibliothèques ambulantes — these are vehicles, not fixed places).
+(bibliothèques ambulantes, these are vehicles, not fixed places).
 
 ## Fields
 
@@ -41,7 +41,7 @@ Nabeul 51 · Sousse 26 · Ben Arous 19 · Tataouine 14 · Manouba 13 · Médenin
 - Names are French/Latin script as published, with inconsistent abbreviation
   ("Bib", "Bib Pub", "Bibliothèque"). They are kept verbatim.
 - Statistics from the source files (book counts, subscriber numbers) were **not**
-  imported — they are time-series data that would go stale and are outside this
+  imported, they are time-series data that would go stale and are outside this
   repository's purpose.
 - Deduplication was by normalized name within a governorate; the same library appearing
   in several yearly publications is stored once.

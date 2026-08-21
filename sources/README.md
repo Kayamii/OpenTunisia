@@ -4,29 +4,29 @@ Every dataset in this project should document where its information came from.
 
 This matters for two reasons:
 
-1. **Trust** — anyone using the data should be able to check where it originated and how
+1. **Trust** anyone using the data should be able to check where it originated and how
    current it is.
-2. **Licensing** — data is not automatically free to reuse just because it is publicly
+2. **Licensing** data is not automatically free to reuse just because it is publicly
    visible on a website. Each source has its own terms.
 
 ---
 
 ## Possible sources
 
-- **OpenStreetMap** — community-maintained geographic data. Published under the ODbL,
+- **OpenStreetMap** community-maintained geographic data. Published under the ODbL,
   which requires attribution and share-alike.
-- **Tunisian government open-data sources** — official portals and public
+- **Tunisian government open-data sources** official portals and public
   administrations. Terms vary per portal and per dataset.
-- **Official websites** — ministries, municipalities, public institutions. Being public
+- **Official websites** ministries, municipalities, public institutions. Being public
   does not mean being reusable; check the terms.
-- **Publicly reusable datasets** — datasets explicitly published under an open license
+- **Publicly reusable datasets** datasets explicitly published under an open license
   (Creative Commons, ODbL, public domain, etc.).
-- **Community contributions** — information gathered or verified directly by
+- **Community contributions** information gathered or verified directly by
   contributors, contributed under this project's license.
 
 ---
 
-## Licensing — please read
+## Licensing, please read
 
 **Do not assume information from a website can be copied or redistributed.**
 
@@ -50,13 +50,13 @@ This is not legal advice.
 
 These have been checked and are in use.
 
-### OpenStreetMap — ODbL
+### OpenStreetMap. ODbL
 
 Queried through the Overpass API. Requires attribution to **(c) OpenStreetMap
 contributors** and share-alike on modified distributions. Broad coverage, but reflects
 contributor activity rather than reality (see `points-of-interest.md`).
 
-### data.gov.tn — the Tunisian national open data portal
+### data.gov.tn, the Tunisian national open data portal
 
 The official portal at **https://www.data.gov.tn** publishes public-sector datasets, and
 its catalog is machine-readable through a standard **CKAN API** at
@@ -93,14 +93,14 @@ Two further live portals whose resources are indexed in the same national catalo
 centres); `openculture.gov.tn` carries cultural institutions, museums and festivals,
 much of it geolocated. Both are in use here.
 
-### openbaladiati.tn — municipal open data (DEAD)
+### openbaladiati.tn, municipal open data (DEAD)
 
 Municipality-level datasets (pharmacies, bakeries, cafés, parking, per commune, many
 under `cc-zero`) are still **indexed** in the national catalog, but the host no longer
 serves them: every resource URL returns **HTTP 404**, and `app.openbaladiati.tn` does not
 respond at all. 40 resources were probed; all failed.
 
-Be careful here — the failing downloads return an **HTML error page with HTTP 200**, so a
+Be careful here: the failing downloads return an **HTML error page with HTTP 200**, so a
 naive fetch silently saves a web page as if it were a CSV. Always check that a downloaded
 file does not begin with `<!doctype html`.
 
@@ -112,12 +112,12 @@ data for Tunisia.
 ## What belongs in this repository
 
 **Things that exist and can be found.** A pharmacy, a school, a museum, a bus station, a
-water user association, a doctor's practice — something a person or an application could
+water user association, a doctor's practice, something a person or an application could
 go to, look up, or point at on a map.
 
 ### Not included: statistics and time series
 
-The Tunisian open data portals publish a large volume of **statistics** — around 1,340 of
+The Tunisian open data portals publish a large volume of **statistics** around 1,340 of
 the openly licensed datasets are counts, budgets, subscriber numbers, production figures,
 yearly evolutions. None of it is imported here.
 
@@ -131,7 +131,7 @@ That is a deliberate scope decision, not an oversight:
   directory records people actually come here for.
 
 Where a statistics publication happened to contain a **list of named facilities**, the
-names were extracted and the numbers left behind — see `public-libraries.md` for an
+names were extracted and the numbers left behind, see `public-libraries.md` for an
 example.
 
 If someone wants Tunisian statistics, the portals themselves serve that need well, and
@@ -166,16 +166,16 @@ The realistic open sources for Tunisia have been swept:
 | data.gov.tn catalog | **All 2,698 datasets enumerated**; the ~159 directory-type ones collected |
 | agridata.tn | Collected |
 | openculture.gov.tn | Collected |
-| openbaladiati.tn | **Dead** — all resources 404 |
+| openbaladiati.tn | **Dead** all resources 404 |
 
 Of 274 directory-type resources identified, **269 were downloaded**. Five could not be
 retrieved after repeated attempts with long timeouts and retries:
 
-- *Liste des gouvernorats en Tunisie* — HTTP 403 (and redundant; the repository already
+- *Liste des gouvernorats en Tunisie*, HTTP 403 (and redundant; the repository already
   has all 24 governorates from OSM)
-- *Liste des Institutions publiques de prise en charge* — no response
-- *Liste des divisions de promotion sociale* — no response
-- Two per-governorate social promotion unit files (Sousse, Mahdia) — no response
+- *Liste des Institutions publiques de prise en charge*, no response
+- *Liste des divisions de promotion sociale*, no response
+- Two per-governorate social promotion unit files (Sousse, Mahdia), no response
 
 None of these would change the shape of the data; the same facility types are already
 covered for other governorates. They are recorded here so a future contributor can retry
@@ -232,7 +232,7 @@ Use this template:
 - **URL:** <link>
 - **License:** <license name, or "unclear" / "permission granted by ...">
 - **Retrieved:** <YYYY-MM-DD>
-- **Method:** <how it was obtained — manual entry, official export, API, etc.>
+- **Method:** <how it was obtained, manual entry, official export, API, etc.>
 
 ## Notes
 
