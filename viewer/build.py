@@ -109,7 +109,7 @@ for key, (path, label, src_kind, group) in LAYERS.items():
             miss += 1
             continue
         nm = r.get('name') or r.get('name_fr') or r.get('name_ar') or r.get('label') or ''
-        # index 8 is a subtype the icon layer can specialise on — religion for a
+        # index 8 is a subtype the icon layer can specialise on: religion for a
         # place of worship, cuisine for a restaurant. Empty when not applicable.
         sub = r.get('religion') or r.get('cuisine') or r.get('sport') or ''
         pts.append([round(r['lat'], 5), round(r['lon'], 5), nm,

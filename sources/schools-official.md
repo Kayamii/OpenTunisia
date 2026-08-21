@@ -1,4 +1,4 @@
-# Schools (official — Ministry of Education)
+# Schools (official. Ministry of Education)
 
 - **Dataset file:** data/services/schools-official.json
 - **Source:** Portail National des Données Ouvertes (data.gov.tn), published by the
@@ -23,7 +23,7 @@ Ministry list** and is substantially more complete:
 
 Crucially, the geographic distribution is different. OSM over-represents Tunis and the
 coast. The official data is distributed by **population**: Sfax 578, Tunis 519,
-Kairouan 446, Sidi Bouzid 442, Kasserine 421 — interior governorates that OSM barely
+Kairouan 446, Sidi Bouzid 442, Kasserine 421, interior governorates that OSM barely
 covers.
 
 **The two files are not merged and not deduplicated against each other.** They are
@@ -41,8 +41,8 @@ coverage and the public/private distinction. Cross-matching them is a good futur
 | `education_district` | Regional education directorate (المندوبية الجهوية للتربية) |
 | `governorate_code` / `governorate` | Joins to `governorates.json` |
 | `delegation` / `delegation_code_geo` | Joins to `delegations.json` |
-| `lat` / `lon` | GPS coordinates — **public schools only** |
-| `address` | Street address — **private schools only** |
+| `lat` / `lon` | GPS coordinates, **public schools only** |
+| `address` | Street address, **private schools only** |
 
 ## Notes and caveats
 
@@ -52,7 +52,7 @@ coverage and the public/private distinction. Cross-matching them is a good futur
 - **Private schools have no coordinates.** The source file provides only an address and
   delegation. They were located to a delegation by name matching, not geographically.
 - **5 public schools were dropped** because their coordinates fell outside Tunisia's
-  bounding box — bad data in the source.
+  bounding box, bad data in the source.
 - **4 private schools were dropped** whose delegation name could not be matched.
 - Matching Arabic delegation names required normalizing diacritics, the definite article
   `ال` on every token, and **invisible Unicode bidi marks**, plus a short alias table for
@@ -99,13 +99,13 @@ A candidate must be in the **same delegation**, within **400 m**, and share name
 after normalization (diacritics, definite article, bidi marks, and school-type prefixes
 like `م.إ.` are stripped). Scoring is 75% name similarity, 25% proximity. A match is
 accepted only if it scores ≥ 0.45 **and** beats the runner-up by ≥ 0.10, so ambiguous
-cases are dropped rather than guessed — 143 were rejected on that basis.
+cases are dropped rather than guessed, 143 were rejected on that basis.
 
 ### Two guards that matter
 
 Testing an earlier version surfaced two classes of false positive, both now blocked:
 
-1. **Sibling schools.** "حي الحبيب 3" matched "حي الحبيب 1" — different schools sharing a
+1. **Sibling schools.** "حي الحبيب 3" matched "حي الحبيب 1", different schools sharing a
    name stem. Numeric suffixes must now agree exactly.
 2. **Different school levels.** A primary school (`م.إ.`) matched a preparatory school
    (`المدرسة الإعدادية`) at the same site. Primary / preparatory / secondary are now

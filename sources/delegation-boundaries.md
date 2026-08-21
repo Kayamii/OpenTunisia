@@ -2,7 +2,7 @@
 
 - **Dataset file:** data/geography/delegation-boundaries.geojson
 - **Source:** OpenStreetMap (via the Overpass API)
-- **License:** Open Database License (ODbL) v1.0 — attribution to
+- **License:** Open Database License (ODbL) v1.0, attribution to
   **© OpenStreetMap contributors** and share-alike required
 - **Retrieved:** 2026-08-21
 - **Method:** Overpass query for `admin_level=5` boundary relations with inline geometry,
@@ -17,7 +17,7 @@ relation(area.tn)["boundary"="administrative"]["admin_level"="5"];
 out geom;
 ```
 
-`out geom` is essential — `out skel` returns ways without relation membership, so the
+`out geom` is essential, `out skel` returns ways without relation membership, so the
 polygons cannot be reassembled.
 
 ## Contents
@@ -36,14 +36,14 @@ Each feature's `properties` carry `name_fr`, `name_ar`, `code_geo`, `governorate
 
 Every point-of-interest dataset in this repository was assigned to its delegation by
 point-in-polygon testing against these exact polygons. Publishing them means anyone can
-**reproduce or audit that assignment**, and do their own spatial work — clipping,
-choropleths, "which delegation is this point in".
+**reproduce or audit that assignment**, and do their own spatial work: clipping,
+choropleths, or asking which delegation a point falls in.
 
 ## Validation
 
 - Valid JSON; 266 features; all rings closed; no ring with fewer than 4 points.
 - No vertex falls outside Tunisia's bounding box.
-- Every delegation in `delegations.json` has a boundary — none missing.
+- Every delegation in `delegations.json` has a boundary, none missing.
 - **Round-trip test:** 60 randomly sampled points-of-interest were re-located using only
   this published file. All 60 reproduced the `delegation` already stored on the record.
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OpenTunisia — Map</title>
+<title>OpenTunisia Map</title>
 <meta name="description" content="An interactive map of 38,567 places across Tunisia, from open data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -487,8 +487,8 @@ main{flex:1;display:flex;min-height:0;position:relative}
   </a>
 
   <div class="stats">
-    <div class="stat"><b id="c-mapped">—</b><span>Mapped</span></div>
-    <div class="stat"><b id="c-total">—</b><span>Records</span></div>
+    <div class="stat"><b id="c-mapped">···</b><span>Mapped</span></div>
+    <div class="stat"><b id="c-total">···</b><span>Records</span></div>
     <div class="stat"><b>266</b><span>Delegations</span></div>
     <div class="stat"><b>24</b><span>Governorates</span></div>
   </div>
@@ -590,11 +590,11 @@ main{flex:1;display:flex;min-height:0;position:relative}
     <div class="readout">
       <div class="chipbox" id="scalebox">
         <span class="scaleline" id="scale-l" style="width:60px"></span>
-        <span class="mono" id="scale-t">—</span>
+        <span class="mono" id="scale-t">···</span>
       </div>
       <div class="chipbox coordbox" id="coordbox">
         <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:var(--ink-3);stroke-width:2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
-        <span class="mono" id="coord-t">—</span>
+        <span class="mono" id="coord-t">···</span>
       </div>
     </div>
 
@@ -602,7 +602,7 @@ main{flex:1;display:flex;min-height:0;position:relative}
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 7 9 4Zm0 0v13m6-10v12.5"/></svg>
       <div>
         <b>Pick a layer to begin</b>
-        <span>The map starts clean — only Tunisia's 266 delegations are drawn.
+        <span>The map starts clean. Only Tunisia's 266 delegations are drawn.
         Choose what to show from the panel.</span>
       </div>
     </div>
@@ -662,7 +662,7 @@ var TILES = {
     { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR }),
   plain_dark:  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
     { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR }),
-  // place names only, no POIs — useful for orientation without the clutter
+  // place names only, no POIs, useful for orientation without the clutter
   named_light: L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',
     { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR }),
   named_dark:  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
@@ -757,7 +757,7 @@ map.on('zoomend moveend', updateScale);
 map.on('mousemove', function(e){
   $('coord-t').textContent = e.latlng.lat.toFixed(4) + ', ' + e.latlng.lng.toFixed(4);
 });
-map.on('mouseout', function(){ $('coord-t').textContent = '—'; });
+map.on('mouseout', function(){ $('coord-t').textContent = '···'; });
 
 var hereMarker = null;
 map.on('locationfound', function(e){
@@ -774,7 +774,7 @@ map.on('locationfound', function(e){
   toast('Found your location');
 });
 map.on('locationerror', function(){
-  toast('Location unavailable — permission denied or no signal');
+  toast('Location unavailable: permission denied or no signal');
 });
 
 // keyboard: / focuses search, Esc clears it
@@ -887,7 +887,7 @@ function makeCluster(key){
     }
   });
   var pts = allPoints[key], markers = [];
-  // one L.divIcon per (glyph,colour) pair, reused across markers — building 4,000
+  // one L.divIcon per (glyph,colour) pair, reused across markers. Building 4,000
   // separate icon objects is what makes a map like this feel slow
   var iconCache = {};
   function iconFor(type, sub){
@@ -973,7 +973,7 @@ function buildPanel(){
       lab.title = mappable
         ? (m.nocoord ? fmt(m.n)+' shown · '+fmt(m.nocoord)+' more have no coordinates in the source'
                      : fmt(m.n)+' records, all mapped')
-        : 'All '+fmt(m.total)+' records in this dataset are located by address only — '
+        : 'All '+fmt(m.total)+' records in this dataset are located by address only, '
           + 'the source publishes no coordinates, so they cannot be drawn on a map.';
       wrap.appendChild(lab);
     });
@@ -1094,7 +1094,7 @@ $('q').addEventListener('input', function(e){
 
 /* ---- ui chrome ---- */
 var BM_NOTE = {
-  plain:  'Plain background — only OpenTunisia data is drawn on the map.',
+  plain:  'Plain background. Only OpenTunisia data is drawn on the map.',
   named:  'Place names for orientation, but no shops or points of interest from OSM.',
   detail: 'Full OpenStreetMap rendering. Its own POIs and streets are shown alongside '
         + 'this project data, so the two can be compared.'
@@ -1187,7 +1187,7 @@ Promise.all([
   st.governorates.slice().sort(function(a,b){ return a.name.localeCompare(b.name); })
     .forEach(function(g){
       var o = document.createElement('option');
-      o.value = g.code; o.textContent = g.name + ' — ' + g.ar;
+      o.value = g.code; o.textContent = g.name + ' · ' + g.ar;
       sel.appendChild(o);
     });
   sel.addEventListener('change', function(){
@@ -1213,11 +1213,11 @@ Promise.all([
   if (unmapped){
     $('nocoord-b').textContent = fmt(unmapped) + ' records are not on the map.';
     $('nocoord').textContent =
-      'Their source publishes an address but no coordinates — mostly official '
+      'Their source publishes an address but no coordinates, mostly official '
       + 'registries. They are in the repository, just not mappable.';
   }
 
-  // The map opens clean — boundaries only. Layers are switched on deliberately, so
+  // The map opens clean: boundaries only. Layers are switched on deliberately, so
   // what you see is always what you asked for. A previous session's choice is
   // restored, since that was a deliberate choice too.
   var restored = 0;

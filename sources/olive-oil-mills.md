@@ -1,9 +1,9 @@
 # Olive oil mills (huileries)
 
 - **Dataset file:** data/businesses/olive-oil-mills.json
-- **Source:** agridata.tn / data.gov.tn — regional agricultural development commissions
+- **Source:** agridata.tn / data.gov.tn, regional agricultural development commissions
   (CRDA), aggregated on the national open data portal
-- **URL:** https://catalog.agridata.tn — discovered via
+- **URL:** https://catalog.agridata.tn, discovered via
   `https://catalog.data.gov.tn/api/3/action/package_search?q=huilerie`
 - **License:** Licence Nationale de Données Publiques Ouvertes (LNDPO-TN)
 - **Retrieved:** 2026-08-21
@@ -16,7 +16,7 @@ Olive oil is one of Tunisia's defining industries. Each governorate's agricultur
 commission publishes its own list of mills. **This dataset merges 11 governorates'
 publications into a single normalized file.**
 
-## Two kinds of record — read this first
+## Two kinds of record, read this first
 
 The source publications are inconsistent: some list individual mills by name, others
 publish only per-delegation totals. Both are preserved and distinguished by the
@@ -27,13 +27,13 @@ publish only per-delegation totals. Both are preserved and distinguished by the
 | `individual_mill` | 141 | One named mill, with its own capacity |
 | `delegation_summary` | 327 | An aggregate count for a whole delegation |
 
-**Do not sum the two together** — you would double-count. Filter on `record_type` first.
+**Do not sum the two together** you would double-count. Filter on `record_type` first.
 
 ## Fields
 
 | Field | Meaning |
 |---|---|
-| `name` | Mill name or owner — individual records only |
+| `name` | Mill name or owner, individual records only |
 | `record_type` | `individual_mill` or `delegation_summary` |
 | `year` | Reference year of the source publication (2017–2024) |
 | `governorate_code` / `governorate` | Joins to `governorates.json` |
@@ -55,7 +55,7 @@ publish only per-delegation totals. Both are preserved and distinguished by the
   olive-producing governorates like Sfax are **missing** because they do not publish.
 - **327 of 468 records have a matched delegation.** The rest kept
   `delegation_name_source` so nothing is lost.
-- **Years differ between governorates** (2017 to 2024). Always read `year` — this is not
+- **Years differ between governorates** (2017 to 2024). Always read `year`, this is not
   a single-year snapshot.
 - Aggregate rows labelled "المجموع" / "Total" in the sources were removed, as were
   numeric values misparsed as names. One file failed to parse and was skipped.

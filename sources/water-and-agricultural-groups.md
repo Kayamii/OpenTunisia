@@ -1,7 +1,7 @@
 # Water user associations and agricultural organizations
 
 - **Dataset file:** data/services/water-and-agricultural-groups.json
-- **Source:** agridata.tn / data.gov.tn — Ministry of Agriculture, regional commissions
+- **Source:** agridata.tn / data.gov.tn. Ministry of Agriculture, regional commissions
   (CRDA), ODESYPANO
 - **License:** Licence Nationale de Données Publiques Ouvertes (per record, in `license`)
 - **Retrieved:** 2026-08-21
@@ -48,7 +48,7 @@ Distribution follows rural need rather than mapping activity: Kasserine 323, Kai
 ## A correction worth recording
 
 An earlier build let a delegation guessed from the **record's own name** override the
-governorate stated in the source, producing **70 contradictions** — a GDA named
+governorate stated in the source, producing **70 contradictions** a GDA named
 "سيدي البشير" in a Bizerte file was assigned to Sidi El Béchir in Tunis, because the name
 matches a delegation elsewhere in the country.
 

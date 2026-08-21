@@ -2,7 +2,7 @@
 
 - **Dataset file:** data/geography/imadas.json
 - **Source:** OpenStreetMap (via the Overpass API)
-- **URL:** https://overpass-api.de/api/interpreter — https://www.openstreetmap.org
+- **URL:** https://overpass-api.de/api/interpreter, https://www.openstreetmap.org
 - **License:** Open Database License (ODbL) v1.0
 - **Retrieved:** 2026-08-21
 - **Method:** Overpass query for `admin_level=6` administrative relations in Tunisia.
@@ -42,11 +42,11 @@ This completes the administrative hierarchy in the repository.
 
 ## Notes
 
-- **2,084 records**, every one linked to a delegation and governorate — none dropped.
+- **2,084 records**, every one linked to a delegation and governorate. None dropped.
 - 2,082 were linked via their `code_geo` prefix; 2 lacked the tag and were resolved by
   point-in-polygon against delegation boundaries.
 - Note that OSM uses `admin_level=6` for imadas in Tunisia and `admin_level=5` for
-  delegations — the reverse of what the level numbers might suggest. This was verified
+  delegations, the reverse of what the level numbers might suggest. This was verified
   by inspecting record counts and code lengths before export.
 
 ## Caveats

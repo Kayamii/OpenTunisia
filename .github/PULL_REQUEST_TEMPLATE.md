@@ -12,7 +12,7 @@
 - **Licence:**
 - **Retrieved:** <!-- YYYY-MM-DD -->
 
-<!-- If the licence is unclear, say so — better to discuss it than to merge data we
+<!-- If the licence is unclear, say so, better to discuss it than to merge data we
      cannot legally publish. See CONTRIBUTING.md. -->
 
 ## Checklist

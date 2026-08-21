@@ -4,8 +4,8 @@ Covers all datasets in `data/services/`, `data/businesses/` and
 `data/places/populated-places.json`.
 
 - **Source:** OpenStreetMap (via the Overpass API)
-- **URL:** https://overpass-api.de/api/interpreter — https://www.openstreetmap.org
-- **License:** Open Database License (ODbL) v1.0 — https://opendatacommons.org/licenses/odbl/
+- **URL:** https://overpass-api.de/api/interpreter, https://www.openstreetmap.org
+- **License:** Open Database License (ODbL) v1.0, https://opendatacommons.org/licenses/odbl/
 - **Retrieved:** 2026-08-21
 - **Method:** Overpass API queries per category, filtered to named features, then
   assigned to a governorate and delegation by point-in-polygon.
@@ -48,11 +48,11 @@ Records also carry, where tagged: `email`, `fax`, `housenumber`, `street_ar`, `c
 
 Roads are line geometry, not points, so this dataset works differently from the others.
 Segments are **grouped by road reference number** (`ref`) where one exists, since a road
-number is its stable identity — otherwise by name. 6,532 OSM way segments consolidate
+number is its stable identity, otherwise by name. 6,532 OSM way segments consolidate
 into 131 roads. `segments` records how many source ways were merged, and
 `governorate_codes` lists every governorate the road passes through (the A1 crosses 7).
 
-`center_lat` / `center_lon` are the mean of the segment centers — a rough midpoint of the
+`center_lat` / `center_lon` are the mean of the segment centers, a rough midpoint of the
 route, **not** a meaningful location. There is no `delegation` field, since a major road
 spans many. Full road geometry was not exported; it belongs in a GeoJSON file if needed.
 
@@ -86,12 +86,12 @@ Filter on `location_precision == "exact"` if you need certainty.
 
 `name` is always present. `name_fr`, `name_ar`, `name_en`, `street`, `city`, `postcode`,
 `phone`, `website`, `opening_hours`, `operator`, `brand`, `cuisine` are **included only
-when OSM has them** — absent keys mean unknown, never empty strings. `type` holds the
+when OSM has them** absent keys mean unknown, never empty strings. `type` holds the
 originating OSM tag (e.g. `amenity=pharmacy`). `osm_type` + `osm_id` trace back to source.
 
 ---
 
-## Important limitations — please read before relying on this data
+## Important limitations, please read before relying on this data
 
 ### 1. This is not a complete business directory
 
@@ -99,8 +99,7 @@ Only features already mapped in OpenStreetMap are included. Tunisia's OSM covera
 real but partial: many businesses, especially outside major cities, are simply not
 mapped. **Absence from this dataset does not mean a place does not exist.**
 
-Unnamed features were excluded — roughly 26,000 of the ~57,000 raw features returned —
-since a nameless record is not useful in a directory. This is why the transport dataset,
+Unnamed features were excluded, roughly 26,000 of the ~57,000 raw features returned, since a nameless record is not useful in a directory. This is why the transport dataset,
 for instance, holds 4,085 named stops rather than every mapped stop position.
 
 ### 2. Contact details are sparse
@@ -127,7 +126,7 @@ Mapping density follows OSM contributor activity, not population:
 Tunis 5,755 is the most mapped; Kef 250 the least.
 
 All 24 governorates are represented, but Tunis has roughly **23× more entries than Kef**.
-Do not use these counts for any density, per-capita or comparative analysis — they
+Do not use these counts for any density, per-capita or comparative analysis, they
 measure mapping effort, not reality.
 
 ### 4. Data may be outdated
@@ -165,7 +164,7 @@ relation(area.tn)["boundary"="administrative"]["admin_level"="5"];
 out geom;
 ```
 
-Queries must be split by category — a single combined query exceeds the response limit
+Queries must be split by category, a single combined query exceeds the response limit
 and truncates silently, producing an invalid JSON file. The public Overpass endpoint also
 rate-limits to 2 concurrent slots, so requests need retry-with-backoff.
 
@@ -181,14 +180,14 @@ rate-limits to 2 concurrent slots, so requests need retry-with-backoff.
 ## `places/unnamed-branded-facilities.json`
 
 A separate file of **334 OpenStreetMap features that have no `name` tag but do carry an
-`operator`, `brand` or `network`** — an ATM tagged with its bank, a fuel station tagged
+`operator`, `brand` or `network`** an ATM tagged with its bank, a fuel station tagged
 with its company, a water tower tagged with its utility.
 
 They are excluded from the main datasets, which require a name. They are published
 separately because the brand still identifies them usefully, and kept clearly marked so
 they are never mistaken for named records:
 
-- `label` holds the operator/brand/network — **it is not a name**.
+- `label` holds the operator/brand/network, **it is not a name**.
 - `unnamed: true` is set on every record.
 
 All 334 were located by exact point-in-polygon. Composition: parking (54), ATMs (51),

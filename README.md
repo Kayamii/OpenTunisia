@@ -14,10 +14,10 @@ scattered across websites, PDFs, social media pages and private systems. It is o
 hard to find, hard to reuse, and disappears when a website goes offline.
 
 This project tries to gather that information in a plain, open format that anyone can
-read, reuse and improve — developers, researchers, students, journalists, organizations
+read, reuse and improve, developers, researchers, students, journalists, organizations
 and citizens.
 
-**The repository now holds 49,780 records** covering all 24 governorates — from the full
+**The repository now holds 49,780 records** covering all 24 governorates, from the full
 administrative hierarchy down to schools, pharmacies, hotels, bus stations, museums and
 water associations. Everything is plain JSON, openly licensed, and traceable to its
 source.
@@ -27,7 +27,7 @@ source.
 ## Vision
 
 - Information about Tunisia should be **open** and freely reusable.
-- Data should be stored in **simple, readable formats** (JSON, CSV, Markdown) — no
+- Data should be stored in **simple, readable formats** (JSON, CSV, Markdown), no
   special software required to open it.
 - Every piece of data should be **traceable** to where it came from.
 - Anyone should be able to contribute, whether they add one restaurant or a whole
@@ -61,10 +61,10 @@ All datasets live in [`data/`](data/), organized by category:
 
 ```
 data/
-├── places/       — cities, neighborhoods, points of interest
-├── businesses/   — shops, restaurants, cafés, local businesses
-├── services/     — pharmacies, hospitals, schools, government services
-└── geography/    — governorates, boundaries, coordinates
+├── places/, cities, neighborhoods, points of interest
+├── businesses/, shops, restaurants, cafés, local businesses
+├── services/, pharmacies, hospitals, schools, government services
+└── geography/, governorates, boundaries, coordinates
 ```
 
 ### Explore it on a map
@@ -73,8 +73,7 @@ data/
 
 [![The OpenTunisia map](viewer/screenshot.png)](https://kayamii.github.io/OpenTunisia/)
 
-Every coordinate-bearing record in this repository — 38,567 points across 28 layers —
-drawn over all 266 delegation boundaries, with search, per-layer toggles, category
+Every coordinate-bearing record in this repository, 38,567 points across 28 layers, drawn over all 266 delegation boundaries, with search, per-layer toggles, category
 icons and light/dark themes. The map starts clean: nothing is plotted until you choose
 a layer.
 
@@ -87,7 +86,7 @@ To run it locally:
 cd viewer && python -m http.server 8000    # then open http://localhost:8000
 ```
 
-One HTML file, one icons file and three generated JSON files — no build step, no
+One HTML file, one icons file and three generated JSON files, no build step, no
 framework. Rebuild the bundle with `python viewer/build.py` after changing `data/`.
 
 ---
@@ -107,7 +106,7 @@ framework. Rebuild the bundle with `python viewer/build.py` after changing `data
 
 ---
 
-#### Geography — the full administrative hierarchy
+#### Geography, the full administrative hierarchy
 
 ```
 Governorate (24)  ->  Delegation (266)  ->  Imada (2,084)
@@ -118,34 +117,34 @@ Governorate (24)  ->  Delegation (266)  ->  Imada (2,084)
 | [`geography/imadas.json`](data/geography/imadas.json) | 2,084 | Imadas / sectors (*imadat*) |
 | [`geography/delegations.json`](data/geography/delegations.json) | 266 | Delegations (*mu'tamadiyat*) |
 | [`geography/governorates.json`](data/geography/governorates.json) | 24 | Governorates (*wilayat*) |
-| [`geography/delegation-boundaries.geojson`](data/geography/delegation-boundaries.geojson) | 266 | **Boundary polygons** — 274k vertices, GeoJSON |
+| [`geography/delegation-boundaries.geojson`](data/geography/delegation-boundaries.geojson) | 266 | **Boundary polygons** 274k vertices, GeoJSON |
 
 The polygons are the ones used to assign every record in this repository to its
 delegation, so that assignment can be reproduced or audited independently.
 
 ---
 
-#### Official government data — 15,848 records
+#### Official government data, 15,848 records
 
 Published by Tunisian ministries via [data.gov.tn](https://www.data.gov.tn),
 agridata.tn and openculture.gov.tn. Authoritative, and far better distributed
-geographically than OpenStreetMap — but most carry no coordinates.
+geographically than OpenStreetMap, but most carry no coordinates.
 
 | Dataset | Records | Publisher & notes |
 |---|---:|---|
-| [`services/schools-official.json`](data/services/schools-official.json) | 7,452 | **Ministry of Education** — public + private schools. 6,139 have GPS |
-| [`services/water-and-agricultural-groups.json`](data/services/water-and-agricultural-groups.json) | 2,709 | **Ministry of Agriculture / CRDA** — water user associations (GDA), organic operators |
-| [`services/private-specialist-doctors.json`](data/services/private-specialist-doctors.json) | 2,220 | **Ministry of Health** — private specialists. **95% have a phone number** |
-| [`services/health-facilities-official.json`](data/services/health-facilities-official.json) | 1,555 | **Ministry of Health** — health centres, hospitals |
-| [`places/cultural-sites.json`](data/places/cultural-sites.json) | 849 | **Ministry of Cultural Affairs** — museums, institutions, festivals. All geolocated |
-| [`businesses/olive-oil-mills.json`](data/businesses/olive-oil-mills.json) | 468 | Regional agricultural commissions — olive mills (*huileries*), 11 governorates |
-| [`services/social-and-training-facilities.json`](data/services/social-and-training-facilities.json) | 268 | **Ministry of Social Affairs** — welfare offices, vocational training. **92% have a phone** |
-| [`places/agricultural-infrastructure.json`](data/places/agricultural-infrastructure.json) | 200 | Agricultural commissions / ODESYPANO — dams, hill lakes, collection centres |
-| [`services/public-libraries.json`](data/services/public-libraries.json) | 127 | Regional cultural directorates — public libraries, 7 governorates |
+| [`services/schools-official.json`](data/services/schools-official.json) | 7,452 | **Ministry of Education** public + private schools. 6,139 have GPS |
+| [`services/water-and-agricultural-groups.json`](data/services/water-and-agricultural-groups.json) | 2,709 | **Ministry of Agriculture / CRDA** water user associations (GDA), organic operators |
+| [`services/private-specialist-doctors.json`](data/services/private-specialist-doctors.json) | 2,220 | **Ministry of Health** private specialists. **95% have a phone number** |
+| [`services/health-facilities-official.json`](data/services/health-facilities-official.json) | 1,555 | **Ministry of Health** health centres, hospitals |
+| [`places/cultural-sites.json`](data/places/cultural-sites.json) | 849 | **Ministry of Cultural Affairs** museums, institutions, festivals. All geolocated |
+| [`businesses/olive-oil-mills.json`](data/businesses/olive-oil-mills.json) | 468 | Regional agricultural commissions, olive mills (*huileries*), 11 governorates |
+| [`services/social-and-training-facilities.json`](data/services/social-and-training-facilities.json) | 268 | **Ministry of Social Affairs** welfare offices, vocational training. **92% have a phone** |
+| [`places/agricultural-infrastructure.json`](data/places/agricultural-infrastructure.json) | 200 | Agricultural commissions / ODESYPANO, dams, hill lakes, collection centres |
+| [`services/public-libraries.json`](data/services/public-libraries.json) | 127 | Regional cultural directorates, public libraries, 7 governorates |
 
 ---
 
-#### Services — OpenStreetMap
+#### Services. OpenStreetMap
 
 | Dataset | Records | Contents |
 |---|---:|---|
@@ -158,7 +157,7 @@ geographically than OpenStreetMap — but most carry no coordinates.
 | [`services/other-facilities.json`](data/services/other-facilities.json) | 287 | Veterinary, research institutes, misc. |
 | [`services/vehicle-services.json`](data/services/vehicle-services.json) | 138 | Car rental, driving schools, parking |
 
-#### Businesses — OpenStreetMap
+#### Businesses. OpenStreetMap
 
 | Dataset | Records | Contents |
 |---|---:|---|
@@ -167,7 +166,7 @@ geographically than OpenStreetMap — but most carry no coordinates.
 | [`businesses/tourism-and-lodging.json`](data/businesses/tourism-and-lodging.json) | 1,471 | Hotels, guest houses, hostels, museums |
 | [`businesses/offices-and-crafts.json`](data/businesses/offices-and-crafts.json) | 962 | Company offices, NGOs, craft workshops |
 
-#### Places — OpenStreetMap
+#### Places. OpenStreetMap
 
 | Dataset | Records | Contents |
 |---|---:|---|
@@ -186,10 +185,10 @@ geographically than OpenStreetMap — but most carry no coordinates.
 
 Every point-of-interest record carries a `governorate_code` (e.g. `TN-11`) and, where
 known, a `delegation_code_geo`. That means **any file joins to the geography files
-without a database** — plain JSON and a text editor are enough.
+without a database.** Plain JSON and a text editor are enough.
 
 No record appears in two files. Official records matched to their OpenStreetMap
-counterpart carry `osm_type` / `osm_id` as a **cross-reference**, not a duplicate —
+counterpart carry `osm_type` / `osm_id` as a **cross-reference**, not a duplicate.
 715 such links exist (697 schools, 18 health facilities).
 
 ---
@@ -200,17 +199,17 @@ Everything here comes from two families of source, both openly licensed. Every d
 has a matching file in [`sources/`](sources/) recording where it came from, under what
 license, when it was retrieved, and what its limitations are.
 
-### 1. OpenStreetMap — 33,932 records
+### 1. OpenStreetMap, 33,932 records
 
 Collected through the [Overpass API](https://overpass-api.de/). Published under the
 **Open Database License (ODbL)**: reuse requires attribution to
 **(c) OpenStreetMap contributors** and share-alike on modified distributions.
 
 Strong on coordinates (every record has them) and on breadth. Weak on contact details
-and on evenness — coverage follows mapping activity, so Tunis has roughly 23x more
+and on evenness, coverage follows mapping activity, so Tunis has roughly 23x more
 entries than Kef.
 
-### 2. Tunisian government open data — 15,848 records
+### 2. Tunisian government open data, 15,848 records
 
 From the national portal [data.gov.tn](https://www.data.gov.tn) and its sister portals
 `agridata.tn` (agriculture and water) and `openculture.gov.tn` (culture), all reachable
@@ -226,14 +225,14 @@ Licenses vary **per dataset** and are recorded per record where applicable:
 | Other open licenses | 976 |
 | ODbL / CC-Zero / stated in `sources/` | 9,456 |
 
-Authoritative and evenly distributed by population — the official school registry covers
+Authoritative and evenly distributed by population, the official school registry covers
 interior governorates that OpenStreetMap barely touches. Usually lacks coordinates.
 
 ### Sources deliberately not used
 
 **Google Maps, TripAdvisor, Foursquare and commercial directories.** Their terms forbid
 bulk extraction and redistribution, and their database contents are protected. Scraping
-them would produce data this project could not legally publish — compromising the
+them would produce data this project could not legally publish, compromising the
 licensing of the whole repository, not just one file.
 
 **Statistics.** Around 1,340 openly licensed datasets on the portals are counts, budgets
@@ -259,7 +258,7 @@ independent random samples of 30 records: **30/30 correct both times**. The publ
 boundary polygons independently reproduce the stored delegation for 60/60 sampled points.
 
 **Known limitations are documented, not hidden.** Each file in [`sources/`](sources/)
-states its own gaps — sparse contact details in the OpenStreetMap files, missing
+states its own gaps, sparse contact details in the OpenStreetMap files, missing
 coordinates in most official files, governorates that do not publish, and population
 figures that mix the 2004 and 2014 censuses.
 
@@ -271,7 +270,7 @@ Contributions are welcome, including small ones.
 
 1. **Fork** this repository.
 2. **Add or improve data** in the relevant folder under `data/`.
-3. **Document your source** — where did the information come from, and is it allowed to
+3. **Document your source** where did the information come from, and is it allowed to
    be shared? Add it to `sources/`.
 4. **Open a pull request** describing what you added and where it came from.
 
@@ -291,15 +290,15 @@ website unless its license or terms permit it.
 **Phase 1 is complete.** The realistic open sources for Tunisia have been swept.
 
 - [x] Repository structure and documentation
-- [x] Full administrative hierarchy — governorates, delegations, imadas, boundary polygons
-- [x] OpenStreetMap collection across places, services and businesses — 33,932 records
-- [x] Official Tunisian government data — 15,848 records from six ministries
+- [x] Full administrative hierarchy, governorates, delegations, imadas, boundary polygons
+- [x] OpenStreetMap collection across places, services and businesses, 33,932 records
+- [x] Official Tunisian government data, 15,848 records from six ministries
 - [x] Cross-match official records against OpenStreetMap records
 - [ ] Periodic refresh, and coverage for governorates that do not yet publish
 
 ### What is finished
 
-**OpenStreetMap is exhausted** for named features in these categories — a final sweep
+**OpenStreetMap is exhausted** for named features in these categories, a final sweep
 found roughly 290 left uncollected, and those were taken. What remains there is unnamed
 geometry, which does not belong in a directory.
 
@@ -310,13 +309,13 @@ so nobody has to rediscover the gap.
 
 **715 cross-reference links** connect official registry records to their OpenStreetMap
 counterparts (697 schools, 18 health facilities), letting an authoritative record borrow
-coordinates and multilingual names. Matching is deliberately conservative — ambiguous
+coordinates and multilingual names. Matching is deliberately conservative, ambiguous
 candidates are dropped rather than guessed, and guards prevent matching sibling schools,
 different school levels, or a public health centre to a private clinic.
 
 ### What would help most now
 
-Not more bulk collection — the bottleneck has moved.
+Not more bulk collection, the bottleneck has moved.
 
 1. **Verification.** Records go stale: businesses close, doctors move. Spot-checking real
    entries against reality is the highest-value contribution.
@@ -347,11 +346,11 @@ Not more bulk collection — the bottleneck has moved.
 
 ## Contributing
 
-Contributions are welcome — a single corrected record is as useful as a new dataset.
+Contributions are welcome, a single corrected record is as useful as a new dataset.
 
 1. **Fork** the repository and create a branch.
 2. **Make your change** in `data/`, and document where it came from in `sources/`.
-3. **Run `python scripts/validate.py`** — it needs only Python 3.
+3. **Run `python scripts/validate.py`** it needs only Python 3.
 4. **Open a pull request** against `main`.
 
 The same validator runs automatically on every pull request, so a green tick means
@@ -360,8 +359,7 @@ review can focus on whether the data is correct rather than whether it parses.
 **The one firm rule:** every dataset must document its origin and licence. Data being
 publicly visible on a website does not make it reusable. See
 [`CONTRIBUTING.md`](CONTRIBUTING.md) for the conventions, and
-[`sources/README.md`](sources/README.md) for which sources are known to be usable —
-and which must not be scraped.
+[`sources/README.md`](sources/README.md) for which sources are known to be usable, and which must not be scraped.
 
 ---
 
@@ -383,7 +381,7 @@ The datasets fall under two families:
 | Data | Licence | What it requires |
 |---|---|---|
 | From **OpenStreetMap** (33,932 records) | [ODbL](https://opendatacommons.org/licenses/odbl/) | Credit **© OpenStreetMap contributors**, and share modified distributions under the same licence |
-| From **Tunisian government portals** (15,848 records) | CC-BY, CC-Zero, ODbL or the national open licence — **per dataset** | Usually attribution to the publishing ministry; a few are public domain |
+| From **Tunisian government portals** (15,848 records) | CC-BY, CC-Zero, ODbL or the national open licence, **per dataset** | Usually attribution to the publishing ministry; a few are public domain |
 
 Each file in [`sources/`](sources/) states the licence for that specific dataset. Read it
 before reusing one.

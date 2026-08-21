@@ -2,8 +2,8 @@
 
 - **Dataset file:** data/geography/delegations.json
 - **Source:** OpenStreetMap (via the Overpass API)
-- **URL:** https://overpass-api.de/api/interpreter — https://www.openstreetmap.org
-- **License:** Open Database License (ODbL) v1.0 — https://opendatacommons.org/licenses/odbl/
+- **URL:** https://overpass-api.de/api/interpreter, https://www.openstreetmap.org
+- **License:** Open Database License (ODbL) v1.0, https://opendatacommons.org/licenses/odbl/
 - **Retrieved:** 2026-08-20
 - **Method:** Overpass API query for administrative relations at `admin_level=5` within
   Tunisia, exported with tags and centroid, then linked to the parent governorate.
@@ -21,7 +21,7 @@ All 266 results came back at `admin_level=5`; levels 7 and 8 are unused in Tunis
 
 ## Attribution requirement
 
-ODbL — attribution to **© OpenStreetMap contributors** and share-alike, as with the
+ODbL: attribution to **© OpenStreetMap contributors** and share-alike, as with the
 governorates dataset.
 
 ## Fields
@@ -54,7 +54,7 @@ governorates dataset.
 - **No English names.** OSM only tags `name:en` on 19 of 266 delegations, so the field
   was omitted rather than filled with guesses or transliterations. French and Arabic are
   complete for all 266.
-- **Two records have no `code_geo`** — *Regueb* and *Essaida*, both untagged in OSM.
+- **Two records have no `code_geo`:** *Regueb* and *Essaida*, both untagged in OSM.
   Their parent governorate (TN-43, Sidi Bouzid) was resolved by querying OSM's
   point-in-polygon lookup (`is_in()`) against their centroids rather than by assumption.
   Regueb's HASC code `TN.SZ.RE` independently confirms Sidi Bouzid.

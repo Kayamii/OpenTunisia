@@ -6,10 +6,10 @@ labels: data
 ---
 
 **Which dataset and record?**
-<!-- e.g. data/services/healthcare.json — "Pharmacie Centrale", Sfax -->
+<!-- e.g. data/services/healthcare.json, "Pharmacie Centrale", Sfax -->
 
 **What is wrong?**
 <!-- Closed, moved, wrong name, wrong coordinates, duplicate… -->
 
 **How do you know?**
-<!-- Local knowledge is fine and valuable — just say so. A link is even better. -->
+<!-- Local knowledge is fine and valuable, just say so. A link is even better. -->
