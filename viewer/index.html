@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OpenTunisia — Map</title>
+<meta name="description" content="An interactive map of 38,567 places across Tunisia, from open data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<style>
+/* ─────────────────────────────────────────────────────────────
+   Design tokens
+   ───────────────────────────────────────────────────────────── */
+:root{
+  --bg:#f2f4f7;
+  --surface:#ffffff;
+  --surface-2:#f7f9fc;
+  --surface-3:#eef2f7;
+  --ink:#0f172a;
+  --ink-2:#475569;
+  --ink-3:#94a3b8;
+  --line:#e2e8f0;
+  --line-2:#cbd5e1;
+  --brand:#c8102e;
+  --brand-ink:#ffffff;
+  --brand-soft:#fdeaed;
+  --osm:#2f9e44;
+  --gov:#1971c2;
+  --focus:#3b82f6;
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:20px;
+  --sh-1:0 1px 2px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.05);
+  --sh-2:0 4px 12px rgba(15,23,42,.08), 0 2px 4px rgba(15,23,42,.04);
+  --sh-3:0 12px 32px rgba(15,23,42,.14), 0 4px 8px rgba(15,23,42,.06);
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --header-h:60px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0f16; --surface:#141a23; --surface-2:#1a212b; --surface-3:#222b38;
+    --ink:#e8edf4; --ink-2:#9fb0c4; --ink-3:#6b7c92;
+    --line:#232c39; --line-2:#334052; --brand:#ff5a70; --brand-soft:#2a1419;
+    --osm:#51cf66; --gov:#4dabf7; --focus:#60a5fa;
+    --sh-1:0 1px 2px rgba(0,0,0,.4);
+    --sh-2:0 4px 12px rgba(0,0,0,.45);
+    --sh-3:0 12px 32px rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0f16; --surface:#141a23; --surface-2:#1a212b; --surface-3:#222b38;
+  --ink:#e8edf4; --ink-2:#9fb0c4; --ink-3:#6b7c92;
+  --line:#232c39; --line-2:#334052; --brand:#ff5a70; --brand-soft:#2a1419;
+  --osm:#51cf66; --gov:#4dabf7; --focus:#60a5fa;
+  --sh-1:0 1px 2px rgba(0,0,0,.4);
+  --sh-2:0 4px 12px rgba(0,0,0,.45);
+  --sh-3:0 12px 32px rgba(0,0,0,.55);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%;margin:0}
+/* fill the viewport exactly; dvh keeps mobile browser chrome from cropping it */
+body{height:100dvh}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  font-feature-settings:'cv02','cv03','cv04','ss01';
+  display:flex;flex-direction:column;overflow:hidden;
+}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
+::selection{background:var(--brand);color:#fff}
+
+/* scrollbars */
+#side::-webkit-scrollbar{width:10px}
+#side::-webkit-scrollbar-track{background:transparent}
+#side::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:99px;
+  border:3px solid var(--surface)}
+#side::-webkit-scrollbar-thumb:hover{background:var(--ink-3)}
+
+/* ─────────────────────────────────────────────────────────────
+   Header
+   ───────────────────────────────────────────────────────────── */
+header{
+  height:var(--header-h);flex:none;display:flex;align-items:center;gap:20px;
+  padding:0 16px;background:var(--surface);
+  border-bottom:1px solid var(--line);z-index:1200;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand-mark{
+  width:30px;height:30px;border-radius:9px;flex:none;
+  background:linear-gradient(135deg,var(--brand),#e63950);
+  display:grid;place-items:center;box-shadow:var(--sh-1);
+}
+.brand-mark svg{width:17px;height:17px;fill:#fff}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15}
+.brand-txt b{font-size:15px;font-weight:700;letter-spacing:-.02em}
+.brand-txt span{font-size:10.5px;color:var(--ink-3);font-weight:500;letter-spacing:.01em}
+
+.stats{display:flex;gap:6px;margin-left:4px}
+.stat{
+  display:flex;flex-direction:column;padding:4px 12px;border-radius:var(--r-sm);
+  background:var(--surface-2);border:1px solid var(--line);line-height:1.25;
+}
+.stat b{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.stat span{font-size:9.5px;color:var(--ink-3);text-transform:uppercase;
+  letter-spacing:.05em;font-weight:600}
+.spacer{flex:1}
+
+.iconbtn{
+  width:34px;height:34px;flex:none;display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink-2);
+  border-radius:var(--r-sm);cursor:pointer;transition:all .15s var(--ease);
+}
+.iconbtn:hover{background:var(--surface-2);color:var(--ink);border-color:var(--line-2)}
+.iconbtn:active{transform:scale(.94)}
+.iconbtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.iconbtn[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+
+/* ─────────────────────────────────────────────────────────────
+   Layout
+   ───────────────────────────────────────────────────────────── */
+main{flex:1;display:flex;min-height:0;position:relative}
+#side{
+  width:330px;flex:none;background:var(--surface);
+  border-right:1px solid var(--line);overflow-y:auto;overscroll-behavior:contain;
+  padding:14px 14px 28px;display:flex;flex-direction:column;gap:18px;
+  scrollbar-width:thin;
+}
+#side.hidden{display:none}
+#map{flex:1;min-width:0;position:relative}
+
+.sec{display:flex;flex-direction:column;gap:9px}
+.sec-h{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.sec-h .act{
+  font-size:10.5px;font-weight:600;letter-spacing:0;text-transform:none;
+  color:var(--brand);background:none;border:0;cursor:pointer;padding:2px 4px;
+  border-radius:5px;font-family:inherit;
+}
+.sec-h .act:hover{background:var(--brand-soft)}
+
+/* ── search ── */
+.searchwrap{position:relative}
+.searchwrap svg.si{
+  position:absolute;left:11px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;fill:none;stroke:var(--ink-3);stroke-width:2;
+  stroke-linecap:round;pointer-events:none;
+}
+.search{
+  width:100%;padding:10px 34px 10px 34px;border:1px solid var(--line);
+  border-radius:var(--r-md);background:var(--surface-2);color:var(--ink);
+  font:inherit;font-size:13.5px;transition:all .15s var(--ease);
+}
+.search::placeholder{color:var(--ink-3)}
+.search:focus{outline:none;border-color:var(--brand);background:var(--surface);
+  box-shadow:0 0 0 3px var(--brand-soft)}
+.clearbtn{
+  position:absolute;right:7px;top:50%;transform:translateY(-50%);
+  width:22px;height:22px;display:none;place-items:center;border:0;padding:0;
+  background:var(--line);color:var(--ink-2);border-radius:50%;cursor:pointer;
+}
+.clearbtn.show{display:grid}
+.clearbtn:hover{background:var(--line-2);color:var(--ink)}
+.clearbtn svg{width:11px;height:11px;stroke:currentColor;stroke-width:2.5;fill:none;
+  stroke-linecap:round}
+.kbd{
+  position:absolute;right:34px;top:50%;transform:translateY(-50%);
+  font-size:10px;color:var(--ink-3);border:1px solid var(--line);
+  border-radius:4px;padding:1px 5px;background:var(--surface);font-weight:600;
+  pointer-events:none;
+}
+.searchwrap:focus-within .kbd{display:none}
+
+/* ── select ── */
+.selwrap{position:relative}
+.sel{
+  width:100%;padding:10px 32px 10px 12px;border:1px solid var(--line);
+  border-radius:var(--r-md);background:var(--surface-2);color:var(--ink);
+  font:inherit;font-size:13.5px;cursor:pointer;appearance:none;
+  transition:all .15s var(--ease);
+}
+.sel:hover{border-color:var(--line-2)}
+.sel:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+.selwrap svg{
+  position:absolute;right:11px;top:50%;transform:translateY(-50%);
+  width:14px;height:14px;fill:none;stroke:var(--ink-3);stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;pointer-events:none;
+}
+
+/* ── segmented control ── */
+.seg{
+  display:flex;gap:3px;padding:3px;background:var(--surface-3);
+  border-radius:var(--r-md);
+}
+.seg button{
+  flex:1;padding:7px 6px;border:0;border-radius:9px;background:transparent;
+  color:var(--ink-2);font:inherit;font-size:12px;font-weight:600;cursor:pointer;
+  white-space:nowrap;transition:all .15s var(--ease);
+}
+.seg button:hover{color:var(--ink)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--sh-1)}
+
+/* ── layer list ── */
+.grp{display:flex;flex-direction:column;gap:2px}
+.ghead{
+  display:flex;align-items:center;gap:7px;padding:9px 4px 5px;
+  font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.ghead::after{content:'';flex:1;height:1px;background:var(--line)}
+
+.layer{
+  display:flex;align-items:center;gap:10px;padding:7px 9px;
+  border-radius:var(--r-md);cursor:pointer;position:relative;
+  transition:background .13s var(--ease);border:1px solid transparent;
+}
+.layer:hover{background:var(--surface-2)}
+.layer:has(input:checked){background:var(--surface-2);border-color:var(--line)}
+.layer input{position:absolute;opacity:0;width:0;height:0}
+.layer .box{
+  width:17px;height:17px;flex:none;border-radius:5px;border:1.8px solid var(--line-2);
+  background:var(--surface);display:grid;place-items:center;
+  transition:all .15s var(--ease);
+}
+.layer .box svg{width:11px;height:11px;stroke:#fff;stroke-width:3;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.5);
+  transition:all .15s var(--ease)}
+.layer input:checked ~ .box{background:var(--brand);border-color:var(--brand)}
+.layer input:checked ~ .box svg{opacity:1;transform:scale(1)}
+.layer input:focus-visible ~ .box{outline:2px solid var(--focus);outline-offset:2px}
+.layer .chip{flex:none;line-height:0;opacity:.95}
+.layer .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-size:13px;font-weight:500}
+.layer .ct{
+  flex:none;font-size:11px;font-weight:600;color:var(--ink-3);
+  font-variant-numeric:tabular-nums;background:var(--surface-3);
+  padding:2px 7px;border-radius:99px;
+}
+.layer input:checked ~ .ct{background:var(--brand-soft);color:var(--brand)}
+.layer .src{width:5px;height:5px;border-radius:50%;flex:none}
+.s-osm{background:var(--osm)} .s-gov{background:var(--gov)}
+.layer.off{opacity:.45;cursor:not-allowed}
+.layer.off:hover{background:transparent}
+.layer.off .ct{font-size:9.5px;letter-spacing:.02em;background:transparent;
+  border:1px dashed var(--line-2);color:var(--ink-3)}
+
+.legend{
+  display:flex;gap:14px;font-size:11px;color:var(--ink-3);
+  padding:9px 4px 0;border-top:1px solid var(--line);margin-top:4px;font-weight:500;
+}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:7px;height:7px;border-radius:50%}
+
+.note{font-size:11.5px;color:var(--ink-3);line-height:1.5}
+.note code{background:var(--surface-3);padding:1px 5px;border-radius:5px;
+  font-size:10.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.note b{color:var(--ink-2);font-weight:600}
+
+/* ─────────────────────────────────────────────────────────────
+   Map furniture
+   ───────────────────────────────────────────────────────────── */
+.leaflet-container{background:var(--bg);font-family:inherit}
+.leaflet-control-container .leaflet-top,
+.leaflet-control-container .leaflet-bottom{z-index:800}
+
+/* floating control stack */
+.mapctl{
+  position:absolute;top:14px;right:14px;z-index:820;
+  display:flex;flex-direction:column;gap:8px;
+}
+.ctlgrp{
+  display:flex;flex-direction:column;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--r-md);
+  box-shadow:var(--sh-2);overflow:hidden;
+}
+.ctlgrp button{
+  width:38px;height:38px;display:grid;place-items:center;border:0;
+  background:transparent;color:var(--ink-2);cursor:pointer;
+  transition:background .13s var(--ease),color .13s var(--ease);position:relative;
+}
+.ctlgrp button + button{border-top:1px solid var(--line)}
+.ctlgrp button:hover{background:var(--surface-2);color:var(--ink)}
+.ctlgrp button:active{background:var(--surface-3)}
+.ctlgrp button svg{width:18px;height:18px;fill:none;stroke:currentColor;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ctlgrp button::after{
+  content:attr(data-tip);position:absolute;right:calc(100% + 9px);top:50%;
+  transform:translateY(-50%) translateX(4px);
+  background:var(--ink);color:var(--surface);font-size:11.5px;font-weight:500;
+  padding:5px 9px;border-radius:7px;white-space:nowrap;pointer-events:none;
+  opacity:0;transition:all .15s var(--ease);box-shadow:var(--sh-2);
+}
+.ctlgrp button:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* readouts, bottom-left */
+.readout{
+  position:absolute;left:14px;bottom:14px;z-index:820;
+  display:flex;flex-direction:column;gap:7px;align-items:flex-start;
+}
+.chipbox{
+  background:var(--surface);border:1px solid var(--line);border-radius:9px;
+  padding:5px 10px;box-shadow:var(--sh-1);font-size:11px;font-weight:500;
+  color:var(--ink-2);display:flex;align-items:center;gap:7px;
+}
+.chipbox .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:10.5px;color:var(--ink);font-variant-numeric:tabular-nums}
+.scaleline{height:6px;border:1.5px solid var(--ink-2);border-top:0;
+  border-radius:0 0 2px 2px;transition:width .2s var(--ease)}
+
+/* empty state */
+.empty{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.96);
+  z-index:830;display:none;gap:13px;align-items:flex-start;max-width:330px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:16px 18px;box-shadow:var(--sh-3);opacity:0;
+  transition:opacity .25s var(--ease),transform .25s var(--ease);
+}
+.empty.show{display:flex;opacity:1;transform:translate(-50%,-50%) scale(1)}
+.empty svg{width:22px;height:22px;flex:none;margin-top:1px;fill:none;
+  stroke:var(--brand);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.empty b{display:block;font-size:13.5px;font-weight:650;margin-bottom:3px}
+.empty span{display:block;font-size:12px;color:var(--ink-3);line-height:1.5}
+
+/* toast */
+.toast{
+  position:absolute;left:50%;bottom:22px;transform:translate(-50%,14px);
+  z-index:900;background:var(--ink);color:var(--surface);
+  padding:9px 15px;border-radius:99px;font-size:12.5px;font-weight:500;
+  box-shadow:var(--sh-3);opacity:0;pointer-events:none;
+  transition:all .22s var(--ease);white-space:nowrap;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* loading */
+#loading{
+  position:absolute;inset:0;display:grid;place-items:center;z-index:1500;
+  background:var(--bg);gap:14px;
+}
+#loading.done{opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.loadbox{display:flex;flex-direction:column;align-items:center;gap:13px}
+.spinner{
+  width:30px;height:30px;border:2.5px solid var(--line);
+  border-top-color:var(--brand);border-radius:50%;animation:spin .75s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loadtxt{font-size:12.5px;color:var(--ink-3);font-weight:500}
+
+/* ── markers ── */
+.ot-clu{
+  border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;
+  font-family:'Inter',system-ui,sans-serif;line-height:1;letter-spacing:-.02em;
+  border:2.5px solid rgba(255,255,255,.95);
+  box-shadow:0 2px 8px rgba(15,23,42,.32);
+  transition:transform .14s var(--ease);font-variant-numeric:tabular-nums;
+}
+.leaflet-marker-icon:hover .ot-clu{transform:scale(1.09)}
+.ot-pin{background:none;border:0;cursor:pointer}
+.ot-pin svg{display:block;filter:drop-shadow(0 2px 3px rgba(15,23,42,.35));
+  transition:transform .14s var(--ease);transform-origin:50% 100%}
+.ot-pin:hover svg{transform:scale(1.2)}
+.ot-pin:focus-visible svg{transform:scale(1.2)}
+.leaflet-marker-icon.ot-pin{margin-left:-14px;margin-top:-36px}
+.leaflet-marker-icon.ot-pin.ot-hit{margin-left:-17px;margin-top:-44px}
+.ot-hit svg{filter:drop-shadow(0 3px 6px rgba(15,23,42,.45))}
+@keyframes drop{from{transform:translateY(-9px) scale(.85);opacity:0}
+                to{transform:none;opacity:1}}
+.ot-hit svg{animation:drop .3s var(--ease) both}
+
+/* ── popups ── */
+.leaflet-popup-content-wrapper{
+  border-radius:var(--r-lg);box-shadow:var(--sh-3);
+  background:var(--surface);color:var(--ink);padding:0;
+  border:1px solid var(--line);
+}
+.leaflet-popup-content{margin:0;width:auto !important;font-family:inherit}
+.leaflet-popup-tip{background:var(--surface);box-shadow:var(--sh-2);
+  border:1px solid var(--line)}
+.leaflet-popup-close-button{
+  color:var(--ink-3) !important;font-size:19px !important;padding:9px 10px 0 0 !important;
+  font-weight:400 !important;
+}
+.leaflet-popup-close-button:hover{color:var(--ink) !important}
+.pop{min-width:236px;max-width:290px}
+.pop-top{display:flex;gap:11px;padding:15px 15px 11px;align-items:flex-start}
+.pop-chip{flex:none;line-height:0;margin-top:1px}
+.pop-name{font-size:14.5px;font-weight:650;letter-spacing:-.01em;line-height:1.3;
+  word-break:break-word;padding-right:14px}
+.pop-type{
+  font-size:10.5px;color:var(--ink-3);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  margin-top:3px;
+}
+.pop-rows{padding:0 15px 3px;display:flex;flex-direction:column;gap:7px}
+.pop-row{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--ink-2)}
+.pop-row svg{width:14px;height:14px;flex:none;margin-top:2px;fill:none;
+  stroke:var(--ink-3);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pop-row a{color:var(--gov);text-decoration:none;font-weight:500;word-break:break-all}
+.pop-row a:hover{text-decoration:underline}
+.pop-act{display:flex;gap:6px;padding:12px 15px;flex-wrap:wrap;
+  border-top:1px solid var(--line);margin-top:11px;background:var(--surface-2);
+  border-radius:0 0 var(--r-lg) var(--r-lg)}
+.pop-act button,.pop-act a{
+  display:inline-flex;align-items:center;gap:5px;font:inherit;font-size:11.5px;
+  font-weight:600;padding:6px 10px;border-radius:8px;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;
+  white-space:nowrap;transition:all .13s var(--ease);
+}
+.pop-act button:hover,.pop-act a:hover{background:var(--surface-3);
+  border-color:var(--line-2);transform:translateY(-1px)}
+.pop-act svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.pop-src{
+  display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;
+  padding:2px 8px;border-radius:99px;letter-spacing:.02em;margin:0 15px 13px;
+}
+.src-osm-b{background:rgba(47,158,68,.13);color:var(--osm)}
+.src-gov-b{background:rgba(25,113,194,.13);color:var(--gov)}
+
+/* delegation tooltip */
+.leaflet-tooltip.deleg{
+  background:var(--ink);color:var(--surface);border:0;border-radius:7px;
+  font-size:11.5px;font-weight:600;padding:4px 9px;box-shadow:var(--sh-2);
+}
+.leaflet-tooltip.deleg::before{border-top-color:var(--ink)}
+
+/* ─────────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────────── */
+.backdrop{
+  position:absolute;inset:0;background:rgba(15,23,42,.42);z-index:1090;
+  opacity:0;pointer-events:none;transition:opacity .2s var(--ease);
+  backdrop-filter:blur(2px);
+}
+.backdrop.show{opacity:1;pointer-events:auto}
+
+@media (max-width:1100px){
+  .stats .stat:nth-child(n+3){display:none}
+}
+@media (max-width:860px){
+  :root{--header-h:54px}
+  header{gap:10px;padding:0 10px}
+  .stats{display:none}
+  .brand-txt span{display:none}
+  /* the buttons must not run off the edge on a narrow phone */
+  .iconbtn{width:36px;height:36px}
+  .mapctl{top:auto;bottom:64px;right:10px}
+  .readout{bottom:10px}
+  #side{
+    position:absolute;left:0;top:0;bottom:0;width:min(88vw,340px);z-index:1100;
+    transform:translateX(-102%);transition:transform .24s var(--ease);
+    box-shadow:var(--sh-3);border-right:1px solid var(--line);
+  }
+  #side.open{transform:none}
+  #side.hidden{display:flex}
+  .mapctl{top:10px;right:10px}
+  .ctlgrp button{width:42px;height:42px}
+  .ctlgrp button::after{display:none}
+  .readout{left:10px;bottom:10px}
+  .readout .coordbox{display:none}
+}
+@media (max-width:420px){
+  .pop{min-width:200px}
+  .brand-txt b{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#" id="home" title="Reset the map">
+    <span class="brand-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 4.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"/></svg>
+    </span>
+    <span class="brand-txt">
+      <b>OpenTunisia</b>
+      <span>Open data map</span>
+    </span>
+  </a>
+
+  <div class="stats">
+    <div class="stat"><b id="c-mapped">—</b><span>Mapped</span></div>
+    <div class="stat"><b id="c-total">—</b><span>Records</span></div>
+    <div class="stat"><b>266</b><span>Delegations</span></div>
+    <div class="stat"><b>24</b><span>Governorates</span></div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <button class="iconbtn" id="t-panel" title="Toggle sidebar" aria-label="Toggle sidebar" aria-pressed="true">
+    <svg viewBox="0 0 24 24"><path d="M3 5h18M3 12h18M3 19h18"/></svg>
+  </button>
+  <button class="iconbtn" id="t-theme" title="Switch theme" aria-label="Switch theme">
+    <svg viewBox="0 0 24 24" id="th-i"><path d="M12 3v1M12 20v1M4.2 4.2l.7.7M19.1 19.1l.7.7M3 12h1M20 12h1M4.2 19.8l.7-.7M19.1 4.9l.7-.7"/><circle cx="12" cy="12" r="4"/></svg>
+  </button>
+</header>
+
+<main>
+  <div class="backdrop" id="backdrop"></div>
+
+  <aside id="side">
+
+    <div class="sec">
+      <div class="sec-h"><span>Search</span></div>
+      <div class="searchwrap">
+        <svg class="si" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="search" id="q" placeholder="Find a place…" autocomplete="off" spellcheck="false">
+        <span class="kbd">/</span>
+        <button class="clearbtn" id="qclear" aria-label="Clear search">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <p class="note" id="qinfo"></p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span>Region</span></div>
+      <div class="selwrap">
+        <select class="sel" id="gov"><option value="">All of Tunisia</option></select>
+        <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span>Background</span></div>
+      <div class="seg" id="basemap" role="group" aria-label="Map background">
+        <button data-m="plain" class="on">Plain</button>
+        <button data-m="named">Labels</button>
+        <button data-m="detail">Streets</button>
+      </div>
+      <p class="note" id="bm-note">Only OpenTunisia data is drawn on the map.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h">
+        <span>Layers</span>
+        <button class="act" id="clear-layers">Clear all</button>
+      </div>
+      <div id="layers"></div>
+      <div class="legend">
+        <span><i class="s-osm"></i> OpenStreetMap</span>
+        <span><i class="s-gov"></i> Government</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><span>About</span></div>
+      <p class="note">
+        Delegation boundaries and every record with coordinates from
+        <code>data/</code>. <b id="nocoord-b"></b>
+      </p>
+      <p class="note" id="nocoord"></p>
+    </div>
+
+  </aside>
+
+  <div id="map">
+    <div id="loading">
+      <div class="loadbox">
+        <div class="spinner"></div>
+        <div class="loadtxt">Loading Tunisia…</div>
+      </div>
+    </div>
+
+    <div class="mapctl">
+      <div class="ctlgrp">
+        <button id="z-in"  data-tip="Zoom in"  aria-label="Zoom in">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button id="z-out" data-tip="Zoom out" aria-label="Zoom out">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+      </div>
+      <div class="ctlgrp">
+        <button id="z-fit"  data-tip="Fit Tunisia" aria-label="Fit Tunisia">
+          <svg viewBox="0 0 24 24"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg></button>
+        <button id="z-me"   data-tip="My location" aria-label="Find my location">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></button>
+        <button id="z-full" data-tip="Fullscreen" aria-label="Toggle fullscreen">
+          <svg viewBox="0 0 24 24"><path d="M8 4H5a1 1 0 0 0-1 1v3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M4 16v3a1 1 0 0 0 1 1h3"/></svg></button>
+      </div>
+    </div>
+
+    <div class="readout">
+      <div class="chipbox" id="scalebox">
+        <span class="scaleline" id="scale-l" style="width:60px"></span>
+        <span class="mono" id="scale-t">—</span>
+      </div>
+      <div class="chipbox coordbox" id="coordbox">
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:var(--ink-3);stroke-width:2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+        <span class="mono" id="coord-t">—</span>
+      </div>
+    </div>
+
+    <div class="empty" id="empty">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 7 9 4Zm0 0v13m6-10v12.5"/></svg>
+      <div>
+        <b>Pick a layer to begin</b>
+        <span>The map starts clean — only Tunisia's 266 delegations are drawn.
+        Choose what to show from the panel.</span>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="icons.js"></script>
+<script>
+(function(){
+"use strict";
+
+// Tunisia's real extent, so the country fills the frame rather than the Mediterranean
+var TN_BOUNDS = L.latLngBounds([30.20, 7.45], [37.60, 11.65]);
+var isNarrow = function(){ return window.matchMedia('(max-width:860px)').matches; };
+
+var map = L.map('map', { minZoom:6, maxZoom:18, zoomControl:false, preferCanvas:true,
+                         maxBounds: TN_BOUNDS.pad(0.18), maxBoundsViscosity:0.85 });
+
+// Frame the country. fitBounds alone snaps down to the next whole zoom level, which
+// leaves Tunisia small inside the Mediterranean, so nudge in afterwards.
+function frameTunisia(){
+  map.invalidateSize();
+  map.fitBounds(TN_BOUNDS, {padding: isNarrow() ? [2,2] : [6,6], animate:false});
+  // fitBounds snaps down to a whole zoom level, leaving the country floating in the
+  // Mediterranean. Step back in while the whole of Tunisia still fits the viewport.
+  var CENTRE = L.latLng(34.0, 9.55);
+  function visibleAt(z){
+    var half = map.getSize().divideBy(2);
+    var c = map.project(CENTRE, z);
+    return L.latLngBounds(map.unproject(c.add([-half.x,  half.y]), z),
+                          map.unproject(c.add([ half.x, -half.y]), z));
+  }
+  // Fit the mainland, not the outer bounding box. TN_BOUNDS is deliberately generous
+  // (it covers the far south-west desert corner), and insisting all of it stay visible
+  // holds the zoom a whole level too low, leaving the country small on screen.
+  var CORE = L.latLngBounds([30.5, 7.7], [37.45, 11.4]);
+  var z = map.getZoom();
+  while (z < 12 && visibleAt(z + 1).contains(CORE)) z++;
+  map.setView(CENTRE, z, {animate:false});
+}
+frameTunisia();
+window.addEventListener('resize', function(){
+  clearTimeout(window.__rs);
+  window.__rs = setTimeout(function(){ map.invalidateSize(); }, 150);
+});
+
+// The default OSM basemap draws its own shops, roads and labels, which compete with
+// the data this project collected. The "plain" basemaps carry land, water and
+// coastlines only, so the points on the map are OpenTunisia's points.
+var CARTO_ATTR = '&copy; OpenStreetMap contributors &copy; CARTO';
+var TILES = {
+  plain_light: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+    { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR }),
+  plain_dark:  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
+    { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR }),
+  // place names only, no POIs — useful for orientation without the clutter
+  named_light: L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',
+    { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR }),
+  named_dark:  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
+    { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR }),
+  // the full OSM rendering, for when you want streets and existing POIs for context
+  detail_light: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    { maxZoom:19, attribution:'&copy; OpenStreetMap contributors' }),
+  detail_dark:  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    { maxZoom:19, subdomains:'abcd', attribution:CARTO_ATTR })
+};
+// optional place-name overlay, drawn above the plain basemap
+var LABELS = {
+  light: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png',
+    { maxZoom:19, subdomains:'abcd', pane:'shadowPane' }),
+  dark:  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',
+    { maxZoom:19, subdomains:'abcd', pane:'shadowPane' })
+};
+var basemapMode = 'plain';       // plain | named | detail
+var activeTiles = null, activeLabels = null;
+function isDark(){
+  var t = document.documentElement.getAttribute('data-theme');
+  if (t === 'dark') return true;
+  if (t === 'light') return false;
+  return window.matchMedia('(prefers-color-scheme:dark)').matches;
+}
+function applyBasemap(){
+  var dark = isDark();
+  var key = (basemapMode === 'detail' ? 'detail' : basemapMode === 'named' ? 'named' : 'plain')
+          + (dark ? '_dark' : '_light');
+  var want = TILES[key];
+
+  // place labels sit on top of the plain map only in "named" mode
+  if (activeLabels) { map.removeLayer(activeLabels); activeLabels = null; }
+  if (basemapMode === 'named') {
+    activeLabels = dark ? LABELS.dark : LABELS.light;
+  }
+
+  if (activeTiles !== want) {
+    if (activeTiles) map.removeLayer(activeTiles);
+    activeTiles = want;
+    map.addLayer(activeTiles);
+  }
+  activeTiles.bringToBack();
+  if (activeLabels) map.addLayer(activeLabels);
+}
+applyBasemap();
+window.matchMedia('(prefers-color-scheme:dark)')
+      .addEventListener('change', applyBasemap);
+
+/* ---- map controls: our own buttons, styled with the rest of the page ---- */
+var $ = function(id){ return document.getElementById(id); };
+
+var toastTimer = null;
+function toast(msg){
+  var t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2100);
+}
+
+$('z-in').addEventListener('click',  function(){ map.zoomIn(); });
+$('z-out').addEventListener('click', function(){ map.zoomOut(); });
+$('z-fit').addEventListener('click', function(){ frameTunisia(); });
+$('z-me').addEventListener('click',  function(){
+  toast('Locating…');
+  map.locate({ setView:true, maxZoom:14, enableHighAccuracy:true });
+});
+$('z-full').addEventListener('click', function(){
+  if (document.fullscreenElement) document.exitFullscreen();
+  else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+  setTimeout(function(){ map.invalidateSize(); }, 320);
+});
+
+// scale bar and coordinate readout, drawn into our own chips
+function updateScale(){
+  var y = map.getSize().y / 2;
+  var maxPx = 90;
+  var metres = map.containerPointToLatLng([0, y])
+                  .distanceTo(map.containerPointToLatLng([maxPx, y]));
+  // round down to a 1/2/5 x 10^n figure, the way a scale bar should read
+  var pow = Math.pow(10, Math.floor(Math.log(metres) / Math.LN10));
+  var d = metres / pow;
+  d = d >= 5 ? 5 : d >= 3 ? 3 : d >= 2 ? 2 : 1;
+  var round = d * pow;
+  var px = maxPx * (round / metres);
+  $('scale-t').textContent = round >= 1000 ? (round / 1000) + ' km' : round + ' m';
+  $('scale-l').style.width = Math.round(px) + 'px';
+}
+map.on('zoomend moveend', updateScale);
+
+map.on('mousemove', function(e){
+  $('coord-t').textContent = e.latlng.lat.toFixed(4) + ', ' + e.latlng.lng.toFixed(4);
+});
+map.on('mouseout', function(){ $('coord-t').textContent = '—'; });
+
+var hereMarker = null;
+map.on('locationfound', function(e){
+  if (hereMarker) map.removeLayer(hereMarker);
+  hereMarker = L.marker(e.latlng, {
+    icon: L.divIcon({
+      className:'',
+      html:'<div style="width:18px;height:18px;border-radius:50%;background:#1971c2;'
+          +'border:3px solid #fff;box-shadow:0 0 0 4px rgba(25,113,194,.28),'
+          +'0 2px 6px rgba(0,0,0,.3)"></div>',
+      iconSize:[18,18], iconAnchor:[9,9]
+    })
+  }).addTo(map);
+  toast('Found your location');
+});
+map.on('locationerror', function(){
+  toast('Location unavailable — permission denied or no signal');
+});
+
+// keyboard: / focuses search, Esc clears it
+document.addEventListener('keydown', function(e){
+  if (e.key === '/' && document.activeElement.id !== 'q'){
+    e.preventDefault(); document.getElementById('q').focus();
+  } else if (e.key === 'Escape' && document.activeElement.id === 'q'){
+    var q = document.getElementById('q');
+    q.value = ''; q.dispatchEvent(new Event('input')); q.blur();
+  }
+});
+
+var GROUPS = {
+  health:'Health', education:'Education', public:'Public services',
+  business:'Business', places:'Places & transport', culture:'Culture & heritage',
+  agri:'Agriculture & water'
+};
+
+var esc = function(s){
+  return String(s==null?'':s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+};
+var fmt = function(n){ return n.toLocaleString('en-US'); };
+
+var clusters = {}, meta = null, allPoints = null, boundaryLayer = null;
+var govByCode = {};
+
+function popupHtml(p, mk, layerKey){
+  var name = p[2] || '(unnamed)';
+  var r = OTIcons.resolve(p[3], layerKey, p[8]);
+  var lat = p[0], lon = p[1];
+
+  var I = {
+    pin:  '<svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>',
+    tel:  '<svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.9 2.1Z"/></svg>',
+    web:  '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>',
+    ext:  '<svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>',
+    nav:  '<svg viewBox="0 0 24 24"><path d="m3 11 19-8-8 19-2-8-9-3Z"/></svg>',
+    copy: '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'
+  };
+
+  var h = '<div class="pop">'
+        + '<div class="pop-top">'
+        +   '<span class="pop-chip">' + OTIcons.chipSvg(r[0], r[1], 30) + '</span>'
+        +   '<div><div class="pop-name">' + esc(name) + '</div>'
+        +   (p[3] ? '<div class="pop-type">'+esc(p[3])+'</div>' : '')
+        +   '</div></div>';
+
+  var loc = [];
+  if (p[4]) loc.push(p[4]);
+  var g = govByCode[p[5]];
+  if (g) loc.push(g.name);
+
+  h += '<div class="pop-rows">';
+  if (loc.length) h += '<div class="pop-row">'+I.pin+'<span>'+esc(loc.join(' · '))+'</span></div>';
+  if (p[6]) h += '<div class="pop-row">'+I.tel+'<a href="tel:'+esc(p[6])+'">'+esc(p[6])+'</a></div>';
+  if (p[7]) h += '<div class="pop-row">'+I.web+'<a href="'+esc(p[7])
+              +'" target="_blank" rel="noopener noreferrer">Website</a></div>';
+  h += '</div>';
+
+  h += '<span class="pop-src '+(mk==='gov'?'src-gov-b':'src-osm-b')+'">'
+     + (mk==='gov'?'Government data':'OpenStreetMap') + '</span>';
+
+  h += '<div class="pop-act">'
+     + '<a href="https://www.openstreetmap.org/?mlat='+lat+'&mlon='+lon+'#map=17/'+lat+'/'+lon+'"'
+     +   ' target="_blank" rel="noopener noreferrer">'+I.ext+'OSM</a>'
+     + '<a href="https://www.google.com/maps/dir/?api=1&destination='+lat+','+lon+'"'
+     +   ' target="_blank" rel="noopener noreferrer">'+I.nav+'Directions</a>'
+     + '<button type="button" class="copy" data-copy="'+lat.toFixed(5)+', '+lon.toFixed(5)+'">'
+     +   I.copy+'Copy</button>'
+     + '</div></div>';
+  return h;
+}
+
+// one delegated handler for every popup's copy button
+document.addEventListener('click', function(e){
+  var b = e.target.closest && e.target.closest('button.copy');
+  if (!b) return;
+  var txt = b.dataset.copy;
+  var done = function(){ toast('Coordinates copied: ' + txt); };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done, done);
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(err){}
+    document.body.removeChild(ta); done();
+  }
+});
+
+function makeCluster(key){
+  var m = meta[key];
+  // colour the cluster like its layer's pins, so a bubble still says what is inside
+  // when several layers are switched on at once
+  var col = OTIcons.colourFor(null, key);
+  var glyph = OTIcons.glyphFor(null, key);
+  var cg = L.markerClusterGroup({
+    chunkedLoading:true, chunkInterval:120, maxClusterRadius:52,
+    spiderfyOnMaxZoom:true, showCoverageOnHover:false, disableClusteringAtZoom:16,
+    iconCreateFunction:function(c){
+      var n = c.getChildCount();
+      var s = n < 100 ? 30 : n < 1000 ? 38 : 46;
+      var lbl = n < 1000 ? n : (n/1000).toFixed(n<10000?1:0)+'k';
+      return L.divIcon({
+        html:'<div class="ot-clu" style="background:'+col+';width:'+s+'px;height:'+s+'px;'
+            +'font-size:'+(s<34?11:12)+'px">'+lbl+'</div>',
+        className:'', iconSize:[s,s]
+      });
+    }
+  });
+  var pts = allPoints[key], markers = [];
+  // one L.divIcon per (glyph,colour) pair, reused across markers — building 4,000
+  // separate icon objects is what makes a map like this feel slow
+  var iconCache = {};
+  function iconFor(type, sub){
+    var r = OTIcons.resolve(type, key, sub);
+    var ck = r[0] + r[1];
+    if (!iconCache[ck]){
+      iconCache[ck] = L.divIcon({
+        html: OTIcons.pinSvg(r[0], r[1], 26),
+        className: 'ot-pin',
+        iconSize: [26, 33],
+        iconAnchor: [13, 33],     // tip of the pin sits on the coordinate
+        popupAnchor: [0, -30]
+      });
+    }
+    return iconCache[ck];
+  }
+  for (var i=0;i<pts.length;i++){
+    var p = pts[i];
+    var mk = L.marker([p[0],p[1]], {
+      icon: iconFor(p[3], p[8]),
+      riseOnHover: true,
+      title: p[2] || '',            // native tooltip, so hovering identifies a pin
+      keyboard: true                // reachable by keyboard
+    });
+    mk.bindPopup(popupHtml(p, m.src, key), {maxWidth:300, autoPanPadding:[40,40]});
+    markers.push(mk);
+  }
+  cg.addLayers(markers);
+  return cg;
+}
+
+function activeKeys(){
+  return Object.keys(clusters).filter(function(k){ return map.hasLayer(clusters[k]); });
+}
+function saveLayers(){
+  try { localStorage.setItem('ot-layers', JSON.stringify(activeKeys())); } catch(e){}
+}
+function showEmptyHint(){ var e = $('empty'); if (e) e.classList.add('show'); }
+function hideEmptyHint(){ var e = $('empty'); if (e) e.classList.remove('show'); }
+
+function toggleLayer(key, on){
+  if (on){
+    if (!clusters[key]) clusters[key] = makeCluster(key);
+    map.addLayer(clusters[key]);
+    hideEmptyHint();
+  } else if (clusters[key]) {
+    map.removeLayer(clusters[key]);
+    if (!activeKeys().length) showEmptyHint();
+  }
+  saveLayers();
+}
+
+function buildPanel(){
+  var host = document.getElementById('layers');
+  var byGroup = {};
+  Object.keys(meta).forEach(function(k){
+    var g = meta[k].group || 'places';
+    (byGroup[g] = byGroup[g] || []).push(k);
+  });
+  Object.keys(GROUPS).forEach(function(g){
+    var keys = byGroup[g];
+    if (!keys) return;
+    keys.sort(function(a,b){ return meta[b].n - meta[a].n; });
+    var wrap = document.createElement('div');
+    wrap.className = 'grp';
+    var hd = document.createElement('div');
+    hd.className = 'ghead';
+    hd.textContent = GROUPS[g];
+    wrap.appendChild(hd);
+    keys.forEach(function(k){
+      var m = meta[k];
+      var lab = document.createElement('label');
+      var mappable = m.n > 0;
+      lab.className = 'layer' + (mappable ? '' : ' off');
+      var ir = OTIcons.resolve(null, k);
+      lab.innerHTML =
+        '<input type="checkbox" data-k="'+k+'"'+(mappable?'':' disabled')+'>'
+        + '<span class="box"><svg viewBox="0 0 24 24"><path d="m5 12.5 5 5 9-10"/></svg></span>'
+        + '<span class="chip">'+OTIcons.chipSvg(ir[0], ir[1], 21)+'</span>'
+        + '<span class="nm">'+esc(m.label)+'</span>'
+        + '<i class="src s-'+m.src+'"></i>'
+        + '<span class="ct">'+(mappable ? fmt(m.n) : 'no coords')+'</span>';
+      lab.title = mappable
+        ? (m.nocoord ? fmt(m.n)+' shown · '+fmt(m.nocoord)+' more have no coordinates in the source'
+                     : fmt(m.n)+' records, all mapped')
+        : 'All '+fmt(m.total)+' records in this dataset are located by address only — '
+          + 'the source publishes no coordinates, so they cannot be drawn on a map.';
+      wrap.appendChild(lab);
+    });
+    host.appendChild(wrap);
+  });
+  host.addEventListener('change', function(e){
+    var cb = e.target;
+    if (cb && cb.dataset && cb.dataset.k) toggleLayer(cb.dataset.k, cb.checked);
+  });
+}
+
+// thin hairlines at country zoom, firmer as you zoom in; fill stays near-transparent
+// so the basemap and the points stay readable through it
+// On a plain background the delegations are the map, so they carry a little more
+// weight and fill; over the busy full-OSM tiles they step back to hairlines.
+function styleFor(){
+  var z = map.getZoom(), plain = basemapMode !== 'detail';
+  return { color:'#c8102e',
+           weight: plain ? (z < 8 ? 0.9 : z < 10 ? 1.2 : 1.6)
+                         : (z < 8 ? 0.6 : z < 10 ? 1 : 1.4),
+           opacity: plain ? 0.75 : 0.55,
+           fillColor:'#c8102e',
+           fillOpacity: plain ? 0.07 : 0.03 };
+}
+
+function addBoundaries(gj){
+  boundaryLayer = L.geoJSON(gj, {
+    style: styleFor,
+    onEachFeature: function(f, lyr){
+      var p = f.properties;
+      lyr.on('mouseover', function(){ lyr.setStyle({weight:2.5, opacity:1, fillOpacity:.16}); });
+      lyr.on('mouseout',  function(){ lyr.setStyle(styleFor()); });
+      lyr.bindTooltip(p.n, {sticky:true, direction:'top', opacity:1, className:'deleg'});
+      lyr.on('click', function(){
+        var g = govByCode[p.g];
+        var h = '<div class="pop-t">'+esc(p.n)+'</div>';
+        if (p.na) h += '<div class="pop-r">'+esc(p.na)+'</div>';
+        h += '<div class="pop-r">Delegation of '+esc(g?g.name:p.g)+'</div>';
+        if (p.c) h += '<div class="pop-r">code '+esc(p.c)+'</div>';
+        h += '<span class="pop-b b-osm">OpenStreetMap</span>';
+        lyr.bindPopup(h, {maxWidth:260}).openPopup();
+      });
+    }
+  }).addTo(map);
+
+  // keep line weight proportionate as the user zooms
+  map.on('zoomend', function(){
+    if (boundaryLayer) boundaryLayer.setStyle(styleFor());
+  });
+}
+
+/* ---- search across loaded layers ---- */
+var searchLayer = L.layerGroup().addTo(map);
+function runSearch(q){
+  searchLayer.clearLayers();
+  var info = document.getElementById('qinfo');
+  q = q.trim().toLowerCase();
+  if (q.length < 3){ info.textContent = q ? 'Type at least 3 characters.' : ''; return; }
+  var hits = [], cap = 300;
+  outer:
+  for (var k in allPoints){
+    var pts = allPoints[k];
+    for (var i=0;i<pts.length;i++){
+      var nm = pts[i][2];
+      if (nm && nm.toLowerCase().indexOf(q) !== -1){
+        hits.push([pts[i], meta[k].src, k]);
+        if (hits.length >= cap) break outer;
+      }
+    }
+  }
+  info.textContent = hits.length
+    ? (hits.length >= cap ? 'Showing first '+cap+' matches' : hits.length+' match'+(hits.length===1?'':'es'))
+    : 'No match found.';
+  if (!hits.length) return;
+  var bounds = [];
+  hits.forEach(function(h){
+    var p = h[0];
+    var srcKey = h[2];
+    var rr = OTIcons.resolve(p[3], srcKey, p[8]);
+    var mk = L.marker([p[0],p[1]], {
+      icon: L.divIcon({
+        html: OTIcons.pinSvg(rr[0], rr[1], 32) +
+              '<span class="pin-ring"></span>',
+        className:'ot-pin ot-hit', iconSize:[32,41], iconAnchor:[16,41],
+        popupAnchor:[0,-38]
+      }),
+      title: p[2] || '', riseOnHover:true, zIndexOffset:1000
+    }).bindPopup(popupHtml(p, h[1], srcKey), {maxWidth:300});
+    searchLayer.addLayer(mk);
+    bounds.push([p[0],p[1]]);
+  });
+  if (bounds.length) map.fitBounds(bounds, {padding:[50,50], maxZoom:14});
+  if (isNarrow()) {
+    document.getElementById('side').classList.remove('open');
+    setTimeout(function(){ map.invalidateSize(); }, 220);
+  }
+}
+$('qclear').addEventListener('click', function(){
+  var q = $('q');
+  q.value=''; q.dispatchEvent(new Event('input')); q.focus();
+});
+$('clear-layers').addEventListener('click', function(){
+  var n=0;
+  document.querySelectorAll('#layers input[data-k]:checked').forEach(function(cb){
+    cb.checked=false; toggleLayer(cb.dataset.k,false); n++;
+  });
+  toast(n ? 'Cleared '+n+' layer'+(n===1?'':'s') : 'No layers were on');
+  if (!activeKeys().length) showEmptyHint();
+});
+
+var tmr = null;
+$('q').addEventListener('input', function(e){
+  $('qclear').classList.toggle('show', e.target.value.length>0);
+  clearTimeout(tmr);
+  var v = e.target.value;
+  tmr = setTimeout(function(){ runSearch(v); }, 220);
+});
+
+/* ---- ui chrome ---- */
+var BM_NOTE = {
+  plain:  'Plain background — only OpenTunisia data is drawn on the map.',
+  named:  'Place names for orientation, but no shops or points of interest from OSM.',
+  detail: 'Full OpenStreetMap rendering. Its own POIs and streets are shown alongside '
+        + 'this project data, so the two can be compared.'
+};
+document.getElementById('basemap').addEventListener('click', function(e){
+  var b = e.target.closest('button');
+  if (!b) return;
+  basemapMode = b.dataset.m;
+  Array.prototype.forEach.call(this.querySelectorAll('button'), function(x){
+    x.classList.toggle('on', x === b);
+  });
+  document.getElementById('bm-note').textContent = BM_NOTE[basemapMode];
+  applyBasemap();
+  if (boundaryLayer) boundaryLayer.setStyle(styleFor());
+  try { localStorage.setItem('ot-basemap', basemapMode); } catch(err){}
+});
+try {
+  var savedBm = localStorage.getItem('ot-basemap');
+  if (savedBm && BM_NOTE[savedBm]) {
+    basemapMode = savedBm;
+    var host = document.getElementById('basemap');
+    Array.prototype.forEach.call(host.querySelectorAll('button'), function(x){
+      x.classList.toggle('on', x.dataset.m === savedBm);
+    });
+    document.getElementById('bm-note').textContent = BM_NOTE[savedBm];
+    applyBasemap();
+  }
+} catch(err){}
+
+function setPanel(open){
+  var side = $('side'), bd = $('backdrop'), btn = $('t-panel');
+  if (isNarrow()){
+    side.classList.toggle('open', open);
+    bd.classList.toggle('show', open);
+  } else {
+    side.classList.toggle('hidden', !open);
+  }
+  btn.setAttribute('aria-pressed', open ? 'true' : 'false');
+  setTimeout(function(){ map.invalidateSize(); frameKeep(); }, 260);
+}
+function panelOpen(){
+  return isNarrow() ? $('side').classList.contains('open')
+                    : !$('side').classList.contains('hidden');
+}
+$('t-panel').addEventListener('click', function(){ setPanel(!panelOpen()); });
+$('home').addEventListener('click', function(e){ e.preventDefault(); frameTunisia(); });
+$('backdrop').addEventListener('click', function(){ setPanel(false); });
+// the panel starts closed on a phone, open on a desktop
+if (isNarrow()) setPanel(false);
+// keep the current view sensible after the panel resizes the map
+var frameKeep = function(){ if (map.getZoom() <= 7) frameTunisia(); };
+function themeIcon(){
+  var dark = isDark();
+  $('th-i').innerHTML = dark
+    ? '<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>'
+    : '<path d="M12 3v1M12 20v1M4.2 4.2l.7.7M19.1 19.1l.7.7M3 12h1M20 12h1M4.2 19.8l.7-.7M19.1 4.9l.7-.7"/><circle cx="12" cy="12" r="4"/>';
+}
+$('t-theme').addEventListener('click', function(){
+  var cur = document.documentElement.getAttribute('data-theme');
+  var next = cur === 'dark' ? 'light' : cur === 'light' ? 'dark'
+           : (matchMedia('(prefers-color-scheme:dark)').matches ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', next);
+  applyBasemap();
+  themeIcon();
+  try { localStorage.setItem('ot-theme', next); } catch(e){}
+});
+try {
+  var saved = localStorage.getItem('ot-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+} catch(e){}
+
+/* ---- load ---- */
+Promise.all([
+  fetch('boundaries.json').then(function(r){ return r.json(); }),
+  fetch('points.json').then(function(r){ return r.json(); }),
+  fetch('stats.json').then(function(r){ return r.json(); })
+]).then(function(res){
+  var gj = res[0], pk = res[1], st = res[2];
+  meta = pk.meta; allPoints = pk.layers;
+
+  st.governorates.forEach(function(g){ govByCode[g.code] = g; });
+
+  document.getElementById('c-mapped').textContent = fmt(st.totals.mapped);
+  document.getElementById('c-total').textContent  = fmt(st.totals.records);
+
+  addBoundaries(gj);
+  buildPanel();
+
+  var sel = document.getElementById('gov');
+  st.governorates.slice().sort(function(a,b){ return a.name.localeCompare(b.name); })
+    .forEach(function(g){
+      var o = document.createElement('option');
+      o.value = g.code; o.textContent = g.name + ' — ' + g.ar;
+      sel.appendChild(o);
+    });
+  sel.addEventListener('change', function(){
+    var code = sel.value;
+    if (!code){ frameTunisia(); return; }
+    var b = [];
+    boundaryLayer.eachLayer(function(l){
+      if (l.feature && l.feature.properties.g === code) b.push(l.getBounds());
+    });
+    if (b.length){
+      var box = b[0];
+      for (var i=1;i<b.length;i++) box = box.extend(b[i]);
+      map.fitBounds(box, {padding:[24,24]});
+    }
+    if (isNarrow()) {
+      document.getElementById('side').classList.remove('open');
+      setTimeout(function(){ map.invalidateSize(); }, 220);
+    }
+  });
+
+  var unmapped = 0;
+  Object.keys(meta).forEach(function(k){ unmapped += meta[k].nocoord||0; });
+  if (unmapped){
+    $('nocoord-b').textContent = fmt(unmapped) + ' records are not on the map.';
+    $('nocoord').textContent =
+      'Their source publishes an address but no coordinates — mostly official '
+      + 'registries. They are in the repository, just not mappable.';
+  }
+
+  // The map opens clean — boundaries only. Layers are switched on deliberately, so
+  // what you see is always what you asked for. A previous session's choice is
+  // restored, since that was a deliberate choice too.
+  var restored = 0;
+  try {
+    var saved = JSON.parse(localStorage.getItem('ot-layers') || '[]');
+    saved.forEach(function(k){
+      var cb = document.querySelector('input[data-k="'+k+'"]');
+      if (cb && !cb.disabled){ cb.checked = true; toggleLayer(k, true); restored++; }
+    });
+  } catch(e){}
+  if (!restored) showEmptyHint();
+
+  $('loading').classList.add('done');
+  setTimeout(function(){ frameTunisia(); updateScale(); }, 60);
+  // the sidebar and fonts can shift the map's size just after load; re-frame once
+  // things have settled so the country is centred whatever the viewport did
+  setTimeout(function(){ frameTunisia(); updateScale(); }, 700);
+  themeIcon();
+
+  // small handle for debugging and automated checks
+  window.OT = { map:map, boundaries:boundaryLayer, meta:meta,
+                layerCount:function(){ var n=0; boundaryLayer.eachLayer(function(){n++;}); return n; },
+                activeLayers:function(){ return Object.keys(clusters).filter(function(k){
+                  return map.hasLayer(clusters[k]); }); } };
+}).catch(function(err){
+  document.getElementById('loading').textContent =
+    'Could not load data. Serve this folder over HTTP (see viewer/README.md).';
+  console.error(err);
+});
+
+})();
+</script>
+</body>
+</html>

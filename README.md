@@ -17,8 +17,10 @@ This project tries to gather that information in a plain, open format that anyon
 read, reuse and improve — developers, researchers, students, journalists, organizations
 and citizens.
 
-**This repository is in its early stage.** The first datasets — Tunisia's
-administrative geography — are in place, and collection is ongoing.
+**The repository now holds 49,780 records** covering all 24 governorates — from the full
+administrative hierarchy down to schools, pharmacies, hotels, bus stations, museums and
+water associations. Everything is plain JSON, openly licensed, and traceable to its
+source.
 
 ---
 
@@ -65,35 +67,75 @@ data/
 └── geography/    — governorates, boundaries, coordinates
 ```
 
+### Explore it on a map
+
+An interactive viewer lives in [`viewer/`](viewer/) — every coordinate-bearing record
+in this repository (38,567 points across 28 layers) drawn over all 266 delegation
+boundaries, with search, per-layer toggles and light/dark themes.
+
+```bash
+cd viewer && python -m http.server 8000    # then open http://localhost:8000
+```
+
+It is a single HTML file plus three generated JSON files — no build step, no framework.
+Rebuild the data with `python viewer/build.py` after changing anything in `data/`.
+
+---
+
 ### Available now
 
-**49,780 records** from two source families: **OpenStreetMap** (ODbL) and the **Tunisian
-national open data portal** data.gov.tn (CC-BY / ODbL, official ministry data).
+**49,780 records** across **33 datasets** (25.9 MB), plus 266 delegation boundary polygons.
 
-**Official government data** — from data.gov.tn
+| | |
+|---|---|
+| Total records | **49,780** |
+| With coordinates | 40,941 (82%) |
+| With a phone number | 4,123 (8%) |
+| From OpenStreetMap | 33,932 |
+| From Tunisian government open data | 15,848 |
+| Governorates covered | 24 of 24 |
 
-| Dataset | Records | Source |
-|---|---:|---|
-| [`services/schools-official.json`](data/services/schools-official.json) | 7,452 | Ministry of Education — public + private schools |
-| [`services/water-and-agricultural-groups.json`](data/services/water-and-agricultural-groups.json) | 2,709 | Water user associations (GDA), organic operators |
-| [`services/private-specialist-doctors.json`](data/services/private-specialist-doctors.json) | 2,220 | Private specialist doctors - 95% have a phone number |
-| [`services/health-facilities-official.json`](data/services/health-facilities-official.json) | 1,555 | Ministry of Health — health centres + hospitals |
-| [`places/cultural-sites.json`](data/places/cultural-sites.json) | 849 | Museums, cultural institutions, festivals - all geolocated |
-| [`businesses/olive-oil-mills.json`](data/businesses/olive-oil-mills.json) | 468 | Olive oil mills (huileries), 11 governorates |
-| [`services/social-and-training-facilities.json`](data/services/social-and-training-facilities.json) | 268 | Social welfare offices, vocational training - 92% have a phone |
-| [`places/agricultural-infrastructure.json`](data/places/agricultural-infrastructure.json) | 200 | Dams, hill lakes, milk and grain collection centres |
-| [`services/public-libraries.json`](data/services/public-libraries.json) | 127 | Public libraries, 7 governorates |
+---
 
-**Geography** — the full administrative hierarchy
+#### Geography — the full administrative hierarchy
+
+```
+Governorate (24)  ->  Delegation (266)  ->  Imada (2,084)
+```
 
 | Dataset | Records | Contents |
 |---|---:|---|
 | [`geography/imadas.json`](data/geography/imadas.json) | 2,084 | Imadas / sectors (*imadat*) |
 | [`geography/delegations.json`](data/geography/delegations.json) | 266 | Delegations (*mu'tamadiyat*) |
 | [`geography/governorates.json`](data/geography/governorates.json) | 24 | Governorates (*wilayat*) |
-| [`geography/delegation-boundaries.geojson`](data/geography/delegation-boundaries.geojson) | 266 | **Delegation boundary polygons** (GeoJSON, 274k vertices) |
+| [`geography/delegation-boundaries.geojson`](data/geography/delegation-boundaries.geojson) | 266 | **Boundary polygons** — 274k vertices, GeoJSON |
 
-**Services** — from OpenStreetMap
+The polygons are the ones used to assign every record in this repository to its
+delegation, so that assignment can be reproduced or audited independently.
+
+---
+
+#### Official government data — 15,848 records
+
+Published by Tunisian ministries via [data.gov.tn](https://www.data.gov.tn),
+agridata.tn and openculture.gov.tn. Authoritative, and far better distributed
+geographically than OpenStreetMap — but most carry no coordinates.
+
+| Dataset | Records | Publisher & notes |
+|---|---:|---|
+| [`services/schools-official.json`](data/services/schools-official.json) | 7,452 | **Ministry of Education** — public + private schools. 6,139 have GPS |
+| [`services/water-and-agricultural-groups.json`](data/services/water-and-agricultural-groups.json) | 2,709 | **Ministry of Agriculture / CRDA** — water user associations (GDA), organic operators |
+| [`services/private-specialist-doctors.json`](data/services/private-specialist-doctors.json) | 2,220 | **Ministry of Health** — private specialists. **95% have a phone number** |
+| [`services/health-facilities-official.json`](data/services/health-facilities-official.json) | 1,555 | **Ministry of Health** — health centres, hospitals |
+| [`places/cultural-sites.json`](data/places/cultural-sites.json) | 849 | **Ministry of Cultural Affairs** — museums, institutions, festivals. All geolocated |
+| [`businesses/olive-oil-mills.json`](data/businesses/olive-oil-mills.json) | 468 | Regional agricultural commissions — olive mills (*huileries*), 11 governorates |
+| [`services/social-and-training-facilities.json`](data/services/social-and-training-facilities.json) | 268 | **Ministry of Social Affairs** — welfare offices, vocational training. **92% have a phone** |
+| [`places/agricultural-infrastructure.json`](data/places/agricultural-infrastructure.json) | 200 | Agricultural commissions / ODESYPANO — dams, hill lakes, collection centres |
+| [`services/public-libraries.json`](data/services/public-libraries.json) | 127 | Regional cultural directorates — public libraries, 7 governorates |
+
+---
+
+#### Services — OpenStreetMap
 
 | Dataset | Records | Contents |
 |---|---:|---|
@@ -106,7 +148,7 @@ national open data portal** data.gov.tn (CC-BY / ODbL, official ministry data).
 | [`services/other-facilities.json`](data/services/other-facilities.json) | 287 | Veterinary, research institutes, misc. |
 | [`services/vehicle-services.json`](data/services/vehicle-services.json) | 138 | Car rental, driving schools, parking |
 
-**Businesses** — from OpenStreetMap
+#### Businesses — OpenStreetMap
 
 | Dataset | Records | Contents |
 |---|---:|---|
@@ -115,46 +157,101 @@ national open data portal** data.gov.tn (CC-BY / ODbL, official ministry data).
 | [`businesses/tourism-and-lodging.json`](data/businesses/tourism-and-lodging.json) | 1,471 | Hotels, guest houses, hostels, museums |
 | [`businesses/offices-and-crafts.json`](data/businesses/offices-and-crafts.json) | 962 | Company offices, NGOs, craft workshops |
 
-**Places** — from OpenStreetMap
+#### Places — OpenStreetMap
 
 | Dataset | Records | Contents |
 |---|---:|---|
-| [`places/transport.json`](data/places/transport.json) | 4,085 | Stations, metro/rail stops, bus stations, airports, ferries |
+| [`places/transport.json`](data/places/transport.json) | 4,085 | Stations, metro/rail stops, bus stations, airports, ferry terminals |
 | [`places/places-of-worship.json`](data/places/places-of-worship.json) | 1,695 | Mosques, churches, synagogues |
 | [`places/heritage-sites.json`](data/places/heritage-sites.json) | 1,620 | Ruins, archaeological sites, monuments, castles |
 | [`places/populated-places.json`](data/places/populated-places.json) | 1,302 | Cities, towns, villages, neighborhoods |
 | [`places/leisure-and-sport.json`](data/places/leisure-and-sport.json) | 1,071 | Parks, stadiums, gyms, sports centres, marinas |
 | [`places/natural-features.json`](data/places/natural-features.json) | 536 | Beaches, springs, peaks, caves, oases |
-| [`places/unnamed-branded-facilities.json`](data/places/unnamed-branded-facilities.json) | 334 | ATMs, parking, utilities identified by brand not name |
+| [`places/unnamed-branded-facilities.json`](data/places/unnamed-branded-facilities.json) | 334 | ATMs, parking, utilities identified by brand rather than name |
 | [`places/major-roads.json`](data/places/major-roads.json) | 131 | Motorways, trunk and primary roads |
 
-Every point-of-interest record carries a `governorate_code` and `delegation_code_geo`, so
-all files join to the geography datasets without any database. No record appears twice.
+---
 
-`delegation-boundaries.geojson` holds the actual polygons used to assign every record to
-its delegation, so that assignment can be reproduced or audited independently.
+### How the data fits together
 
-> **Read this before using the data.** The OpenStreetMap files are a geolocated index of
-> *what exists and where* — not a verified business directory. Phone numbers appear on
-> ~4% of them, websites on ~2%, and their coverage follows mapping activity rather than
-> reality (Tunis has ~23× more entries than Kef). The official government files are
-> authoritative and far better distributed, but most carry no coordinates. Absence from a
-> dataset does not mean a place does not exist. Full limitations are in
-> [`sources/`](sources/).
+Every point-of-interest record carries a `governorate_code` (e.g. `TN-11`) and, where
+known, a `delegation_code_geo`. That means **any file joins to the geography files
+without a database** — plain JSON and a text editor are enough.
+
+No record appears in two files. Official records matched to their OpenStreetMap
+counterpart carry `osm_type` / `osm_id` as a **cross-reference**, not a duplicate —
+715 such links exist (697 schools, 18 health facilities).
 
 ---
 
 ## Data sources
 
-Every dataset should document where its information came from. Possible sources include
-OpenStreetMap, Tunisian government open-data portals, official websites, publicly
-reusable datasets, and direct community contributions.
+Everything here comes from two families of source, both openly licensed. Every dataset
+has a matching file in [`sources/`](sources/) recording where it came from, under what
+license, when it was retrieved, and what its limitations are.
 
-**Important:** information being publicly visible on a website does not mean it can be
-copied or redistributed. Each source has its own license and terms of use, and this
-project respects them.
+### 1. OpenStreetMap — 33,932 records
 
-See [`sources/README.md`](sources/README.md) for details.
+Collected through the [Overpass API](https://overpass-api.de/). Published under the
+**Open Database License (ODbL)**: reuse requires attribution to
+**(c) OpenStreetMap contributors** and share-alike on modified distributions.
+
+Strong on coordinates (every record has them) and on breadth. Weak on contact details
+and on evenness — coverage follows mapping activity, so Tunis has roughly 23x more
+entries than Kef.
+
+### 2. Tunisian government open data — 15,848 records
+
+From the national portal [data.gov.tn](https://www.data.gov.tn) and its sister portals
+`agridata.tn` (agriculture and water) and `openculture.gov.tn` (culture), all reachable
+through a CKAN API. All 2,698 catalog datasets were enumerated; the directory-type ones
+were collected.
+
+Licenses vary **per dataset** and are recorded per record where applicable:
+
+| License | Records |
+|---|---:|
+| Licence Nationale de Donnees Publiques Ouvertes | 2,949 |
+| Creative Commons Attribution (CC-BY) | 2,467 |
+| Other open licenses | 976 |
+| ODbL / CC-Zero / stated in `sources/` | 9,456 |
+
+Authoritative and evenly distributed by population — the official school registry covers
+interior governorates that OpenStreetMap barely touches. Usually lacks coordinates.
+
+### Sources deliberately not used
+
+**Google Maps, TripAdvisor, Foursquare and commercial directories.** Their terms forbid
+bulk extraction and redistribution, and their database contents are protected. Scraping
+them would produce data this project could not legally publish — compromising the
+licensing of the whole repository, not just one file.
+
+**Statistics.** Around 1,340 openly licensed datasets on the portals are counts, budgets
+and time series. They are deliberately excluded: this repository is a directory of things
+that exist and can be found, not a statistics archive. See
+[`sources/README.md`](sources/README.md).
+
+---
+
+## Data quality
+
+Every dataset is validated on each build. Current state:
+
+| Check | Result |
+|---|---|
+| Invalid governorate references | **0** |
+| Coordinates outside Tunisia | **0** |
+| Governorate/delegation contradictions | **0** |
+| Duplicate records | **0** |
+
+Delegation assignment was verified against OpenStreetMap's own `is_in()` lookup on two
+independent random samples of 30 records: **30/30 correct both times**. The published
+boundary polygons independently reproduce the stored delegation for 60/60 sampled points.
+
+**Known limitations are documented, not hidden.** Each file in [`sources/`](sources/)
+states its own gaps — sparse contact details in the OpenStreetMap files, missing
+coordinates in most official files, governorates that do not publish, and population
+figures that mix the 2004 and 2014 censuses.
 
 ---
 
@@ -181,42 +278,44 @@ website unless its license or terms permit it.
 
 ## Current status
 
-**Phase 1 — foundation and first datasets.**
+**Phase 1 is complete.** The realistic open sources for Tunisia have been swept.
 
-- [x] Repository structure created
-- [x] Research available Tunisian data sources
-- [x] Collect the first datasets — administrative geography (governorates, delegations)
-- [x] Expand into places, services and businesses — 31,093 points of interest
-- [x] Complete the administrative hierarchy down to imada level
-- [x] Add official Tunisian government data (Ministries of Education and Health)
-- [x] Cross-match official records against the OpenStreetMap records
-- [ ] Extend coverage to governorates that do not yet publish open data
+- [x] Repository structure and documentation
+- [x] Full administrative hierarchy — governorates, delegations, imadas, boundary polygons
+- [x] OpenStreetMap collection across places, services and businesses — 33,932 records
+- [x] Official Tunisian government data — 15,848 records from six ministries
+- [x] Cross-match official records against OpenStreetMap records
+- [ ] Periodic refresh, and coverage for governorates that do not yet publish
 
-**715 cross-reference links** now connect official registry records to their
-OpenStreetMap counterparts (697 schools, 18 health facilities), so an authoritative
-record can borrow OSM's coordinates and multilingual names. Matching is conservative:
-ambiguous candidates are dropped rather than guessed, and guards prevent matching sibling
-schools, different school levels, or a public health centre to a private clinic.
+### What is finished
 
-The administrative geography layer is verified against the official ISO 3166-2:TN code
-list, and every point of interest is tied to it by point-in-polygon assignment (verified 30/30
-on two independent random samples).
+**OpenStreetMap is exhausted** for named features in these categories — a final sweep
+found roughly 290 left uncollected, and those were taken. What remains there is unnamed
+geometry, which does not belong in a directory.
 
-OpenStreetMap's usable named features for Tunisia are **exhausted** for these categories.
-Collection has therefore moved to **official Tunisian government sources** via
-data.gov.tn, which is where the remaining value is: the official school registry alone
-holds 7,452 records against OpenStreetMap's 2,856, and — unlike OSM — it is distributed
-by population rather than by mapping activity, so interior governorates like Kairouan,
-Sidi Bouzid and Kasserine are properly represented.
+**The government catalog is fully enumerated.** All 2,698 datasets on data.gov.tn were
+listed; the ~159 directory-type ones were collected. 269 of 274 resources downloaded;
+the five that could not be retrieved are named in [`sources/README.md`](sources/README.md)
+so nobody has to rediscover the gap.
 
-The next step is **cross-matching** the official records against the OSM ones, so a
-school has both its authoritative registry entry and its coordinates.
+**715 cross-reference links** connect official registry records to their OpenStreetMap
+counterparts (697 schools, 18 health facilities), letting an authoritative record borrow
+coordinates and multilingual names. Matching is deliberately conservative — ambiguous
+candidates are dropped rather than guessed, and guards prevent matching sibling schools,
+different school levels, or a public health centre to a private clinic.
 
-**The next priority is quality, not quantity.** The most valuable contributions now are
-cross-checking against official sources (Ministry of Health pharmacy lists, Ministry of
-Education school lists) and improving coverage in under-mapped governorates.
+### What would help most now
 
----
+Not more bulk collection — the bottleneck has moved.
+
+1. **Verification.** Records go stale: businesses close, doctors move. Spot-checking real
+   entries against reality is the highest-value contribution.
+2. **Under-mapped governorates.** Tunis has ~23x more OpenStreetMap entries than Kef.
+   Closing that gap means mapping in OSM, which benefits everyone.
+3. **Governorates that do not publish.** Olive mills cover 11 of 24, libraries 7 of 24.
+   That closes when those administrations publish, not by collecting harder.
+4. **Refresh runs.** Every query and endpoint is documented, so re-collection is a
+   repeatable job rather than a research project.
 
 ## Roadmap
 
