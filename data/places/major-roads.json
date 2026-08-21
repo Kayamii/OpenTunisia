@@ -1,0 +1,2479 @@
+[
+  {
+    "ref": "A1",
+    "name": "الطريق السريعة تونس - سوسة - صفاقس",
+    "alt_names": [
+      "A1",
+      "الطريق السيارة أ1",
+      "المدرسة الإبتدائية الغيب"
+    ],
+    "name_fr": "Autoroute Tunis - Sousse - Sfax",
+    "name_ar": "الطريق السريعة تونس - سوسة - صفاقس",
+    "road_class": "motorway",
+    "governorate_codes": [
+      "TN-11",
+      "TN-13",
+      "TN-21",
+      "TN-51",
+      "TN-53",
+      "TN-61",
+      "TN-81"
+    ],
+    "governorates": [
+      "Tunis",
+      "Ben Arous",
+      "Nabeul",
+      "Sousse",
+      "Mahdia",
+      "Sfax",
+      "Gabès"
+    ],
+    "segments": 417,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "110",
+    "toll": "no",
+    "international_ref": "TAH 1",
+    "center_lat": 36.24485,
+    "center_lon": 10.43723
+  },
+  {
+    "ref": "A3",
+    "name": "الطريق السريعة تونس - بوسالم",
+    "name_fr": "Autoroute Tunis - Bou Salem",
+    "name_ar": "الطريق السريعة تونس - بوسالم",
+    "road_class": "motorway",
+    "governorate_codes": [
+      "TN-11",
+      "TN-14",
+      "TN-31",
+      "TN-32"
+    ],
+    "governorates": [
+      "Tunis",
+      "Manouba",
+      "Béja",
+      "Jendouba"
+    ],
+    "segments": 123,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "110",
+    "toll": "no",
+    "center_lat": 36.6903,
+    "center_lon": 9.6921
+  },
+  {
+    "ref": "A4",
+    "name": "الطريق السريعة تونس - بنزرت",
+    "name_fr": "Autoroute Tunis - Bizerte",
+    "name_ar": "الطريق السريعة تونس - بنزرت",
+    "road_class": "motorway",
+    "governorate_codes": [
+      "TN-12",
+      "TN-23"
+    ],
+    "governorates": [
+      "Ariana",
+      "Bizerte"
+    ],
+    "segments": 110,
+    "lanes": "2",
+    "maxspeed": "110",
+    "toll": "yes",
+    "international_ref": "TAH 1",
+    "center_lat": 37.04693,
+    "center_lon": 10.03365
+  },
+  {
+    "ref": "RN8",
+    "name": "الطريق الوطنية تونس - بنزرت",
+    "alt_names": [
+      "جسر بنزرت",
+      "شارع البيئة",
+      "نهج 8 جانفي 1938",
+      "نهج المنجي سليم"
+    ],
+    "name_fr": "Route Nationale Tunis - Bizerte",
+    "name_ar": "الطريق الوطنية تونس - بنزرت",
+    "road_class": "motorway",
+    "governorate_codes": [
+      "TN-11",
+      "TN-12",
+      "TN-23"
+    ],
+    "governorates": [
+      "Tunis",
+      "Ariana",
+      "Bizerte"
+    ],
+    "segments": 115,
+    "surface": "asphalt",
+    "lanes": "4",
+    "maxspeed": "110",
+    "international_ref": "TAH 1",
+    "center_lat": 37.04442,
+    "center_lon": 10.0449
+  },
+  {
+    "ref": "RR21",
+    "name": "شارع محمد البوعزيزي",
+    "name_fr": "Boulevard Mohamed Bouazizi",
+    "name_ar": "شارع محمد البوعزيزي",
+    "road_class": "motorway",
+    "governorate_codes": [
+      "TN-11",
+      "TN-12",
+      "TN-14"
+    ],
+    "governorates": [
+      "Tunis",
+      "Ariana",
+      "Manouba"
+    ],
+    "segments": 73,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "70",
+    "center_lat": 36.82921,
+    "center_lon": 10.15983
+  },
+  {
+    "ref": "RL 451 طم",
+    "name": "Avenue Mahmoud El Matri",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-12"
+    ],
+    "governorates": [
+      "Ariana"
+    ],
+    "segments": 2,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.84591,
+    "center_lon": 10.16163
+  },
+  {
+    "ref": "RL452",
+    "name": "طريق مفتاح سعد الله",
+    "name_fr": "Avenue Meftah Saadallah",
+    "name_ar": "طريق مفتاح سعد الله",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 16,
+    "lanes": "2",
+    "maxspeed": "70",
+    "center_lat": 36.81256,
+    "center_lon": 10.15611
+  },
+  {
+    "ref": "RL560",
+    "name": "شارع البيئة",
+    "name_fr": "Avenue de l'Environnement",
+    "name_ar": "شارع البيئة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-13"
+    ],
+    "governorates": [
+      "Ben Arous"
+    ],
+    "segments": 2,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.74385,
+    "center_lon": 10.23289
+  },
+  {
+    "ref": "RL812",
+    "name": "Route de Hergla",
+    "alt_names": [
+      "Routede Hergla",
+      "شارع 18 جانفي 1952"
+    ],
+    "name_fr": "Avenue du 18 Janvier 1952",
+    "name_ar": "شارع 18 جانفي 1952",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-51"
+    ],
+    "governorates": [
+      "Sousse"
+    ],
+    "segments": 27,
+    "surface": "asphalt",
+    "maxspeed": "50",
+    "center_lat": 36.01276,
+    "center_lon": 10.46451
+  },
+  {
+    "ref": "RL822",
+    "name": "الطريق الحزامية",
+    "name_fr": "Route de Ceinture",
+    "name_ar": "الطريق الحزامية",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-51"
+    ],
+    "governorates": [
+      "Sousse"
+    ],
+    "segments": 1,
+    "center_lat": 35.79708,
+    "center_lon": 10.62791
+  },
+  {
+    "ref": "RN 1 ط و",
+    "name": "الطريق الوطنية تونس - رأس جدير",
+    "name_fr": "Route Nationale Tunis - Ras Jedir",
+    "name_ar": "الطريق الوطنية تونس - رأس جدير",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-13",
+      "TN-51"
+    ],
+    "governorates": [
+      "Ben Arous",
+      "Sousse"
+    ],
+    "segments": 3,
+    "lanes": "2",
+    "maxspeed": "90",
+    "center_lat": 36.37526,
+    "center_lon": 10.38679
+  },
+  {
+    "ref": "RN 11 ط و",
+    "name": "الطريق الوطنية بنزرت - ببوش",
+    "name_fr": "Route Nationale Bizerte - Babouch",
+    "name_ar": "الطريق الوطنية بنزرت - ببوش",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-31"
+    ],
+    "governorates": [
+      "Béja"
+    ],
+    "segments": 4,
+    "surface": "asphalt",
+    "maxspeed": "50",
+    "center_lat": 36.73421,
+    "center_lon": 9.20364
+  },
+  {
+    "ref": "RN 12 طو",
+    "name": "الطريق الوطنية سوسة - السرس",
+    "name_fr": "Route Nationale Sousse - Le Sers",
+    "name_ar": "الطريق الوطنية سوسة - السرس",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-51"
+    ],
+    "governorates": [
+      "Sousse"
+    ],
+    "segments": 4,
+    "center_lat": 35.68149,
+    "center_lon": 10.31741
+  },
+  {
+    "ref": "RN02",
+    "name": "شارع بيت الحكمة",
+    "alt_names": [
+      "Rue de la Victoire",
+      "شارع ابراهيم ابن الاغلب",
+      "شارع ابي زمعة البلوي"
+    ],
+    "name_fr": "Avenue Bait El Hekma",
+    "name_ar": "شارع بيت الحكمة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-41"
+    ],
+    "governorates": [
+      "Kairouan"
+    ],
+    "segments": 17,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.66668,
+    "center_lon": 10.0928
+  },
+  {
+    "ref": "RN1",
+    "name": "الطريق الوطنية تونس - رأس جدير",
+    "alt_names": [
+      "Rocade Express N°11",
+      "Rocade n° 11",
+      "Route Nationale 1",
+      "الحزام السريع 11",
+      "الطريق الوطنية 1",
+      "الطريق الوطنية تونس - رأس جدير - ليبيا",
+      "ساحة ليوبليانا",
+      "شارع 15 أكتوبر 1963",
+      "شارع 3 سبتمبر 1934",
+      "شارع أبو القاسم الشابي",
+      "شارع البيئة",
+      "شارع الحبيب بورقيبة",
+      "شارع الزعيم ياسر عرفات",
+      "شارع الشهداء",
+      "شارع الطاهر صفر",
+      "شارع الطيب المهيري",
+      "شارع المنجي سليم",
+      "شارع بنزرت",
+      "شارع تونس",
+      "شارع فرحات حشاد",
+      "شارع ليوبولد سانغور",
+      "قنطرة الشمامة",
+      "مفترق الساعة",
+      "مفترق المغرب العربي",
+      "مفترق دائري الأرض",
+      "مفترق دائري سوق الأحد",
+      "ملتقى ايتيكودا",
+      "ملتقى تيمترا"
+    ],
+    "name_fr": "Route Nationale Tunis - Ras Jedir",
+    "name_ar": "الطريق الوطنية تونس - رأس جدير",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11",
+      "TN-13",
+      "TN-21",
+      "TN-51",
+      "TN-52",
+      "TN-53",
+      "TN-61",
+      "TN-81",
+      "TN-82"
+    ],
+    "governorates": [
+      "Tunis",
+      "Ben Arous",
+      "Nabeul",
+      "Sousse",
+      "Monastir",
+      "Mahdia",
+      "Sfax",
+      "Gabès",
+      "Médenine"
+    ],
+    "segments": 1014,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "90",
+    "international_ref": "TAH 1",
+    "center_lat": 35.00612,
+    "center_lon": 10.51666
+  },
+  {
+    "ref": "RN10",
+    "name": "الطريق الوطنية تونس - قرطاج",
+    "alt_names": [
+      "شارع اتحاد المغرب العربي",
+      "شارع الطيب المهيري",
+      "شارع فطومة بورقيبة",
+      "نهج 18 جانفي 1952"
+    ],
+    "name_fr": "Route Nationale Tunis - Carthage",
+    "name_ar": "الطريق الوطنية تونس - قرطاج",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11",
+      "TN-12"
+    ],
+    "governorates": [
+      "Tunis",
+      "Ariana"
+    ],
+    "segments": 63,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.86819,
+    "center_lon": 10.27109
+  },
+  {
+    "ref": "RN12",
+    "name": "الطريق الوطنية سوسة - السرس",
+    "alt_names": [
+      "الطريق الوطنية تونس - رأس جدير",
+      "ساحة 7 نوفمبر",
+      "شارع أسد بن الفرات",
+      "شارع ابراهيم ابن الاغلب",
+      "شارع الإمام سحنون",
+      "شارع الجمهورية",
+      "شارع المنجي سليم",
+      "شارع طارق بن زياد"
+    ],
+    "name_fr": "Route Nationale Sousse - Le Sers",
+    "name_ar": "الطريق الوطنية سوسة - السرس",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-33",
+      "TN-34",
+      "TN-41",
+      "TN-51"
+    ],
+    "governorates": [
+      "Kef",
+      "Siliana",
+      "Kairouan",
+      "Sousse"
+    ],
+    "segments": 177,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.78739,
+    "center_lon": 9.85039
+  },
+  {
+    "ref": "RN14",
+    "name": "الطريق الوطنية صفاقس - قفصة",
+    "alt_names": [
+      "RTE National GP14",
+      "طريق المطار"
+    ],
+    "name_fr": "Route Nationale Sfax - Gafsa",
+    "name_ar": "الطريق الوطنية صفاقس - قفصة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-43",
+      "TN-61",
+      "TN-71"
+    ],
+    "governorates": [
+      "Sidi Bouzid",
+      "Sfax",
+      "Gafsa"
+    ],
+    "segments": 147,
+    "surface": "asphalt",
+    "lanes": "1",
+    "maxspeed": "50",
+    "center_lat": 34.6132,
+    "center_lon": 9.78063
+  },
+  {
+    "ref": "RN16",
+    "name": "الطريق الوطنية قابس - تمغزة",
+    "alt_names": [
+      "شارع الإستقلال",
+      "طريق توزر"
+    ],
+    "name_fr": "Route Nationale Gabès - Tameghza",
+    "name_ar": "الطريق الوطنية قابس - تمغزة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-72",
+      "TN-73",
+      "TN-81"
+    ],
+    "governorates": [
+      "Tozeur",
+      "Kébili",
+      "Gabès"
+    ],
+    "segments": 238,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 33.8845,
+    "center_lon": 9.02889
+  },
+  {
+    "ref": "RN19",
+    "name": "الطريق الوطنية مدنين - الذهيبة",
+    "alt_names": [
+      "شارع 2 ماي"
+    ],
+    "name_fr": "Route Nationale Medenine - Dhehiba",
+    "name_ar": "الطريق الوطنية مدنين - الذهيبة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-82",
+      "TN-83"
+    ],
+    "governorates": [
+      "Médenine",
+      "Tataouine"
+    ],
+    "segments": 107,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 32.75192,
+    "center_lon": 10.39559
+  },
+  {
+    "ref": "RN2",
+    "name": "الطريق الوطنية النفيضة - الصخيرة",
+    "name_fr": "Route Nationale Enfidha - Skhira",
+    "name_ar": "الطريق الوطنية النفيضة - الصخيرة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-41",
+      "TN-51",
+      "TN-61"
+    ],
+    "governorates": [
+      "Kairouan",
+      "Sousse",
+      "Sfax"
+    ],
+    "segments": 182,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.47171,
+    "center_lon": 10.15076
+  },
+  {
+    "ref": "RN3",
+    "name": "الطريق الوطنية تونس - حزوة",
+    "alt_names": [
+      "الطريق الوطنية 3 تونس - حزوة - الجزائر",
+      "شارع 14 جانفي 2011",
+      "شارع 9 أفريل 1938",
+      "شارع الساحل",
+      "شارع فرحات حشاد",
+      "نهج جمال عبد الناصر"
+    ],
+    "name_fr": "Avenue du 14 Janvier 2011",
+    "name_ar": "شارع 14 جانفي 2011",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11",
+      "TN-13",
+      "TN-22",
+      "TN-41",
+      "TN-42",
+      "TN-43",
+      "TN-71",
+      "TN-72"
+    ],
+    "governorates": [
+      "Tunis",
+      "Ben Arous",
+      "Zaghouan",
+      "Kairouan",
+      "Kasserine",
+      "Sidi Bouzid",
+      "Gafsa",
+      "Tozeur"
+    ],
+    "segments": 500,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "90",
+    "center_lat": 35.40015,
+    "center_lon": 9.34611
+  },
+  {
+    "ref": "RN4",
+    "name": "الطريق الوطنية الفحص - حيدرة",
+    "alt_names": [
+      "شارع الطيب المهيري",
+      "قنطرة وادي مسوج"
+    ],
+    "name_fr": "Route Nationale El Fahs - Haïdra",
+    "name_ar": "الطريق الوطنية الفحص - حيدرة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-22",
+      "TN-33",
+      "TN-34",
+      "TN-42"
+    ],
+    "governorates": [
+      "Zaghouan",
+      "Kef",
+      "Siliana",
+      "Kasserine"
+    ],
+    "segments": 151,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.03737,
+    "center_lon": 9.36281
+  },
+  {
+    "ref": "RN5",
+    "name": "الطريق الوطنية تونس - ساقية سيدي يوسف",
+    "alt_names": [
+      "شارع الاستقلال"
+    ],
+    "name_fr": "Route Nationale Tunis - Sakiet Sidi Youssef",
+    "name_ar": "الطريق الوطنية تونس - ساقية سيدي يوسف",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11",
+      "TN-14",
+      "TN-31",
+      "TN-33",
+      "TN-34"
+    ],
+    "governorates": [
+      "Tunis",
+      "Manouba",
+      "Béja",
+      "Kef",
+      "Siliana"
+    ],
+    "segments": 266,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "70",
+    "center_lat": 36.56038,
+    "center_lon": 9.53435
+  },
+  {
+    "ref": "RN6",
+    "name": "الطريق الوطنية مجاز الباب - غار الدماء",
+    "alt_names": [
+      "شارع البيئة",
+      "شارع الحبيب بورقيبة"
+    ],
+    "name_fr": "Route Nationale Medjez El Bab - Ghardimaou",
+    "name_ar": "الطريق الوطنية مجاز الباب - غار الدماء",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-31",
+      "TN-32"
+    ],
+    "governorates": [
+      "Béja",
+      "Jendouba"
+    ],
+    "segments": 151,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.6,
+    "center_lon": 9.03673
+  },
+  {
+    "ref": "RN9",
+    "name": "الطريق الوطنية تونس - المرسى",
+    "alt_names": [
+      "ساحة 14 جانفي 2011",
+      "شارع الاستقلال",
+      "شارع الحبيب بورقيبة",
+      "شارع فرنسا",
+      "نهج الجزيرة",
+      "نهج سيدي البشير"
+    ],
+    "name_fr": "Route Nationale Tunis - La Marsa",
+    "name_ar": "الطريق الوطنية تونس - المرسى",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 50,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "40",
+    "toll": "no",
+    "center_lat": 36.81935,
+    "center_lon": 10.21786
+  },
+  {
+    "ref": "RR 21 طج",
+    "name": "شارع محمد البوعزيزي",
+    "name_fr": "Boulevard Mohamed Bouazizi",
+    "name_ar": "شارع محمد البوعزيزي",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 2,
+    "center_lat": 36.84872,
+    "center_lon": 10.21111
+  },
+  {
+    "ref": "RR 26 ط ج",
+    "name": "الطريق الجهوية الهوارية - ط و 1",
+    "name_fr": "Route Régionale El Haouaria - RN1",
+    "name_ar": "الطريق الجهوية الهوارية - ط و 1",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-21"
+    ],
+    "governorates": [
+      "Nabeul"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.69452,
+    "center_lon": 10.48116
+  },
+  {
+    "ref": "RR22",
+    "name": "RR 22",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "90",
+    "center_lat": 36.76486,
+    "center_lon": 10.12044
+  },
+  {
+    "ref": "RR23",
+    "name": "شارع جودة الحياة",
+    "alt_names": [
+      "الطريق الجهوية رقم 23",
+      "طريق حلق الوادي"
+    ],
+    "name_fr": "Boulevard Qualité de la Vie",
+    "name_ar": "شارع جودة الحياة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 67,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "70",
+    "center_lat": 36.85982,
+    "center_lon": 10.29429
+  },
+  {
+    "ref": "RR26",
+    "name": "الطريق الجهوية الهوارية - ط و 1",
+    "name_fr": "Route Régionale El Haouaria - RN1",
+    "name_ar": "الطريق الجهوية الهوارية - ط و 1",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-13",
+      "TN-21"
+    ],
+    "governorates": [
+      "Ben Arous",
+      "Nabeul"
+    ],
+    "segments": 33,
+    "surface": "asphalt",
+    "lanes": "1",
+    "maxspeed": "50",
+    "center_lat": 36.69597,
+    "center_lon": 10.45171
+  },
+  {
+    "ref": "RR28",
+    "name": "شارع أبو ظبي",
+    "alt_names": [
+      "Avenue du Koweit",
+      "الطريق الجهوية مجاز الباب - نابل",
+      "شارع الامم المتحدة",
+      "شارع الحبيب ثامر",
+      "شارع الهادي والي",
+      "شارع محمد الخامس"
+    ],
+    "name_fr": "Avenue d'Abou Dhabi",
+    "name_ar": "شارع أبو ظبي",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-21",
+      "TN-22"
+    ],
+    "governorates": [
+      "Nabeul",
+      "Zaghouan"
+    ],
+    "segments": 79,
+    "surface": "paved",
+    "lanes": "1",
+    "maxspeed": "50",
+    "center_lat": 36.42518,
+    "center_lon": 10.62957
+  },
+  {
+    "ref": "RR82",
+    "name": "الطريق الجهوية صفاقس - المهدية",
+    "alt_names": [
+      "شارع أبو القاسم الشابي",
+      "شارع ابن خلدون",
+      "شارع البيئة",
+      "شارع الحبيب بورقيبة",
+      "شارع الحبيب بوقطفة",
+      "شارع الشهداء",
+      "شارع الهادي شاكر",
+      "شارع علي البلهوان",
+      "شارع فرحات حشاد"
+    ],
+    "name_fr": "Boulevard de l'Environnement",
+    "name_ar": "شارع البيئة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-51",
+      "TN-52",
+      "TN-53",
+      "TN-61"
+    ],
+    "governorates": [
+      "Sousse",
+      "Monastir",
+      "Mahdia",
+      "Sfax"
+    ],
+    "segments": 427,
+    "surface": "asphalt",
+    "lanes": "1",
+    "maxspeed": "30",
+    "center_lat": 35.37422,
+    "center_lon": 10.91832
+  },
+  {
+    "ref": "X",
+    "name": "شارع الزعيم ياسر عرفات",
+    "name_fr": "Boulevard du Leader Yasser Arafat",
+    "name_ar": "شارع الزعيم ياسر عرفات",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 14,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.83763,
+    "center_lon": 10.21296
+  },
+  {
+    "ref": "X;RR 21 طج",
+    "name": "شارع محمد البوعزيزي",
+    "name_fr": "Boulevard Mohamed Bouazizi",
+    "name_ar": "شارع محمد البوعزيزي",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 2,
+    "surface": "paved",
+    "maxspeed": "50",
+    "center_lat": 36.84826,
+    "center_lon": 10.21259
+  },
+  {
+    "name": "Intercommunale Sud",
+    "name_fr": "Intercommunale Sud",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 2,
+    "lanes": "2",
+    "center_lat": 36.78344,
+    "center_lon": 10.16411
+  },
+  {
+    "name": "شارع البيئة",
+    "name_fr": "Avenue de l'Environnement",
+    "name_ar": "شارع البيئة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 7,
+    "lanes": "2",
+    "center_lat": 36.8585,
+    "center_lon": 10.3277
+  },
+  {
+    "name": "شارع الجمهورية",
+    "name_fr": "Avenue de la République",
+    "name_ar": "شارع الجمهورية",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 2,
+    "lanes": "2",
+    "center_lat": 36.86885,
+    "center_lon": 10.33405
+  },
+  {
+    "name": "الطريق الحزامية",
+    "name_fr": "Route de Ceinture",
+    "name_ar": "الطريق الحزامية",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-51",
+      "TN-52"
+    ],
+    "governorates": [
+      "Sousse",
+      "Monastir"
+    ],
+    "segments": 67,
+    "lanes": "2",
+    "maxspeed": "70",
+    "center_lat": 35.80265,
+    "center_lon": 10.65309
+  },
+  {
+    "name": "شارع ابن خلدون",
+    "name_fr": "Avenue Ibn Khaldoun",
+    "name_ar": "شارع ابن خلدون",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-12"
+    ],
+    "governorates": [
+      "Ariana"
+    ],
+    "segments": 2,
+    "center_lat": 36.87372,
+    "center_lon": 10.18068
+  },
+  {
+    "name": "شارع الفل",
+    "name_fr": "Avenue El Fell",
+    "name_ar": "شارع الفل",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-12"
+    ],
+    "governorates": [
+      "Ariana"
+    ],
+    "segments": 1,
+    "center_lat": 36.85685,
+    "center_lon": 10.12757
+  },
+  {
+    "name": "حزام بورقيبة",
+    "name_fr": "Ceinture Bourguiba",
+    "name_ar": "حزام بورقيبة",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 37,
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 34.75824,
+    "center_lon": 10.74807
+  },
+  {
+    "name": "جسر رادس–حلق الوادي",
+    "name_fr": "Pont de Radès–La Goulette",
+    "name_ar": "جسر رادس–حلق الوادي",
+    "road_class": "trunk",
+    "segments": 2,
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.80701,
+    "center_lon": 10.26048
+  },
+  {
+    "name": "Boulevard Périphérique",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-13"
+    ],
+    "governorates": [
+      "Ben Arous"
+    ],
+    "segments": 7,
+    "lanes": "2",
+    "maxspeed": "70",
+    "center_lat": 36.77658,
+    "center_lon": 10.22794
+  },
+  {
+    "name": "Route Périphérie Nabeul - Hammamet",
+    "name_fr": "Route Périphérie Nabeul - Hammamet",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-21"
+    ],
+    "governorates": [
+      "Nabeul"
+    ],
+    "segments": 29,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.46069,
+    "center_lon": 10.70659
+  },
+  {
+    "name": "الحزام السريع 11",
+    "name_fr": "Rocade Express N°11",
+    "name_ar": "الحزام السريع 11",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 30,
+    "lanes": "2",
+    "maxspeed": "90",
+    "center_lat": 34.8492,
+    "center_lon": 10.81266
+  },
+  {
+    "name": "Medenine -Tataouine",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-82",
+      "TN-83"
+    ],
+    "governorates": [
+      "Médenine",
+      "Tataouine"
+    ],
+    "segments": 35,
+    "center_lat": 33.25723,
+    "center_lon": 10.57085
+  },
+  {
+    "name": "مدخل شمالي جنوبي",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 12,
+    "center_lat": 34.6885,
+    "center_lon": 10.72672
+  },
+  {
+    "name": "شارع الزعيم ياسر عرفات",
+    "name_fr": "Boulevard du Leader Yasser Arafat",
+    "name_ar": "شارع الزعيم ياسر عرفات",
+    "road_class": "trunk",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 2,
+    "center_lat": 36.83864,
+    "center_lon": 10.21362
+  },
+  {
+    "ref": "RL460",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 10,
+    "surface": "asphalt",
+    "maxspeed": "70",
+    "center_lat": 36.78101,
+    "center_lon": 10.18269
+  },
+  {
+    "ref": "RL573",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-21"
+    ],
+    "governorates": [
+      "Nabeul"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.59245,
+    "center_lon": 10.49161
+  },
+  {
+    "ref": "RL814",
+    "name": "الطريق السياحي 814",
+    "name_ar": "الطريق السياحي 814",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-51"
+    ],
+    "governorates": [
+      "Sousse"
+    ],
+    "segments": 3,
+    "surface": "paved",
+    "maxspeed": "50",
+    "center_lat": 35.94261,
+    "center_lon": 10.55164
+  },
+  {
+    "ref": "RL845",
+    "name": "الطريق السياحي 845",
+    "name_fr": "Route local 845",
+    "name_ar": "الطريق السياحي 845",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-51"
+    ],
+    "governorates": [
+      "Sousse"
+    ],
+    "segments": 18,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.92189,
+    "center_lon": 10.56801
+  },
+  {
+    "ref": "RL920",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 1,
+    "center_lat": 34.74115,
+    "center_lon": 10.75236
+  },
+  {
+    "ref": "RN 17 ط و",
+    "name": "نهج علي عايش",
+    "name_fr": "Rue Ali Ayech",
+    "name_ar": "نهج علي عايش",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-33"
+    ],
+    "governorates": [
+      "Kef"
+    ],
+    "segments": 1,
+    "center_lat": 36.17907,
+    "center_lon": 8.70984
+  },
+  {
+    "ref": "RN 17 طو",
+    "name": "نهج علي عايش",
+    "name_fr": "Rue Ali Ayech",
+    "name_ar": "نهج علي عايش",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-33"
+    ],
+    "governorates": [
+      "Kef"
+    ],
+    "segments": 1,
+    "center_lat": 36.17982,
+    "center_lon": 8.7102
+  },
+  {
+    "ref": "RN 3 ط و",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-71"
+    ],
+    "governorates": [
+      "Gafsa"
+    ],
+    "segments": 1,
+    "center_lat": 34.42321,
+    "center_lon": 8.76189
+  },
+  {
+    "ref": "RN 5 ط و",
+    "name": "الطريق الوطنية تونس - ساقية سيدي يوسف",
+    "name_fr": "Route Nationale Tunis - Sakiet Sidi Youssef",
+    "name_ar": "الطريق الوطنية تونس - ساقية سيدي يوسف",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-31"
+    ],
+    "governorates": [
+      "Béja"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "center_lat": 36.48609,
+    "center_lon": 9.30273
+  },
+  {
+    "ref": "RN 6 طو",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-31",
+      "TN-32"
+    ],
+    "governorates": [
+      "Béja",
+      "Jendouba"
+    ],
+    "segments": 3,
+    "lanes": "1",
+    "maxspeed": "50",
+    "center_lat": 36.59277,
+    "center_lon": 9.1089
+  },
+  {
+    "ref": "RN 7 ط و",
+    "name": "الطريق الوطنية تونس - طبرقة",
+    "name_fr": "Route Nationale Tunis - Tabarka",
+    "name_ar": "الطريق الوطنية تونس - طبرقة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-23"
+    ],
+    "governorates": [
+      "Bizerte"
+    ],
+    "segments": 1,
+    "international_ref": "TAH 1",
+    "center_lat": 37.03817,
+    "center_lon": 9.67448
+  },
+  {
+    "ref": "RN 8 ط و",
+    "name": "جسر بنزرت",
+    "name_fr": "Pont de Bizerte",
+    "name_ar": "جسر بنزرت",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-23"
+    ],
+    "governorates": [
+      "Bizerte"
+    ],
+    "segments": 2,
+    "center_lat": 37.26958,
+    "center_lon": 9.87423
+  },
+  {
+    "ref": "RN 8 طو",
+    "name": "شارع الطيب المهيري",
+    "alt_names": [
+      "شارع شارل نيكول"
+    ],
+    "name_fr": "Avenue Taïeb Mhiri",
+    "name_ar": "شارع الطيب المهيري",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 5,
+    "surface": "asphalt",
+    "lanes": "4",
+    "center_lat": 36.83131,
+    "center_lon": 10.1801
+  },
+  {
+    "ref": "RN 9 طو",
+    "name": "شارع الحبيب بورقيبة",
+    "name_fr": "Avenue Habib Bourguiba",
+    "name_ar": "شارع الحبيب بورقيبة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-11"
+    ],
+    "governorates": [
+      "Tunis"
+    ],
+    "segments": 8,
+    "surface": "asphalt",
+    "center_lat": 36.79969,
+    "center_lon": 10.18068
+  },
+  {
+    "ref": "RN1,RR119",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 1,
+    "center_lat": 35.12289,
+    "center_lon": 10.74154
+  },
+  {
+    "ref": "RN1-RN19",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-82"
+    ],
+    "governorates": [
+      "Médenine"
+    ],
+    "segments": 1,
+    "center_lat": 33.3434,
+    "center_lon": 10.49108
+  },
+  {
+    "ref": "RN1-RR87",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-53"
+    ],
+    "governorates": [
+      "Mahdia"
+    ],
+    "segments": 1,
+    "lanes": "1",
+    "center_lat": 35.30032,
+    "center_lon": 10.69047
+  },
+  {
+    "ref": "RN1-RR96",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-53"
+    ],
+    "governorates": [
+      "Mahdia"
+    ],
+    "segments": 1,
+    "maxspeed": "30",
+    "center_lat": 35.46735,
+    "center_lon": 10.64011
+  },
+  {
+    "ref": "RN11",
+    "name": "الطريق الوطنية بنزرت - ببوش",
+    "alt_names": [
+      "Avenue du 20 Mars",
+      "الطريق الوطنية ماطر - بنزرت",
+      "شارع 20 مارس 1956",
+      "شارع الحبيب بورقيبة",
+      "شارع المنجي سليم",
+      "شارع باب ماطر",
+      "طريق عين البيّة"
+    ],
+    "name_fr": "Route Nationale Bizerte - Babouch",
+    "name_ar": "الطريق الوطنية بنزرت - ببوش",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-23",
+      "TN-31",
+      "TN-32"
+    ],
+    "governorates": [
+      "Bizerte",
+      "Béja",
+      "Jendouba"
+    ],
+    "segments": 196,
+    "surface": "asphalt",
+    "lanes": "2",
+    "center_lat": 36.8981,
+    "center_lon": 9.29632
+  },
+  {
+    "ref": "RN12;RN18",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-33"
+    ],
+    "governorates": [
+      "Kef"
+    ],
+    "segments": 1,
+    "center_lat": 36.08938,
+    "center_lon": 8.95669
+  },
+  {
+    "ref": "RN12E",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41"
+    ],
+    "governorates": [
+      "Kairouan"
+    ],
+    "segments": 7,
+    "maxspeed": "50",
+    "center_lat": 35.71997,
+    "center_lon": 10.14943
+  },
+  {
+    "ref": "RN13",
+    "name": "الطريق الوطنية صفاقس - القصرين",
+    "alt_names": [
+      "شارع 2 مارس 1934",
+      "طريق منزل شاكر"
+    ],
+    "name_fr": "Route Nationale Sfax - Kasserine",
+    "name_ar": "الطريق الوطنية صفاقس - القصرين",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41",
+      "TN-42",
+      "TN-43",
+      "TN-61"
+    ],
+    "governorates": [
+      "Kairouan",
+      "Kasserine",
+      "Sidi Bouzid",
+      "Sfax"
+    ],
+    "segments": 200,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.06939,
+    "center_lon": 9.59926
+  },
+  {
+    "ref": "RN13,RN14",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "maxspeed": "30",
+    "center_lat": 34.73556,
+    "center_lon": 10.74869
+  },
+  {
+    "ref": "RN13-RN17",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-42"
+    ],
+    "governorates": [
+      "Kasserine"
+    ],
+    "segments": 1,
+    "center_lat": 35.17545,
+    "center_lon": 8.79512
+  },
+  {
+    "ref": "RN15",
+    "name": "الطريق الوطنية قابس - بوشبكة",
+    "alt_names": [
+      "شارع الجمهورية",
+      "نهج محمد الخامس"
+    ],
+    "name_fr": "Route Nationale Gabès - Bouchebka",
+    "name_ar": "الطريق الوطنية قابس - بوشبكة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-42",
+      "TN-71",
+      "TN-81"
+    ],
+    "governorates": [
+      "Kasserine",
+      "Gafsa",
+      "Gabès"
+    ],
+    "segments": 135,
+    "surface": "paved",
+    "lanes": "2",
+    "maxspeed": "90",
+    "center_lat": 34.43217,
+    "center_lon": 9.07809
+  },
+  {
+    "ref": "RN15-RN17",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-42"
+    ],
+    "governorates": [
+      "Kasserine"
+    ],
+    "segments": 1,
+    "center_lat": 34.98065,
+    "center_lon": 8.59841
+  },
+  {
+    "ref": "RN17",
+    "name": "الطريق الوطنية طبرقة - تلابت",
+    "alt_names": [
+      "شارع 14 جانفي 2011",
+      "شارع الحبيب بورقيبة",
+      "نهج طه حسين",
+      "نهج علي البلهوان"
+    ],
+    "name_fr": "Route Nationale Tabarka - Thélepte",
+    "name_ar": "الطريق الوطنية طبرقة - تلابت",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-32",
+      "TN-33",
+      "TN-42"
+    ],
+    "governorates": [
+      "Jendouba",
+      "Kef",
+      "Kasserine"
+    ],
+    "segments": 176,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.18645,
+    "center_lon": 8.70948
+  },
+  {
+    "ref": "RN17-RN18",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-33"
+    ],
+    "governorates": [
+      "Kef"
+    ],
+    "segments": 1,
+    "center_lat": 35.85227,
+    "center_lon": 8.54706
+  },
+  {
+    "ref": "RN18",
+    "name": "الطريق الوطنية دقة - منزل سالم",
+    "name_fr": "Route Nationale Dougga - Menzel Salem",
+    "name_ar": "الطريق الوطنية دقة - منزل سالم",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-31",
+      "TN-33",
+      "TN-34"
+    ],
+    "governorates": [
+      "Béja",
+      "Kef",
+      "Siliana"
+    ],
+    "segments": 100,
+    "surface": "asphalt",
+    "lanes": "2",
+    "center_lat": 36.04552,
+    "center_lon": 8.82052
+  },
+  {
+    "ref": "RN2 , RN14",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "maxspeed": "30",
+    "center_lat": 34.74068,
+    "center_lon": 10.09587
+  },
+  {
+    "ref": "RN2-RN13",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41"
+    ],
+    "governorates": [
+      "Kairouan"
+    ],
+    "segments": 1,
+    "maxspeed": "30",
+    "center_lat": 35.0449,
+    "center_lon": 10.05301
+  },
+  {
+    "ref": "RN2-RR81",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41"
+    ],
+    "governorates": [
+      "Kairouan"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.39426,
+    "center_lon": 10.04896
+  },
+  {
+    "ref": "RN20",
+    "name": "الطريق الوطنية مدنين - حزوة",
+    "alt_names": [
+      "ساحة الشهداء"
+    ],
+    "name_fr": "Route Nationale Medenine - Hazoua",
+    "name_ar": "الطريق الوطنية مدنين - حزوة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-73",
+      "TN-81",
+      "TN-82"
+    ],
+    "governorates": [
+      "Kébili",
+      "Gabès",
+      "Médenine"
+    ],
+    "segments": 68,
+    "surface": "asphalt",
+    "lanes": "2",
+    "center_lat": 33.47138,
+    "center_lon": 9.76696
+  },
+  {
+    "ref": "RN3 , RN15",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-71"
+    ],
+    "governorates": [
+      "Gafsa"
+    ],
+    "segments": 1,
+    "center_lat": 34.42025,
+    "center_lon": 8.78842
+  },
+  {
+    "ref": "RN3 - RN15",
+    "name": "شارع عمر بن سليمان",
+    "alt_names": [
+      "الطريق الوطنية تونس - حزوة",
+      "شارع الطيب المهيري"
+    ],
+    "name_fr": "Avenue Amor Ben Slimen",
+    "name_ar": "شارع عمر بن سليمان",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-71"
+    ],
+    "governorates": [
+      "Gafsa"
+    ],
+    "segments": 8,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 34.4188,
+    "center_lon": 8.78837
+  },
+  {
+    "ref": "RN3,RN12",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41"
+    ],
+    "governorates": [
+      "Kairouan"
+    ],
+    "segments": 2,
+    "surface": "asphalt",
+    "center_lat": 35.6104,
+    "center_lon": 9.90366
+  },
+  {
+    "ref": "RN3,RN4",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-22"
+    ],
+    "governorates": [
+      "Zaghouan"
+    ],
+    "segments": 1,
+    "center_lat": 36.37173,
+    "center_lon": 9.90194
+  },
+  {
+    "ref": "RN3-RN13",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-43"
+    ],
+    "governorates": [
+      "Sidi Bouzid"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "maxspeed": "30",
+    "center_lat": 35.14714,
+    "center_lon": 9.36311
+  },
+  {
+    "ref": "RN3;RN16",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-72"
+    ],
+    "governorates": [
+      "Tozeur"
+    ],
+    "segments": 1,
+    "center_lat": 33.9974,
+    "center_lon": 8.17064
+  },
+  {
+    "ref": "RN3E",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-42",
+      "TN-43"
+    ],
+    "governorates": [
+      "Kasserine",
+      "Sidi Bouzid"
+    ],
+    "segments": 23,
+    "maxspeed": "50",
+    "center_lat": 35.27814,
+    "center_lon": 9.25373
+  },
+  {
+    "ref": "RN4 - RN12",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-34"
+    ],
+    "governorates": [
+      "Siliana"
+    ],
+    "segments": 1,
+    "center_lat": 35.90326,
+    "center_lon": 9.2077
+  },
+  {
+    "ref": "RN4-RN17",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-33"
+    ],
+    "governorates": [
+      "Kef"
+    ],
+    "segments": 1,
+    "center_lat": 35.65526,
+    "center_lon": 8.59286
+  },
+  {
+    "ref": "RN5-RN17",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-33"
+    ],
+    "governorates": [
+      "Kef"
+    ],
+    "segments": 1,
+    "center_lat": 36.14996,
+    "center_lon": 8.67624
+  },
+  {
+    "ref": "RN5-RN6",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-31"
+    ],
+    "governorates": [
+      "Béja"
+    ],
+    "segments": 1,
+    "center_lat": 36.64132,
+    "center_lon": 9.59407
+  },
+  {
+    "ref": "RN5-RR71",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-33"
+    ],
+    "governorates": [
+      "Kef"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "center_lat": 36.15666,
+    "center_lon": 8.69756
+  },
+  {
+    "ref": "RN6-RN17",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-32"
+    ],
+    "governorates": [
+      "Jendouba"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "center_lat": 36.48676,
+    "center_lon": 8.77745
+  },
+  {
+    "ref": "RN7",
+    "name": "الطريق الوطنية تونس - طبرقة",
+    "alt_names": [
+      "الطريق الوطنية تونس - طبرقة - الجزائر",
+      "شارع 20 مارس",
+      "شارع 20 مارس 1956",
+      "شارع الحبيب بورقيبة",
+      "شارع الرابطة",
+      "شارع الطيب المهيري",
+      "شارع درغوث باشا",
+      "ميدان 18 جانفي 1952",
+      "نهج 4021",
+      "نهج الجزائر"
+    ],
+    "name_fr": "Route Nationale Tunis - Tabarka",
+    "name_ar": "الطريق الوطنية تونس - طبرقة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-11",
+      "TN-14",
+      "TN-23",
+      "TN-31",
+      "TN-32"
+    ],
+    "governorates": [
+      "Tunis",
+      "Manouba",
+      "Bizerte",
+      "Béja",
+      "Jendouba"
+    ],
+    "segments": 211,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "70",
+    "international_ref": "TAH 1",
+    "center_lat": 36.93916,
+    "center_lon": 9.4427
+  },
+  {
+    "ref": "RN7-RN17",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-32"
+    ],
+    "governorates": [
+      "Jendouba"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "lanes": "2",
+    "center_lat": 36.95197,
+    "center_lon": 8.76002
+  },
+  {
+    "ref": "RR 100 طج",
+    "name": "شارع البيئة",
+    "alt_names": [
+      "دوار النافورة"
+    ],
+    "name_fr": "Boulevard de l'Environnement",
+    "name_ar": "شارع البيئة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-52"
+    ],
+    "governorates": [
+      "Monastir"
+    ],
+    "segments": 14,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.76391,
+    "center_lon": 10.80658
+  },
+  {
+    "ref": "RR 27 طج",
+    "name": "شارع المنجي سليم",
+    "name_fr": "Avenue Mongi Slim",
+    "name_ar": "شارع المنجي سليم",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-21"
+    ],
+    "governorates": [
+      "Nabeul"
+    ],
+    "segments": 3,
+    "surface": "asphalt",
+    "center_lat": 36.45732,
+    "center_lon": 10.74887
+  },
+  {
+    "ref": "RR 39 طج",
+    "name": "الطريق الجهوية الزهراء - السيجومي",
+    "name_fr": "Route Régionale Ezzahra - Séjoumi",
+    "name_ar": "الطريق الجهوية الزهراء - السيجومي",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-13"
+    ],
+    "governorates": [
+      "Ben Arous"
+    ],
+    "segments": 2,
+    "maxspeed": "50",
+    "center_lat": 36.71492,
+    "center_lon": 10.2645
+  },
+  {
+    "ref": "RR 82 ط ج",
+    "name": "الطريق الجهوية صفاقس - المهدية",
+    "name_fr": "Route Régionale Sfax - Mahdia",
+    "name_ar": "الطريق الجهوية صفاقس - المهدية",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-53"
+    ],
+    "governorates": [
+      "Mahdia"
+    ],
+    "segments": 3,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "90",
+    "center_lat": 35.24897,
+    "center_lon": 11.08486
+  },
+  {
+    "ref": "RR 82 طج",
+    "name": "شارع الحبيب بورقيبة",
+    "name_fr": "Avenue Habib Bourguiba",
+    "name_ar": "شارع الحبيب بورقيبة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-52"
+    ],
+    "governorates": [
+      "Monastir"
+    ],
+    "segments": 1,
+    "maxspeed": "50",
+    "center_lat": 35.67702,
+    "center_lon": 10.83113
+  },
+  {
+    "ref": "RR 92 ط ج",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-52"
+    ],
+    "governorates": [
+      "Monastir"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.77384,
+    "center_lon": 10.81513
+  },
+  {
+    "ref": "RR 94 طج",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-52"
+    ],
+    "governorates": [
+      "Monastir"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.72546,
+    "center_lon": 10.81788
+  },
+  {
+    "ref": "RR107",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-81"
+    ],
+    "governorates": [
+      "Gabès"
+    ],
+    "segments": 10,
+    "lanes": "1",
+    "center_lat": 33.81883,
+    "center_lon": 10.07429
+  },
+  {
+    "ref": "RR111",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-83"
+    ],
+    "governorates": [
+      "Tataouine"
+    ],
+    "segments": 2,
+    "center_lat": 32.97772,
+    "center_lon": 10.48579
+  },
+  {
+    "ref": "RR125",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-43"
+    ],
+    "governorates": [
+      "Sidi Bouzid"
+    ],
+    "segments": 2,
+    "center_lat": 35.07269,
+    "center_lon": 9.51682
+  },
+  {
+    "ref": "RR126",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-23"
+    ],
+    "governorates": [
+      "Bizerte"
+    ],
+    "segments": 1,
+    "center_lat": 37.00867,
+    "center_lon": 9.355
+  },
+  {
+    "ref": "RR133",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-22",
+      "TN-51"
+    ],
+    "governorates": [
+      "Zaghouan",
+      "Sousse"
+    ],
+    "segments": 50,
+    "surface": "paved",
+    "maxspeed": "50",
+    "center_lat": 36.42736,
+    "center_lon": 10.12068
+  },
+  {
+    "ref": "RR151",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-23"
+    ],
+    "governorates": [
+      "Bizerte"
+    ],
+    "segments": 1,
+    "center_lat": 37.12821,
+    "center_lon": 9.81706
+  },
+  {
+    "ref": "RR27",
+    "name": "الطريق الجهوية رقم 27",
+    "alt_names": [
+      "شارع البيئة",
+      "شارع الحبيب بورقيبة",
+      "شارع علي البلهوان"
+    ],
+    "name_fr": "Avenue Habib Bourguiba",
+    "name_ar": "شارع الحبيب بورقيبة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-21"
+    ],
+    "governorates": [
+      "Nabeul"
+    ],
+    "segments": 122,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.64271,
+    "center_lon": 10.82322
+  },
+  {
+    "ref": "RR28;RR133",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-22"
+    ],
+    "governorates": [
+      "Zaghouan"
+    ],
+    "segments": 1,
+    "maxspeed": "30",
+    "center_lat": 36.43764,
+    "center_lon": 10.1028
+  },
+  {
+    "ref": "RR33E",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-13"
+    ],
+    "governorates": [
+      "Ben Arous"
+    ],
+    "segments": 1,
+    "center_lat": 36.74047,
+    "center_lon": 10.30295
+  },
+  {
+    "ref": "RR35",
+    "name": "شارع 14 جانفي 2011",
+    "name_fr": "Avenue du 14 Janvier 2011",
+    "name_ar": "شارع 14 جانفي 2011",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-13"
+    ],
+    "governorates": [
+      "Ben Arous"
+    ],
+    "segments": 23,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 36.7296,
+    "center_lon": 10.24907
+  },
+  {
+    "ref": "RR35;RR39",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-13"
+    ],
+    "governorates": [
+      "Ben Arous"
+    ],
+    "segments": 1,
+    "maxspeed": "30",
+    "center_lat": 36.71482,
+    "center_lon": 10.2642
+  },
+  {
+    "ref": "RR39",
+    "name": "الطريق الجهوية الزهراء - السيجومي",
+    "name_fr": "Route Régionale Ezzahra - Séjoumi",
+    "name_ar": "الطريق الجهوية الزهراء - السيجومي",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-13"
+    ],
+    "governorates": [
+      "Ben Arous"
+    ],
+    "segments": 9,
+    "maxspeed": "50",
+    "center_lat": 36.71628,
+    "center_lon": 10.26959
+  },
+  {
+    "ref": "RR54",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-23"
+    ],
+    "governorates": [
+      "Bizerte"
+    ],
+    "segments": 3,
+    "center_lat": 37.12834,
+    "center_lon": 9.77197
+  },
+  {
+    "ref": "RR81",
+    "name": "الطريق الجهوية صفاقس - سيدي عمر بوحجلة",
+    "alt_names": [
+      "شارع قرطاج",
+      "طريق قرمدة"
+    ],
+    "name_fr": "Route de Gremda",
+    "name_ar": "طريق قرمدة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41",
+      "TN-53",
+      "TN-61"
+    ],
+    "governorates": [
+      "Kairouan",
+      "Mahdia",
+      "Sfax"
+    ],
+    "segments": 73,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 34.91506,
+    "center_lon": 10.58774
+  },
+  {
+    "ref": "RR81-RR96",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-53"
+    ],
+    "governorates": [
+      "Mahdia"
+    ],
+    "segments": 1,
+    "maxspeed": "30",
+    "center_lat": 35.18398,
+    "center_lon": 10.28007
+  },
+  {
+    "ref": "RR81;RL921",
+    "name": "طريق قرمدة",
+    "name_fr": "Route de Grémda",
+    "name_ar": "طريق قرمدة",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 1,
+    "lanes": "1",
+    "maxspeed": "30",
+    "center_lat": 34.80618,
+    "center_lon": 10.7025
+  },
+  {
+    "ref": "RR81;RR119",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "30",
+    "center_lat": 35.03963,
+    "center_lon": 10.52516
+  },
+  {
+    "ref": "RR82,RR119",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-61"
+    ],
+    "governorates": [
+      "Sfax"
+    ],
+    "segments": 1,
+    "surface": "asphalt",
+    "lanes": "1",
+    "maxspeed": "30",
+    "center_lat": 35.03513,
+    "center_lon": 10.90905
+  },
+  {
+    "ref": "RR83",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-43"
+    ],
+    "governorates": [
+      "Sidi Bouzid"
+    ],
+    "segments": 6,
+    "lanes": "2",
+    "center_lat": 35.04582,
+    "center_lon": 9.48609
+  },
+  {
+    "ref": "RR83-RR125",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-43"
+    ],
+    "governorates": [
+      "Sidi Bouzid"
+    ],
+    "segments": 1,
+    "lanes": "2",
+    "center_lat": 35.04545,
+    "center_lon": 9.49868
+  },
+  {
+    "ref": "RR87",
+    "name": "شارع تلمسان",
+    "alt_names": [
+      "Rue de la Victoire",
+      "شارع طارق بن زياد"
+    ],
+    "name_fr": "Avenue Telemcen",
+    "name_ar": "شارع تلمسان",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41",
+      "TN-53"
+    ],
+    "governorates": [
+      "Kairouan",
+      "Mahdia"
+    ],
+    "segments": 27,
+    "surface": "asphalt",
+    "lanes": "2",
+    "center_lat": 35.59019,
+    "center_lon": 10.22479
+  },
+  {
+    "ref": "RR88",
+    "name": "شارع الشهداء",
+    "name_fr": "Avenue des Martyrs",
+    "name_ar": "شارع الشهداء",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-51",
+      "TN-52"
+    ],
+    "governorates": [
+      "Sousse",
+      "Monastir"
+    ],
+    "segments": 55,
+    "surface": "asphalt",
+    "lanes": "4",
+    "maxspeed": "90",
+    "center_lat": 35.62841,
+    "center_lon": 10.72435
+  },
+  {
+    "ref": "RR90",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-52"
+    ],
+    "governorates": [
+      "Monastir"
+    ],
+    "segments": 1,
+    "center_lat": 35.53308,
+    "center_lon": 10.91595
+  },
+  {
+    "ref": "RR94",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-52"
+    ],
+    "governorates": [
+      "Monastir"
+    ],
+    "segments": 55,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "70",
+    "center_lat": 35.66226,
+    "center_lon": 10.77607
+  },
+  {
+    "ref": "RR95",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-52"
+    ],
+    "governorates": [
+      "Monastir"
+    ],
+    "segments": 1,
+    "center_lat": 35.54319,
+    "center_lon": 10.86547
+  },
+  {
+    "ref": "RR96",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-53",
+      "TN-61"
+    ],
+    "governorates": [
+      "Mahdia",
+      "Sfax"
+    ],
+    "segments": 19,
+    "maxspeed": "50",
+    "center_lat": 35.21963,
+    "center_lon": 10.37519
+  },
+  {
+    "ref": "RR99",
+    "road_class": "primary",
+    "governorate_codes": [
+      "TN-41"
+    ],
+    "governorates": [
+      "Kairouan"
+    ],
+    "segments": 13,
+    "surface": "asphalt",
+    "lanes": "2",
+    "maxspeed": "50",
+    "center_lat": 35.68188,
+    "center_lon": 10.08058
+  }
+]
