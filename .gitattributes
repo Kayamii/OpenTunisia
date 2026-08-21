@@ -1,0 +1,15 @@
+# Keep line endings sane across Windows, macOS and Linux contributors.
+* text=auto eol=lf
+
+# These run on Linux CI runners — CRLF would break them.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Data files: LF, and treat them as text so diffs are reviewable.
+*.json    text eol=lf
+*.geojson text eol=lf
+*.md      text eol=lf
+
+*.png binary

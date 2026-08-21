@@ -69,16 +69,26 @@ data/
 
 ### Explore it on a map
 
-An interactive viewer lives in [`viewer/`](viewer/) — every coordinate-bearing record
-in this repository (38,567 points across 28 layers) drawn over all 266 delegation
-boundaries, with search, per-layer toggles and light/dark themes.
+**→ [Open the live map](https://kayamii.github.io/OpenTunisia/)**
+
+[![The OpenTunisia map](viewer/screenshot.png)](https://kayamii.github.io/OpenTunisia/)
+
+Every coordinate-bearing record in this repository — 38,567 points across 28 layers —
+drawn over all 266 delegation boundaries, with search, per-layer toggles, category
+icons and light/dark themes. The map starts clean: nothing is plotted until you choose
+a layer.
+
+It republishes automatically on every push to `main`, so the live map always matches the
+data in this repository.
+
+To run it locally:
 
 ```bash
 cd viewer && python -m http.server 8000    # then open http://localhost:8000
 ```
 
-It is a single HTML file plus three generated JSON files — no build step, no framework.
-Rebuild the data with `python viewer/build.py` after changing anything in `data/`.
+One HTML file, one icons file and three generated JSON files — no build step, no
+framework. Rebuild the bundle with `python viewer/build.py` after changing `data/`.
 
 ---
 
@@ -335,19 +345,48 @@ Not more bulk collection — the bottleneck has moved.
 
 ---
 
+## Contributing
+
+Contributions are welcome — a single corrected record is as useful as a new dataset.
+
+1. **Fork** the repository and create a branch.
+2. **Make your change** in `data/`, and document where it came from in `sources/`.
+3. **Run `python scripts/validate.py`** — it needs only Python 3.
+4. **Open a pull request** against `main`.
+
+The same validator runs automatically on every pull request, so a green tick means
+review can focus on whether the data is correct rather than whether it parses.
+
+**The one firm rule:** every dataset must document its origin and licence. Data being
+publicly visible on a website does not make it reusable. See
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for the conventions, and
+[`sources/README.md`](sources/README.md) for which sources are known to be usable —
+and which must not be scraped.
+
+---
+
 ## License
 
-The **code and documentation** in this repository are released under the
+The **code, map viewer and documentation** in this repository are released under the
 [MIT License](LICENSE).
 
 **Datasets are licensed differently.** A dataset derived from another source keeps
 whatever conditions that source imposes. Each dataset documents its own license and
 source in `sources/`. Check the individual dataset before reusing it.
 
-All current datasets are derived from **OpenStreetMap** and are published under the
-[Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/).
-If you use them, you must credit **© OpenStreetMap contributors** and share any modified
-distribution under the same license.
+> **The MIT licence does not cover the data.** It applies to the scripts, the map
+> viewer and the documentation. The datasets carry the licences of the bodies that
+> published them.
+
+The datasets fall under two families:
+
+| Data | Licence | What it requires |
+|---|---|---|
+| From **OpenStreetMap** (33,932 records) | [ODbL](https://opendatacommons.org/licenses/odbl/) | Credit **© OpenStreetMap contributors**, and share modified distributions under the same licence |
+| From **Tunisian government portals** (15,848 records) | CC-BY, CC-Zero, ODbL or the national open licence — **per dataset** | Usually attribution to the publishing ministry; a few are public domain |
+
+Each file in [`sources/`](sources/) states the licence for that specific dataset. Read it
+before reusing one.
 
 This is not legal advice. If you plan to reuse data commercially or at scale, verify the
 terms of the original source yourself.

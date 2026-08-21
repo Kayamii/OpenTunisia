@@ -1,0 +1,63 @@
+name: Publish map
+
+# Every push to main rebuilds the map bundle from data/ and publishes viewer/
+# to GitHub Pages, so the live map always matches the data in the repository.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate data before publishing
+        run: python scripts/validate.py
+
+      - name: Rebuild the map bundle from data/
+        run: python viewer/build.py
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          cp -r viewer/. _site/
+          # the map fetches these at runtime; ship the raw data too so the
+          # published site is a usable mirror of the datasets themselves
+          mkdir -p _site/data
+          cp -r data/. _site/data/
+          cp README.md _site/README.md 2>/dev/null || true
+          ls -la _site
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
