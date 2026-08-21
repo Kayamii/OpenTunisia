@@ -175,3 +175,21 @@ rate-limits to 2 concurrent slots, so requests need retry-with-backoff.
 - Cross-check schools against Ministry of Education lists.
 - Add contact details from official sources where licensing permits.
 - Improve coverage of under-mapped governorates by contributing back to OSM.
+
+---
+
+## `places/unnamed-branded-facilities.json`
+
+A separate file of **334 OpenStreetMap features that have no `name` tag but do carry an
+`operator`, `brand` or `network`** — an ATM tagged with its bank, a fuel station tagged
+with its company, a water tower tagged with its utility.
+
+They are excluded from the main datasets, which require a name. They are published
+separately because the brand still identifies them usefully, and kept clearly marked so
+they are never mistaken for named records:
+
+- `label` holds the operator/brand/network — **it is not a name**.
+- `unnamed: true` is set on every record.
+
+All 334 were located by exact point-in-polygon. Composition: parking (54), ATMs (51),
+transport platforms (41), fuel stations (22), water infrastructure (36), banks (12).

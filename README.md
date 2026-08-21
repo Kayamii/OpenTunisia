@@ -67,7 +67,7 @@ data/
 
 ### Available now
 
-**42,586 records** from two source families: **OpenStreetMap** (ODbL) and the **Tunisian
+**49,780 records** from two source families: **OpenStreetMap** (ODbL) and the **Tunisian
 national open data portal** data.gov.tn (CC-BY / ODbL, official ministry data).
 
 **Official government data** — from data.gov.tn
@@ -75,21 +75,29 @@ national open data portal** data.gov.tn (CC-BY / ODbL, official ministry data).
 | Dataset | Records | Source |
 |---|---:|---|
 | [`services/schools-official.json`](data/services/schools-official.json) | 7,452 | Ministry of Education — public + private schools |
-| [`services/health-facilities-official.json`](data/services/health-facilities-official.json) | 1,536 | Ministry of Health — health centres + hospitals |
+| [`services/water-and-agricultural-groups.json`](data/services/water-and-agricultural-groups.json) | 2,709 | Water user associations (GDA), organic operators |
+| [`services/private-specialist-doctors.json`](data/services/private-specialist-doctors.json) | 2,220 | Private specialist doctors - 95% have a phone number |
+| [`services/health-facilities-official.json`](data/services/health-facilities-official.json) | 1,555 | Ministry of Health — health centres + hospitals |
+| [`places/cultural-sites.json`](data/places/cultural-sites.json) | 849 | Museums, cultural institutions, festivals - all geolocated |
+| [`businesses/olive-oil-mills.json`](data/businesses/olive-oil-mills.json) | 468 | Olive oil mills (huileries), 11 governorates |
+| [`services/social-and-training-facilities.json`](data/services/social-and-training-facilities.json) | 268 | Social welfare offices, vocational training - 92% have a phone |
+| [`places/agricultural-infrastructure.json`](data/places/agricultural-infrastructure.json) | 200 | Dams, hill lakes, milk and grain collection centres |
+| [`services/public-libraries.json`](data/services/public-libraries.json) | 127 | Public libraries, 7 governorates |
 
 **Geography** — the full administrative hierarchy
 
-| Dataset | Records |
-|---|---:|
-| [`geography/imadas.json`](data/geography/imadas.json) | 2,084 |
-| [`geography/delegations.json`](data/geography/delegations.json) | 266 |
-| [`geography/governorates.json`](data/geography/governorates.json) | 24 |
+| Dataset | Records | Contents |
+|---|---:|---|
+| [`geography/imadas.json`](data/geography/imadas.json) | 2,084 | Imadas / sectors (*imadat*) |
+| [`geography/delegations.json`](data/geography/delegations.json) | 266 | Delegations (*mu'tamadiyat*) |
+| [`geography/governorates.json`](data/geography/governorates.json) | 24 | Governorates (*wilayat*) |
+| [`geography/delegation-boundaries.geojson`](data/geography/delegation-boundaries.geojson) | 266 | **Delegation boundary polygons** (GeoJSON, 274k vertices) |
 
 **Services** — from OpenStreetMap
 
 | Dataset | Records | Contents |
 |---|---:|---|
-| [`services/education.json`](data/services/education.json) | 2,856 | Schools, universities, libraries |
+| [`services/education.json`](data/services/education.json) | 2,856 | Schools, universities, kindergartens, libraries |
 | [`services/public-services.json`](data/services/public-services.json) | 1,934 | Post offices, police, town halls, markets |
 | [`services/healthcare.json`](data/services/healthcare.json) | 1,482 | Pharmacies, clinics, doctors, dentists |
 | [`services/finance.json`](data/services/finance.json) | 1,170 | Banks, ATMs, exchange offices |
@@ -111,16 +119,20 @@ national open data portal** data.gov.tn (CC-BY / ODbL, official ministry data).
 
 | Dataset | Records | Contents |
 |---|---:|---|
-| [`places/transport.json`](data/places/transport.json) | 4,085 | Stations, metro/rail stops, bus stations, airports, ferry terminals |
+| [`places/transport.json`](data/places/transport.json) | 4,085 | Stations, metro/rail stops, bus stations, airports, ferries |
 | [`places/places-of-worship.json`](data/places/places-of-worship.json) | 1,695 | Mosques, churches, synagogues |
 | [`places/heritage-sites.json`](data/places/heritage-sites.json) | 1,620 | Ruins, archaeological sites, monuments, castles |
 | [`places/populated-places.json`](data/places/populated-places.json) | 1,302 | Cities, towns, villages, neighborhoods |
 | [`places/leisure-and-sport.json`](data/places/leisure-and-sport.json) | 1,071 | Parks, stadiums, gyms, sports centres, marinas |
 | [`places/natural-features.json`](data/places/natural-features.json) | 536 | Beaches, springs, peaks, caves, oases |
+| [`places/unnamed-branded-facilities.json`](data/places/unnamed-branded-facilities.json) | 334 | ATMs, parking, utilities identified by brand not name |
 | [`places/major-roads.json`](data/places/major-roads.json) | 131 | Motorways, trunk and primary roads |
 
 Every point-of-interest record carries a `governorate_code` and `delegation_code_geo`, so
 all files join to the geography datasets without any database. No record appears twice.
+
+`delegation-boundaries.geojson` holds the actual polygons used to assign every record to
+its delegation, so that assignment can be reproduced or audited independently.
 
 > **Read this before using the data.** The OpenStreetMap files are a geolocated index of
 > *what exists and where* — not a verified business directory. Phone numbers appear on
@@ -129,131 +141,6 @@ all files join to the geography datasets without any database. No record appears
 > authoritative and far better distributed, but most carry no coordinates. Absence from a
 > dataset does not mean a place does not exist. Full limitations are in
 > [`sources/`](sources/).
-
----|---:|---|
-| [`geography/governorates.json`](data/geography/governorates.json) | 24 | Governorates (*wilayat*) |
-| [`geography/delegations.json`](data/geography/delegations.json) | 266 | Delegations (*mu'tamadiyat*) |
-| [`geography/imadas.json`](data/geography/imadas.json) | 2,084 | Imadas / sectors (*imadat*) |
-
-**Services**
-
-| Dataset | Records | Contents |
-|---|---:|---|
-| [`services/education.json`](data/services/education.json) | 2,856 | Schools, universities, kindergartens, libraries |
-| [`services/public-services.json`](data/services/public-services.json) | 1,934 | Post offices, police, town halls, markets |
-| [`services/healthcare.json`](data/services/healthcare.json) | 1,482 | Pharmacies, hospitals, clinics, doctors, dentists |
-| [`services/finance.json`](data/services/finance.json) | 1,170 | Banks, ATMs, exchange offices |
-| [`services/fuel-stations.json`](data/services/fuel-stations.json) | 717 | Fuel stations |
-| [`services/community-and-culture.json`](data/services/community-and-culture.json) | 496 | Theatres, cinemas, community centres |
-| [`services/other-facilities.json`](data/services/other-facilities.json) | 287 | Veterinary, research institutes, prisons, misc. |
-| [`services/vehicle-services.json`](data/services/vehicle-services.json) | 138 | Car rental, driving schools, parking |
-
-**Businesses**
-
-| Dataset | Records | Contents |
-|---|---:|---|
-| [`businesses/shops.json`](data/businesses/shops.json) | 4,668 | Shops of all kinds |
-| [`businesses/food-and-drink.json`](data/businesses/food-and-drink.json) | 4,603 | Restaurants, cafés, fast food, bars |
-| [`businesses/tourism-and-lodging.json`](data/businesses/tourism-and-lodging.json) | 1,471 | Hotels, guest houses, museums |
-| [`businesses/offices-and-crafts.json`](data/businesses/offices-and-crafts.json) | 962 | Company offices, NGOs, craft workshops |
-
-**Places**
-
-| Dataset | Records | Contents |
-|---|---:|---|
-| [`places/transport.json`](data/places/transport.json) | 4,085 | Stations, stops, bus stations, airports, ferry terminals |
-| [`places/places-of-worship.json`](data/places/places-of-worship.json) | 1,695 | Mosques, churches, synagogues |
-| [`places/heritage-sites.json`](data/places/heritage-sites.json) | 1,620 | Ruins, archaeological sites, monuments, castles |
-| [`places/populated-places.json`](data/places/populated-places.json) | 1,302 | Cities, towns, villages, neighborhoods |
-| [`places/leisure-and-sport.json`](data/places/leisure-and-sport.json) | 1,071 | Parks, stadiums, sports centres, marinas |
-| [`places/natural-features.json`](data/places/natural-features.json) | 536 | Beaches, springs, peaks, caves, oases |
-| [`places/major-roads.json`](data/places/major-roads.json) | 131 | Motorways, trunk and primary roads |
-
-Every point-of-interest record carries a `governorate_code` and `delegation_code_geo`, so
-all files join to the geography datasets without any database. No record appears twice.
-
-> **Read this before using the data.** These files are a geolocated index of *what exists
-> and where* — not a verified business directory. Phone numbers appear on ~4% of records,
-> websites on ~2%. Coverage reflects OpenStreetMap mapping activity, so it is uneven
-> (Tunis has ~23× more entries than Kef) and may be outdated. Absence from a dataset does
-> not mean a place does not exist. Full limitations are documented in
-> [`sources/points-of-interest.md`](sources/points-of-interest.md).
-
----|---:|
-| [`geography/governorates.json`](data/geography/governorates.json) | 24 |
-| [`geography/delegations.json`](data/geography/delegations.json) | 266 |
-
-**Services**
-
-| Dataset | Records | Contents |
-|---|---:|---|
-| [`services/education.json`](data/services/education.json) | 2,856 | Schools, universities, kindergartens, libraries |
-| [`services/public-services.json`](data/services/public-services.json) | 1,934 | Post offices, police, town halls, markets |
-| [`services/healthcare.json`](data/services/healthcare.json) | 1,482 | Pharmacies, hospitals, clinics, doctors, dentists |
-| [`services/finance.json`](data/services/finance.json) | 1,170 | Banks, ATMs, exchange offices |
-| [`services/fuel-stations.json`](data/services/fuel-stations.json) | 717 | Fuel stations |
-| [`services/community-and-culture.json`](data/services/community-and-culture.json) | 496 | Theatres, cinemas, community centres |
-| [`services/vehicle-services.json`](data/services/vehicle-services.json) | 138 | Car rental, driving schools, parking |
-
-**Businesses**
-
-| Dataset | Records | Contents |
-|---|---:|---|
-| [`businesses/shops.json`](data/businesses/shops.json) | 4,668 | Shops of all kinds |
-| [`businesses/food-and-drink.json`](data/businesses/food-and-drink.json) | 4,603 | Restaurants, cafés, fast food, bars |
-| [`businesses/tourism-and-lodging.json`](data/businesses/tourism-and-lodging.json) | 1,471 | Hotels, guest houses, museums |
-| [`businesses/offices-and-crafts.json`](data/businesses/offices-and-crafts.json) | 962 | Company offices, NGOs, craft workshops |
-
-**Places**
-
-| Dataset | Records | Contents |
-|---|---:|---|
-| [`places/transport.json`](data/places/transport.json) | 4,085 | Stations, stops, bus stations, airports, ferry terminals |
-| [`places/places-of-worship.json`](data/places/places-of-worship.json) | 1,695 | Mosques, churches, synagogues |
-| [`places/heritage-sites.json`](data/places/heritage-sites.json) | 1,620 | Ruins, archaeological sites, monuments, castles |
-| [`places/populated-places.json`](data/places/populated-places.json) | 1,302 | Cities, towns, villages, neighborhoods |
-| [`places/leisure-and-sport.json`](data/places/leisure-and-sport.json) | 1,071 | Parks, stadiums, sports centres, marinas |
-| [`places/natural-features.json`](data/places/natural-features.json) | 536 | Beaches, springs, peaks, caves, oases |
-
-Every record carries a `governorate_code` and `delegation_code_geo`, so all files join to
-the geography datasets without any database. No record appears in two files.
-
-> **Read this before using the data.** These files are a geolocated index of *what exists
-> and where* — not a verified business directory. Phone numbers appear on ~5% of records,
-> websites on ~3%. Coverage reflects OpenStreetMap mapping activity, so it is uneven
-> (Tunis has ~23× more entries than Kef) and may be outdated. Absence from a dataset does
-> not mean a place does not exist. Full limitations are documented in
-> [`sources/points-of-interest.md`](sources/points-of-interest.md).
-
----|---:|---|
-| [`geography/governorates.json`](data/geography/governorates.json) | 24 | All governorates — ISO codes, trilingual names |
-| [`geography/delegations.json`](data/geography/delegations.json) | 266 | All delegations, linked to governorates |
-| [`services/education.json`](data/services/education.json) | 2,856 | Schools, universities, kindergartens, libraries |
-| [`services/public-services.json`](data/services/public-services.json) | 1,944 | Post offices, police, town halls, markets |
-| [`services/healthcare.json`](data/services/healthcare.json) | 1,483 | Pharmacies, hospitals, clinics, doctors, dentists |
-| [`services/finance.json`](data/services/finance.json) | 1,170 | Banks, ATMs, exchange offices |
-| [`services/fuel-stations.json`](data/services/fuel-stations.json) | 721 | Fuel stations |
-| [`businesses/shops.json`](data/businesses/shops.json) | 4,674 | Shops of all kinds |
-| [`businesses/food-and-drink.json`](data/businesses/food-and-drink.json) | 4,603 | Restaurants, cafés, fast food, bars |
-| [`businesses/tourism-and-lodging.json`](data/businesses/tourism-and-lodging.json) | 1,475 | Hotels, guest houses, museums, attractions |
-| [`places/populated-places.json`](data/places/populated-places.json) | 1,302 | Cities, towns, villages, neighborhoods |
-
-Every record carries a `governorate_code` and `delegation_code_geo`, so all files join to
-the geography datasets without any database.
-
-> **Read this before using the data.** These files are a geolocated index of *what exists
-> and where* — not a verified business directory. Phone numbers appear on ~6% of records,
-> websites on ~3%. Coverage reflects OpenStreetMap mapping activity, so it is uneven
-> (Tunis has ~25× more entries than Kef) and may be outdated. Absence from a dataset does
-> not mean a place does not exist. Full limitations are documented in
-> [`sources/points-of-interest.md`](sources/points-of-interest.md).
-
----|---|---|
-| [`geography/governorates.json`](data/geography/governorates.json) | 24 | All Tunisian governorates — ISO codes, trilingual names, coordinates |
-| [`geography/delegations.json`](data/geography/delegations.json) | 266 | All delegations (*mu'tamadiyat*), linked to their governorate |
-
-The other folders are still empty. See [`data/README.md`](data/README.md) for how
-datasets are organized.
 
 ---
 
@@ -302,7 +189,14 @@ website unless its license or terms permit it.
 - [x] Expand into places, services and businesses — 31,093 points of interest
 - [x] Complete the administrative hierarchy down to imada level
 - [x] Add official Tunisian government data (Ministries of Education and Health)
-- [ ] Cross-match official records against the OpenStreetMap records
+- [x] Cross-match official records against the OpenStreetMap records
+- [ ] Extend coverage to governorates that do not yet publish open data
+
+**715 cross-reference links** now connect official registry records to their
+OpenStreetMap counterparts (697 schools, 18 health facilities), so an authoritative
+record can borrow OSM's coordinates and multilingual names. Matching is conservative:
+ambiguous candidates are dropped rather than guessed, and guards prevent matching sibling
+schools, different school levels, or a public health centre to a private clinic.
 
 The administrative geography layer is verified against the official ISO 3166-2:TN code
 list, and every point of interest is tied to it by point-in-polygon assignment (verified 30/30

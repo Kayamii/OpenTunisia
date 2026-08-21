@@ -16,7 +16,14 @@
 |---|---:|
 | Centres de Soins de Santé de Base (basic health centres) | 1,442 |
 | Hôpitaux de circonscription (circumscription hospitals) | 94 |
-| **Total** | **1,536** |
+| Établissements publics de santé (major public hospitals) | 19 |
+| **Total** | **1,555** |
+
+The 19 *établissements publics de santé* are Tunisia's major public hospitals — La Rabta,
+Hôpital d'Enfants de Tunis, Aziza Othmana and others — and they arrive **with street
+addresses and phone numbers**, which the other two sources lack. They were matched
+against the existing records by normalized name + governorate before insertion, so no
+facility is listed twice.
 
 This complements `services/healthcare.json` (from OpenStreetMap), which covers
 pharmacies, clinics and private practices that this official list does not include.
@@ -42,8 +49,8 @@ pharmacies, clinics and private practices that this official list does not inclu
 - **1,235 of 1,536 have a delegation**; the remainder are located to governorate only,
   because their delegation string did not match confidently. Governorate is present and
   verified for **all 1,536**.
-- **Only 79 records carry a phone number** — the hospital source has them, the health
-  centre source does not.
+- **98 records carry a phone number and 99 an address** — the two hospital sources have
+  them, the basic-health-centre source does not.
 - Names are in French/Latin script, often fully uppercase in the source, and are kept as
   published.
 - These are **public-sector registries**. Private clinics, private pharmacies and
@@ -54,3 +61,30 @@ pharmacies, clinics and private practices that this official list does not inclu
 ## Attribution
 
 CC-BY requires attribution. Credit the **Ministère de la Santé / data.gov.tn**.
+
+---
+
+## Cross-matching to OpenStreetMap
+
+**18 of 1,536** official health facilities have been linked to a record in
+`services/healthcare.json`, via `osm_type`, `osm_id` and `osm_match_name_similarity`.
+
+The number is low for a real reason: this official list covers **basic health centres and
+public hospitals**, while OpenStreetMap's Tunisian health coverage is mostly
+**pharmacies** and private practices. The two sources largely describe different things,
+which is exactly why both are kept.
+
+Matching requires the same governorate (and same delegation where known), a name
+similarity ≥ 0.6, and a ≥ 0.15 margin over the runner-up. 55 ambiguous candidates were
+rejected.
+
+### Guards
+
+- **Facility class is never crossed.** An early version matched "CSB Hammam Lif" (a
+  public basic health centre) to "Polyclinique Hammam-Lif" (a private clinic), and "CSB
+  Menzel Horr" to "Clinique Menzel Horr". Clinic / hospital / CSB / pharmacy are now
+  treated as distinct classes that cannot match each other.
+- **One OSM feature backs at most one official record.** Two official entries had both
+  matched the same hospital; the strongest link wins and the other is dropped.
+
+All 18 surviving matches were reviewed by hand and point to distinct features.

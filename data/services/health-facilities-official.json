@@ -9,6 +9,138 @@
     "postcode": "2030"
   },
   {
+    "name": "Centre de Maternité et de Neonatologie",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "La Rabta, Tunis-1007",
+    "phone": "21671571316",
+    "fax": "21671572711",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital Aziza Othmana",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Place du Gouvernement la Kasba, Tunis-1008",
+    "phone": "21671560763",
+    "fax": "21671560763",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital Charles Nicolle",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Boulevard 9 Avril 1938, Tunis-1006,",
+    "phone": "21671262740",
+    "fax": "21671262740",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital Habib Thameur",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Montfleury, Tunis",
+    "phone": "21671492773",
+    "fax": "21671492163",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital La Rabta",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "La Rabta, Tunis-1007",
+    "phone": "21671262083",
+    "fax": "21671570506",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital Mongi Slim",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Sidi Daoud, la Marsa, 2070",
+    "phone": "21671764325",
+    "fax": "21671765118",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital d'Enfants . Tunis",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Bab Saadoun -Tunis-1006",
+    "phone": "21671262987",
+    "fax": "21671262987",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Institut Hedi Raies D'ophtalmologie de Tunis",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Boulevard 9 Avril 1938, Tunis- 1006",
+    "phone": "21671263701",
+    "fax": "21671263701",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Institut Mongi Ben Hamida",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "La Rabta, Tunis-1007",
+    "phone": "21671572053",
+    "fax": "21671570070",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Institut National de Nutrition et de Technologie Alimentaire",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Bab Saadoun - Tunis-1006",
+    "phone": "21671570665",
+    "fax": "21671570125",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Institut Salah Azaiez",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-11",
+    "governorate": "Tunis",
+    "address": "Bab Saadoun, Tunis-1006",
+    "phone": "21671263980",
+    "fax": "21671263980",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
     "name": "BACH HAMBA",
     "facility_type": "Centre de Protection Maternelle et Infantile",
     "sector": "public",
@@ -445,6 +577,18 @@
     "governorate": "Ariana",
     "address": "Daouar Hicher",
     "phone": "21671520880"
+  },
+  {
+    "name": "Hôpital de Pneumo-Phtisiologie",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-12",
+    "governorate": "Ariana",
+    "address": "Route de Bizerte -Ariana 2080",
+    "phone": "21671713645",
+    "fax": "21671713645",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
   },
   {
     "name": "ARIANA",
@@ -1058,6 +1202,30 @@
     "fax": "21671530066"
   },
   {
+    "name": "Hôpital Razi",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "address": "Rue des orangers - La Manouba-2010",
+    "phone": "21671600037",
+    "fax": "21671600037",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Institut Mohamed Kassab d'Orthopédie",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "address": "Ksar Saïd - 2010",
+    "phone": "21671520373",
+    "fax": "21671520373",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
     "name": "CSB CHAOUAT",
     "facility_type": "Centre de Soins de Santé de Base",
     "sector": "public",
@@ -1154,7 +1322,10 @@
     "delegation": "Douar Hicher",
     "delegation_code_geo": "1452",
     "locality": "Douar Hicher",
-    "postcode": "2086"
+    "postcode": "2086",
+    "osm_type": "way",
+    "osm_id": 629307276,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "CSB KALED IBN ALWALID",
@@ -1341,7 +1512,10 @@
     "delegation": "Tebourba",
     "delegation_code_geo": "1457",
     "locality": "Tebourba",
-    "postcode": "1130"
+    "postcode": "1130",
+    "osm_type": "node",
+    "osm_id": 11076102367,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "CSB CITEZ ERAJA",
@@ -1423,7 +1597,10 @@
     "governorate_code": "TN-21",
     "governorate": "Nabeul",
     "address": "Rue du Festival - El HAOUARIA - 8045",
-    "phone": "21672297054"
+    "phone": "21672297054",
+    "osm_type": "way",
+    "osm_id": 676026048,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "HOPITAL DE KELIBIA",
@@ -1433,7 +1610,10 @@
     "governorate": "Nabeul",
     "address": "Avenue Ali BELHAOUENE - KELIBIA - 8059",
     "phone": "21672296190",
-    "fax": "21672296268"
+    "fax": "21672296268",
+    "osm_type": "way",
+    "osm_id": 208118856,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "HOPITAL DE KORBA",
@@ -1453,7 +1633,10 @@
     "governorate": "Nabeul",
     "address": "Avenue de la République - SOLIMAN - 8020",
     "phone": "21672290255",
-    "fax": "21672290795"
+    "fax": "21672290795",
+    "osm_type": "way",
+    "osm_id": 678653585,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "HOPITAL FATTOUMA LIMAM MENZEL BOUZELFA",
@@ -1463,7 +1646,10 @@
     "governorate": "Nabeul",
     "address": "Rue Mongi Slim - MENZEL BOUZELFA - 8010",
     "phone": "21672292091",
-    "fax": "21672292593"
+    "fax": "21672292593",
+    "osm_type": "way",
+    "osm_id": 207216169,
+    "osm_match_name_similarity": 0.8
   },
   {
     "name": "HOPITAL HAMMAMET",
@@ -1473,7 +1659,10 @@
     "governorate": "Nabeul",
     "address": "Hôpital Mohamed Tahar Maamouri - Nabeul- 8000",
     "phone": "21672287972",
-    "fax": "21672286180"
+    "fax": "21672286180",
+    "osm_type": "way",
+    "osm_id": 441933766,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "BENI KHALLED",
@@ -6370,7 +6559,10 @@
     "delegation": "Bou Arada",
     "delegation_code_geo": "2453",
     "locality": "Bouarada",
-    "postcode": "6180"
+    "postcode": "6180",
+    "osm_type": "node",
+    "osm_id": 10003949813,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "BOUJLIDA",
@@ -7213,7 +7405,10 @@
     "delegation": "Haffouz",
     "delegation_code_geo": "4156",
     "locality": "Haffouz",
-    "postcode": "3130"
+    "postcode": "3130",
+    "osm_type": "node",
+    "osm_id": 12170719151,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "MESSIOUTA",
@@ -7708,7 +7903,10 @@
     "delegation": "Sbikha",
     "delegation_code_geo": "4154",
     "locality": "Sbikha",
-    "postcode": "3110"
+    "postcode": "3110",
+    "osm_type": "node",
+    "osm_id": 7919870954,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "CSB AIN DEFLA",
@@ -7753,7 +7951,10 @@
     "governorate_code": "TN-42",
     "governorate": "Kasserine",
     "locality": "Haidra",
-    "postcode": "1221"
+    "postcode": "1221",
+    "osm_type": "way",
+    "osm_id": 1525168378,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "CSB HASSI EL FRID",
@@ -7860,7 +8061,10 @@
     "governorate": "Kasserine",
     "address": "Avenue Habib BOURGUIBA - THALA",
     "phone": "21677480022",
-    "fax": "21677480363"
+    "fax": "21677480363",
+    "osm_type": "node",
+    "osm_id": 14064073918,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "MAGEL BEL ABBES",
@@ -8259,7 +8463,10 @@
     "delegation": "Sbeitla",
     "delegation_code_geo": "4255",
     "locality": "Sbeitla",
-    "postcode": "1250"
+    "postcode": "1250",
+    "osm_type": "node",
+    "osm_id": 10006882217,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "CSB RAKHMETTE",
@@ -9273,7 +9480,10 @@
     "governorate_code": "TN-51",
     "governorate": "Sousse",
     "locality": "M'Saken",
-    "postcode": "4070"
+    "postcode": "4070",
+    "osm_type": "way",
+    "osm_id": 790430460,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "CSB MSAKEN SUD",
@@ -9996,7 +10206,10 @@
     "governorate_code": "TN-52",
     "governorate": "Monastir",
     "address": "Avenue Habib BOURGUIBA - BEKALTA - 5090",
-    "phone": "216773477260"
+    "phone": "216773477260",
+    "osm_type": "node",
+    "osm_id": 9836287724,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "HOPITAL DE BEMBLA",
@@ -10072,7 +10285,10 @@
     "governorate_code": "TN-52",
     "governorate": "Monastir",
     "address": "Avenue Farhat HACHED -  TEBOULBA - 5080",
-    "phone": "216773479444"
+    "phone": "216773479444",
+    "osm_type": "way",
+    "osm_id": 527141171,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "JAMMEL",
@@ -10252,7 +10468,10 @@
     "delegation": "Bembla",
     "delegation_code_geo": "3257",
     "locality": "Bembla",
-    "postcode": "5021"
+    "postcode": "5021",
+    "osm_type": "node",
+    "osm_id": 9776020478,
+    "osm_match_name_similarity": 0.67
   },
   {
     "name": "MENZEL HAREB",
@@ -13022,6 +13241,30 @@
     "fax": "21676290131"
   },
   {
+    "name": "Hôpital Habib Bourguiba",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-71",
+    "governorate": "Gafsa",
+    "address": "Avenue El Ferdaouss -Sfax-3029",
+    "phone": "21674242333",
+    "fax": "21674242333",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital Hédi Chaker",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-71",
+    "governorate": "Gafsa",
+    "address": "Route El Ain Km 0,5-Sfax",
+    "phone": "21674242181",
+    "fax": "21674242181",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
     "name": "MDHILLA",
     "facility_type": "Centre de Protection Maternelle et Infantile",
     "sector": "public",
@@ -14575,6 +14818,30 @@
     "fax": "21675330233"
   },
   {
+    "name": "Hôpital Farhat Hached",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-81",
+    "governorate": "Gabès",
+    "address": "Avenue Ibn El Jazzar-Sousse- 4000",
+    "phone": "21673222293",
+    "fax": "21673222293",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
+    "name": "Hôpital Sahloul",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-81",
+    "governorate": "Gabès",
+    "address": "Hammam sousse - 4011",
+    "phone": "21673241411",
+    "fax": "21673241411",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
+  },
+  {
     "name": "MENZEL EL HABIB",
     "facility_type": "Centre de Soins de Santé de Base",
     "sector": "public",
@@ -15240,6 +15507,18 @@
     "governorate": "Médenine",
     "locality": "Djerba Houmet Souk",
     "postcode": "4180"
+  },
+  {
+    "name": "Hôpital Fattouma Bourguiba",
+    "facility_type": "EPS",
+    "sector": "public",
+    "governorate_code": "TN-82",
+    "governorate": "Médenine",
+    "address": "Rue du 1er juin 1995-Monastir-5000",
+    "phone": "21673460309",
+    "fax": "21673460309",
+    "license": "cc-by",
+    "source_dataset": "Liste des établissements publics de santé en Tunisie"
   },
   {
     "name": "JALLEL",
@@ -16130,7 +16409,10 @@
     "delegation": "Smâr",
     "delegation_code_geo": "5353",
     "locality": "Smar",
-    "postcode": "3223"
+    "postcode": "3223",
+    "osm_type": "node",
+    "osm_id": 9032301588,
+    "osm_match_name_similarity": 1.0
   },
   {
     "name": "S SOINS KSAR AOUN",

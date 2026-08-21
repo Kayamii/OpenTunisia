@@ -75,3 +75,41 @@ repository.
 
 ODbL requires attribution and share-alike. Credit the **Ministère de l'Éducation /
 data.gov.tn** and share modified distributions under the same license.
+
+---
+
+## Cross-matching to OpenStreetMap
+
+**697 of 6,139** coordinate-bearing official schools have been linked to their
+OpenStreetMap counterpart. Matched records carry three extra fields:
+
+| Field | Meaning |
+|---|---|
+| `osm_type` / `osm_id` | The matching feature in `services/education.json` |
+| `osm_match_distance_m` | Distance between the two records, in metres |
+| `osm_match_name_similarity` | Jaccard token similarity of the two names, 0–1 |
+
+**These are cross-references, not duplicates.** The official record remains the
+authoritative one; the link lets you pull OSM's extra attributes (multilingual names,
+occasional contact details) for the same school.
+
+### How matching works
+
+A candidate must be in the **same delegation**, within **400 m**, and share name tokens
+after normalization (diacritics, definite article, bidi marks, and school-type prefixes
+like `م.إ.` are stripped). Scoring is 75% name similarity, 25% proximity. A match is
+accepted only if it scores ≥ 0.45 **and** beats the runner-up by ≥ 0.10, so ambiguous
+cases are dropped rather than guessed — 143 were rejected on that basis.
+
+### Two guards that matter
+
+Testing an earlier version surfaced two classes of false positive, both now blocked:
+
+1. **Sibling schools.** "حي الحبيب 3" matched "حي الحبيب 1" — different schools sharing a
+   name stem. Numeric suffixes must now agree exactly.
+2. **Different school levels.** A primary school (`م.إ.`) matched a preparatory school
+   (`المدرسة الإعدادية`) at the same site. Primary / preparatory / secondary are now
+   never matched across.
+
+Both were verified to zero occurrences after the fix. The stricter rules cut matches from
+805 to 697; the 108 lost were unreliable.

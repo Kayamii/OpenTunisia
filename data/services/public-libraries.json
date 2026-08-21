@@ -1,0 +1,1050 @@
+[
+  {
+    "name": "Bib Ambulante",
+    "facility_type": "mobile_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Enfantine De Megrine",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "delegation": "Megrine",
+    "delegation_code_geo": "1359",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Enfantine Hammam Lif",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "delegation": "Hammam Lif",
+    "delegation_code_geo": "1354",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pour Jeunesses et Adultes De Rades",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De  Nouvelle Medina",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Boumhal",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Elmourouj 1 Jeunes Et Adultes",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Ezzahra Cite Elhabib",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "delegation": "Ezzahra",
+    "delegation_code_geo": "1357",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Fouchana",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "delegation": "Fouchana",
+    "delegation_code_geo": "1361",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Hammam chatt",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Mhamedia",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Morneg Cite H Bourguiba",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De Morneg Cite Riadh",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub De khelidia",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub Elmourouj 5",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Pub Pour Jeunesses et Adultes  de Hammam Lif",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "delegation": "Hammam Lif",
+    "delegation_code_geo": "1354",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib Regionale  Ben  Arous",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "delegation": "Ben Arous",
+    "delegation_code_geo": "1351",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib pour Jeunesses et  Adultes De Megrine",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "delegation": "Megrine",
+    "delegation_code_geo": "1359",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Bib pour jeunesses Et Adultes De _Ezzahra",
+    "facility_type": "public_library",
+    "governorate_code": "TN-13",
+    "governorate": "Ben Arous",
+    "license": "other-open",
+    "source_dataset": "Données sur les usagers des bibliothèques publiques CRAC Ben Arous de 2018 à 2020"
+  },
+  {
+    "name": "Battan",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Borj Al Amri",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Denden",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Douar Hicher 1",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "delegation": "Douar Hicher",
+    "delegation_code_geo": "1452",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Dour Hicher 1",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "license": "other-open",
+    "source_dataset": "Les activités culturelles dans les bibliothèques publiques de Manouba 2023"
+  },
+  {
+    "name": "Jdaida",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "license": "other-open",
+    "source_dataset": "Les activités culturelles dans les bibliothèques publiques de Manouba 2023"
+  },
+  {
+    "name": "Jedaida",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Mornaguia",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "delegation": "Mornaguia",
+    "delegation_code_geo": "1454",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Oued Ellil",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "delegation": "Oued Ellil",
+    "delegation_code_geo": "1453",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Regional Manouba",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "delegation": "Manouba",
+    "delegation_code_geo": "1451",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Regional de Manouba",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "delegation": "Manouba",
+    "delegation_code_geo": "1451",
+    "license": "other-open",
+    "source_dataset": "Les activités culturelles dans les bibliothèques publiques de Manouba 2023"
+  },
+  {
+    "name": "Teborba",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "license": "other-open",
+    "source_dataset": "Les activités culturelles dans les bibliothèques publiques de Manouba 2023"
+  },
+  {
+    "name": "Tebourba",
+    "facility_type": "public_library",
+    "governorate_code": "TN-14",
+    "governorate": "Manouba",
+    "delegation": "Tebourba",
+    "delegation_code_geo": "1457",
+    "license": "other-open",
+    "source_dataset": "Fond total des bibliothèques publiques de Manouba en 2023"
+  },
+  {
+    "name": "Bibliothèque ambulante  de NABEUL (01)",
+    "facility_type": "mobile_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque public de AZMOUR",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de BENI KHALED",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de BENI KHIAR",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de BOUARGOUB",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de DAR ALOUCH",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de DAR CHAABAN ELFEHRI",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de GROMBALIA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de HAMAM ELGZAZ",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de HAMMAMET",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de KELIBIA CITE RIADH",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de KELIBIA place de la jeunesse",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de KORBA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de MAAMOURA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de MENZEL BOUZELFA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de MENZEL HOR",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de MENZEL TEMIM",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de MIDA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de OM THWIL",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de SOLIMAN",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de SOMAA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de TAKELSSA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de TAZERKA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de ZAWIT JDIDI",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public de el HAOURIA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque public régional de NABEUL",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques du Crac de Nabeul 2023"
+  },
+  {
+    "name": "Bibliothèque publique de AZMOUR",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de BENI KHALED",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de BENI KHIAR",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de BOUARGOUB",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de DAR ALOUCH",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de DAR CHAABAN ELFEHRI",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de GROMBALIA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de HAMAM ELGZAZ",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de HAMMAMET",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de KELIBIA CITE RIADH",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de KELIBIA place de la jeunesse",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de KORBA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de MAAMOURA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de MENZEL BOUZELFA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de MENZEL HOR",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de MENZEL TEMIM",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de MIDA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de OM THWIL",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de SOLIMAN",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de SOMAA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de TAKELSSA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de TAZERKA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de ZAWIT JDIDI",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique de el HAOURIA",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "Bibliothèque publique régional de NABEUL",
+    "facility_type": "public_library",
+    "governorate_code": "TN-21",
+    "governorate": "Nabeul",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Nabeul 2022"
+  },
+  {
+    "name": "المكتبة الجهوية بباجة",
+    "facility_type": "public_library",
+    "governorate_code": "TN-31",
+    "governorate": "Béja",
+    "license": "other-open",
+    "source_dataset": "Nombres des livres arabes et étrangers des bibliothèques de Béja en 2023 et 2024"
+  },
+  {
+    "name": "Bib pub knayes (ouvert en 2024)",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Les usagers des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bib pub msaken mahata (ouvert en 2024)",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Les usagers des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque pub msaken mahata en 2024",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public akouda",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public bouficha",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public cité matar",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public hadrumet",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public hamam sousse",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public hergla",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public k kbira",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public k kbira (enf)",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public k sghira",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public knayes en 2024",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public kondar",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public ksibet sousse",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public massadine",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public msaken",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public nfidha",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public nfidha (enf)",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public sahloul",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public sidi bou ali",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public zaouiet sousse",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque public zouhour",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque régionale Sousse",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque régionale Sousse (fermée)",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèques",
+    "facility_type": "public_library",
+    "governorate_code": "TN-51",
+    "governorate": "Sousse",
+    "license": "other-open",
+    "source_dataset": "Données sur le nombre d'abonnés des bibliothèques publiques de Sousse de l’année 2021 à l’année 2024"
+  },
+  {
+    "name": "Bibliothèque Publique  Sidi Makhlouf",
+    "facility_type": "public_library",
+    "governorate_code": "TN-82",
+    "governorate": "Médenine",
+    "delegation": "Sidi Makhlouf",
+    "delegation_code_geo": "5259",
+    "license": "other-open",
+    "source_dataset": "Tableau statistique des bibliothèques et la lecture publique en 2020"
+  },
+  {
+    "name": "Bibliothèque Publique Medenine Nord",
+    "facility_type": "public_library",
+    "governorate_code": "TN-82",
+    "governorate": "Médenine",
+    "delegation": "Medenine Nord",
+    "delegation_code_geo": "5251",
+    "license": "other-open",
+    "source_dataset": "Tableau statistique des bibliothèques et la lecture publique en 2020"
+  },
+  {
+    "name": "Bibliothèque Publique Zarzis",
+    "facility_type": "public_library",
+    "governorate_code": "TN-82",
+    "governorate": "Médenine",
+    "delegation": "Zarzis",
+    "delegation_code_geo": "5255",
+    "license": "other-open",
+    "source_dataset": "Tableau statistique des bibliothèques et la lecture publique en 2020"
+  },
+  {
+    "name": "bibliothéque itinérante 1",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publicque ghoumrassen",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique Ksar awled dabeb",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique binimhira",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique birlahmer",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique dhhiba",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique ferech",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique ksar awled soultane",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique ksar hdada",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique rmada",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique rogba",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique smar",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque publique tataouine nord",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  },
+  {
+    "name": "bibliothéque régional tataouine",
+    "facility_type": "public_library",
+    "governorate_code": "TN-83",
+    "governorate": "Tataouine",
+    "license": "other-open",
+    "source_dataset": "Fonds des bibliothèques publiques CRAC Tataouine de 2017 à 2020"
+  }
+]

@@ -86,11 +86,56 @@ Note: `data.gov.tn` itself has an incomplete TLS certificate chain, but
 `catalog.data.gov.tn` (the CKAN backend that serves the actual data) works normally.
 The portal is also intermittently slow - downloads need retry with backoff.
 
-### openbaladiati.tn — municipal open data
+### openculture.gov.tn / agridata.tn
 
-Municipality-level datasets (many under `cc-zero`) surface through the same catalog
-search. Coverage is per-commune and patchy, but for the communes that publish, the data
-is detailed. Not yet used in this repository.
+Two further live portals whose resources are indexed in the same national catalog.
+`agridata.tn` carries agricultural and water data (olive mills, GDAs, collection
+centres); `openculture.gov.tn` carries cultural institutions, museums and festivals,
+much of it geolocated. Both are in use here.
+
+### openbaladiati.tn — municipal open data (DEAD)
+
+Municipality-level datasets (pharmacies, bakeries, cafés, parking, per commune, many
+under `cc-zero`) are still **indexed** in the national catalog, but the host no longer
+serves them: every resource URL returns **HTTP 404**, and `app.openbaladiati.tn` does not
+respond at all. 40 resources were probed; all failed.
+
+Be careful here — the failing downloads return an **HTML error page with HTTP 200**, so a
+naive fetch silently saves a web page as if it were a CSV. Always check that a downloaded
+file does not begin with `<!doctype html`.
+
+If this host is restored, it is the single best remaining source of commune-level POI
+data for Tunisia.
+
+---
+
+## What belongs in this repository
+
+**Things that exist and can be found.** A pharmacy, a school, a museum, a bus station, a
+water user association, a doctor's practice — something a person or an application could
+go to, look up, or point at on a map.
+
+### Not included: statistics and time series
+
+The Tunisian open data portals publish a large volume of **statistics** — around 1,340 of
+the openly licensed datasets are counts, budgets, subscriber numbers, production figures,
+yearly evolutions. None of it is imported here.
+
+That is a deliberate scope decision, not an oversight:
+
+- It goes stale. A directory entry stays useful for years; a 2019 subscriber count does
+  not.
+- It answers a different question. "How many libraries does Manouba have?" is a
+  statistics question. "Where are they?" is what this repository is for.
+- It would bury the useful data. Tens of thousands of statistical rows would swamp the
+  directory records people actually come here for.
+
+Where a statistics publication happened to contain a **list of named facilities**, the
+names were extracted and the numbers left behind — see `public-libraries.md` for an
+example.
+
+If someone wants Tunisian statistics, the portals themselves serve that need well, and
+`sources/README.md` documents how to query them.
 
 ---
 
@@ -108,6 +153,38 @@ is worth more than a larger one that cannot be published.
 
 If you want data from such a source, the correct route is to check whether they offer an
 API whose terms permit redistribution, and to comply with those terms.
+
+---
+
+## Collection status
+
+The realistic open sources for Tunisia have been swept:
+
+| Source | Status |
+|---|---|
+| OpenStreetMap | **Exhausted** for named features in these categories |
+| data.gov.tn catalog | **All 2,698 datasets enumerated**; the ~159 directory-type ones collected |
+| agridata.tn | Collected |
+| openculture.gov.tn | Collected |
+| openbaladiati.tn | **Dead** — all resources 404 |
+
+Of 274 directory-type resources identified, **269 were downloaded**. Five could not be
+retrieved after repeated attempts with long timeouts and retries:
+
+- *Liste des gouvernorats en Tunisie* — HTTP 403 (and redundant; the repository already
+  has all 24 governorates from OSM)
+- *Liste des Institutions publiques de prise en charge* — no response
+- *Liste des divisions de promotion sociale* — no response
+- Two per-governorate social promotion unit files (Sousse, Mahdia) — no response
+
+None of these would change the shape of the data; the same facility types are already
+covered for other governorates. They are recorded here so a future contributor can retry
+rather than rediscover the gap.
+
+### What remains uncollected on purpose
+
+Roughly **1,340 openly licensed datasets** on the live portals are statistics, not
+directories. See "What belongs in this repository" above.
 
 ---
 
